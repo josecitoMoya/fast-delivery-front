@@ -3,6 +3,8 @@ FROM node:18
 
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
+
+
 # Copiar el package.json y package-lock.json a /app en el contenedor
 COPY package*.json ./
 
