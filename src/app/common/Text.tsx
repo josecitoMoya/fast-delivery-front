@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import "../styles/button.css";
+import "../styles/text.css";
 
 interface Props {
   text: string;
