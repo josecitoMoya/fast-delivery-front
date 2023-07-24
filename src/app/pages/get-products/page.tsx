@@ -5,7 +5,7 @@ import Nav from "../../components/Nav";
 const Home = () => (
   <div>
     <Nav />
-    <GreenScreen content={<GetProducts />} />
+    <GreenScreen h2="Obtener paquetes" content={<GetProducts />} />
     <Button
       href="/pages/travel"
       bgc="bg-green text-blue"

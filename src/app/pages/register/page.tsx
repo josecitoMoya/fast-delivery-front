@@ -5,7 +5,7 @@ import Register from "@/app/components/Register";
 const register = () => (
   <div>
     <Nav />
-    <GreenScreen content={<Register />} />
+    <GreenScreen h2="Creá tu cuenta" content={<Register />} />
   </div>
 );
 export default register;

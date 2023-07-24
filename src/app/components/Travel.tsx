@@ -1,17 +1,22 @@
+import { NextPage } from "next";
 import Button from "../common/Button";
-
-const Travel = () => (
+interface Props {
+  dir: string;
+  id: string;
+  destinatario: string;
+}
+const Travel: NextPage<Props> = ({ dir, id, destinatario }) => (
   <div>
     <div className="img mx-auto"></div>
     <div className="info ml-5">
       <p>
-        <span>Destino:</span> Amenabar 2356, CABA
+        <span>Destino:</span> {dir}
       </p>
       <p>
-        <span>Numero de paquete:</span> #04023
+        <span>Numero de paquete:</span> {id}
       </p>
       <p>
-        <span>Recibe:</span> David Rodriguez
+        <span>Recibe:</span> {destinatario}
       </p>
     </div>
     <Button

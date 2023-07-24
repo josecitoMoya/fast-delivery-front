@@ -6,7 +6,16 @@ import "../../styles/travel.css";
 const Home = () => (
   <div>
     <Nav />
-    <GreenScreen content={<Travel />} />
+    <GreenScreen
+      h2="Reparto en curso"
+      content={
+        <Travel
+          destinatario="julian alvarez"
+          dir="sarmiento 1017, CABA"
+          id="#450F7"
+        />
+      }
+    />
     <Button
       href="/pages/get-products"
       bgc="bg-none text-white"

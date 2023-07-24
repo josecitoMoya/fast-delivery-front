@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Logo from "../assets/Main-logo.png";
 import { NextPage } from "next";
+import Mainlogo from "../assets/Ico/Mainlogo";
 
 interface Props {
   position: string;
@@ -9,7 +8,7 @@ interface Props {
 const MainLogo: NextPage<Props> = ({ position }) => {
   return (
     <div className={position}>
-      <Image alt="Fast Logo" priority width={250} src={Logo} />
+      <Mainlogo />
     </div>
   );
 };
