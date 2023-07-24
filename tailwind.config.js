@@ -8,13 +8,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "##3D1DF3",
-        secondary: "#00aaff",
+        blue: "#3D1DF3",
+        green: "#00EA77",
+        lightgreen: "#C7FFB1",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      fontFamily: {
+        custom: ["Poppins"],
       },
     },
   },

@@ -1,0 +1,22 @@
+.inputCont {
+  border: 0.1px solid #fff9;
+  border-radius: 10px;
+  color: #fff;
+  width: 100%;
+  width: 80vw;
+  padding: 7px;
+}
+
+.minput {
+  background: none;
+  color: #fff;
+  width: 90%;
+}
+
+.minput:focus {
+  outline: none;
+}
+
+.minput::placeholder {
+  color: #fff;
+}

@@ -1,5 +1,9 @@
-import MainLogo from "./common/MainLogo";
+import LoginScreen from "./screens/LoginScreen";
 
 export default function Home() {
-  return <main className=""></main>;
+  return (
+    <main>
+      <LoginScreen />
+    </main>
+  );
 }

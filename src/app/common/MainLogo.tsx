@@ -1,16 +1,17 @@
 import Image from "next/image";
 import Logo from "../assets/Main-logo.png";
+import { NextPage } from "next";
 
-export default function MainLogo() {
-  return (
-    <>
-      <Image
-        alt="Fast Logo"
-        width={200}
-        objectFit="cover"
-        className="img"
-        src={Logo}
-      />
-    </>
-  );
+interface Props {
+  position: string;
 }
+
+const MainLogo: NextPage<Props> = ({ position }) => {
+  return (
+    <div className={position}>
+      <Image alt="Fast Logo" priority width={250} src={Logo} />
+    </div>
+  );
+};
+
+export default MainLogo;

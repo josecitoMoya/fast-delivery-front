@@ -1,0 +1,9 @@
+.btnCont {
+  padding: 3px;
+  border-radius: 40px;
+  width: 75vw;
+  border: 1px solid var(--green);
+}
+.btn {
+  font-weight: 500;
+}
