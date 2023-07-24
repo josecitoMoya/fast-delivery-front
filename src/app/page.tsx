@@ -1,9 +1,11 @@
-import LoginScreen from "./screens/LoginScreen";
+import MainLogo from "./common/MainLogo";
+import Login from "./components/Login";
 
 export default function Home() {
   return (
     <main>
-      <LoginScreen />
+      <MainLogo position="w-full mt-28 flex  justify-center" />
+      <Login />
     </main>
   );
 }

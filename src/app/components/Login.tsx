@@ -17,15 +17,17 @@ const Login = () => {
       <Minput
         type="password"
         ico={<Lock />}
-        position="mx-auto mt-3"
+        position="mx-auto my-3"
         placeholder="contraseña"
       />
       <Button
+        href="/home"
         bgc="bg-green text-blue"
         position="mx-auto mt-7"
         text="ingresar"
       />
       <Button
+        href="/home"
         bgc="bg-none text-white"
         position="mx-auto mt-3"
         text="crear cuenta"
