@@ -1,6 +1,6 @@
-import Button from "../common/Button";
-import FoldingCont from "../components/FoldingCont";
-import Nav from "../components/Nav";
+import Button from "../../common/Button";
+import FoldingCont from "../../components/FoldingCont";
+import Nav from "../../components/Nav";
 const fakedata = [
   {
     id: "#f0345",
@@ -43,7 +43,7 @@ const Home = () => (
       text={"Repartos terminados"}
     />
     <Button
-      href="/get-products"
+      href="/pages/get-products"
       bgc="bg-green text-blue"
       position="mx-auto mt-4"
       text="Obtener paquetes"
