@@ -9,30 +9,32 @@ const Login = () => {
   return (
     <>
       <Minput
+        color="white"
         type="text"
-        ico={<User />}
-        position="mx-auto mt-10"
+        ico={<User color="white" />}
+        position="mx-auto mt-10 w-80"
         placeholder="email@contraseña.com"
       />
       <Minput
+        color="white"
         type="password"
-        ico={<Lock />}
-        position="mx-auto my-3"
+        ico={<Lock color="white" />}
+        position="mx-auto my-3 w-80"
         placeholder="contraseña"
       />
       <Button
-        href="/home"
+        href="/pages/home"
         bgc="bg-green text-blue"
         position="mx-auto mt-7"
         text="ingresar"
       />
       <Button
-        href="/home"
+        href="/pages/register"
         bgc="bg-none text-white"
         position="mx-auto mt-3"
         text="crear cuenta"
       />
-      <Text text="OLVIDÉ MI CONTRASEÑA" position="mt-3" />
+      <Text text="OLVIDÉ MI CONTRASEÑA" textColor="white" position="mt-3" />
     </>
   );
 };

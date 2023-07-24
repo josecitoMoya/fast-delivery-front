@@ -1,15 +1,23 @@
 .inputCont {
   border: 0.1px solid #fff9;
   border-radius: 10px;
-  color: #fff;
-  width: 100%;
-  width: 80vw;
   padding: 7px;
+}
+
+.w-80 {
+  width: 80vw;
+}
+
+.w-70 {
+  width: 72vw;
+}
+
+.border-blue {
+  border: 0.1px solid var(--blue);
 }
 
 .minput {
   background: none;
-  color: #fff;
   width: 90%;
 }
 
@@ -17,6 +25,10 @@
   outline: none;
 }
 
-.minput::placeholder {
+.placeholder-blue::placeholder {
+  color: var(--blue);
+}
+
+.placeholder-white::placeholder {
   color: #fff;
 }
