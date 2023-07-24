@@ -15,7 +15,7 @@ const Task: NextPage<Props> = ({ id, dir, state, bg }) => (
       <h3 className="id mt-1">{id}</h3>
       <p className="dir mt-1">{dir}</p>
     </div>
-    <div className="colorBtns mt-1 ml-2 align-end">
+    <div className="colorBtns mt-1 mx-2 align-end">
       <p className={bg + " pending text-center"}>{state}</p>
       <div className="mt-4 ml-20">
         <Trash />
