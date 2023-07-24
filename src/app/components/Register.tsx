@@ -41,7 +41,7 @@ const Register = () => {
         text="¿Ya tenes una cuenta?"
       />
       <Button
-        href="/pages/register"
+        href="/"
         bgc="bg-none text-blue"
         position="mx-auto mb-5 mt-2"
         text="iniciar sesion"

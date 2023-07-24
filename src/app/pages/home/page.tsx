@@ -45,7 +45,7 @@ const Home = () => (
     <Button
       href="/pages/get-products"
       bgc="bg-green text-blue"
-      position="mx-auto mt-4"
+      position="mx-auto mt-4 mb-4"
       text="Obtener paquetes"
     />
   </div>
