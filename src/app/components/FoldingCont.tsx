@@ -18,6 +18,7 @@ const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => (
   <div className={position + " mx-auto folding"}>
     <div className="flex flex-row justify-between">
       <h2>{text}</h2>
+
       <Arrow />
     </div>
     {tasks.map((elem, key) => (

@@ -1,0 +1,55 @@
+.task {
+  border: 0.5px solid var(--blue);
+  border-radius: 10px;
+  margin: 10px 10px;
+  padding: 5px 0px;
+}
+.task:last-child {
+  margin-bottom: 20px;
+}
+.greenCont {
+  width: 80vw;
+  background: var(--lightgreen);
+  border-radius: 5px;
+}
+
+.gHeader {
+  padding: 12px 0;
+}
+
+.h2 {
+  font-weight: 800;
+  color: var(--blue);
+}
+.infoCont {
+  width: 150px;
+  color: var(--blue);
+}
+
+.dir {
+  line-height: 1.2;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.content {
+  background: #fff;
+  border-radius: 5px;
+}
+
+h3 {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--blue);
+}
+
+.number {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.cuantity {
+  border: 0.5px solid #3d1df377;
+  border-radius: 5px;
+  color: var(--blue);
+}
