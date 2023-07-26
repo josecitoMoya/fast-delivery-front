@@ -1,8 +1,8 @@
 import "../styles/minput.css";
 import Minput from "../common/Minput";
 import Button from "../common/Button";
-import Lock from "../assets/Ico/Lock";
-import User from "../assets/Ico/User";
+import Lock from "@/assets/Ico/Lock";
+import User from "@/assets/Ico/User";
 import Text from "../common/Text";
 
 const Register = () => {
@@ -30,7 +30,7 @@ const Register = () => {
         placeholder="confirmar contraseña"
       />
       <Button
-        href="/pages/home"
+        href="/api/home"
         bgc="bg-green text-blue"
         position="mx-auto mt-20"
         text="crear"

@@ -1,6 +1,6 @@
-import GreenScreen from "@/app/components/GreenScreen";
-import Nav from "@/app/components/Nav";
-import Register from "@/app/components/Register";
+import GreenScreen from "@/components/GreenScreen";
+import Nav from "@/components/Nav";
+import Register from "@/components/Register";
 
 const register = () => (
   <div>

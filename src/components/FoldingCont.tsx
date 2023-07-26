@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Arrow from "../assets/Ico/Arrow";
+import Arrow from "@/assets/Ico/Arrow";
 import "../styles/foldingCont.css";
 import Task from "../common/Task";
 import { ReactNode } from "react";

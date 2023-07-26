@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import Addition from "../assets/Ico/Addition";
-import Check from "../assets/Ico/Check";
-import Minus from "../assets/Ico/Minus";
+import Addition from "@/assets/Ico/Addition";
+import Check from "@/assets/Ico/Check";
+import Minus from "@/assets/Ico/Minus";
 interface Props {
   dir: string;
   cuantity: string;
@@ -12,15 +12,15 @@ const Product: NextPage<Props> = ({ dir, cuantity }) => {
       <div className="ml-3 my-auto">
         <Check />
       </div>
-      <div className="infoCont ">
-        <p className="dir ml-2">{dir}</p>
+      <div className="infoCont  ">
+        <p className="dir ml-3">{dir}</p>
       </div>
-      <div className="flex cuantity my-auto mx-3">
-        <div className="mx-1 my-auto">
+      <div className="flex cuantity my-auto">
+        <div className="my-auto">
           <Minus />
         </div>
-        <p className="number">{cuantity}</p>
-        <div className="mx-1 my-">
+        <p className="number ">{cuantity}</p>
+        <div className="my-auto">
           <Addition />
         </div>
       </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Minilogo from "../assets/Ico/Minilogo";
+import Minilogo from "@/assets/Ico/Minilogo";
 import { NextPage } from "next";
 interface Props {
   position: string;
@@ -7,7 +7,7 @@ interface Props {
 
 const Homelogo: NextPage<Props> = ({ position }) => (
   <div className={position}>
-    <Link href="/pages/home">
+    <Link href="/api/home">
       <Minilogo />
     </Link>
   </div>

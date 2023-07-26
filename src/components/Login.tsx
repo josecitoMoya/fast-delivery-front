@@ -1,8 +1,8 @@
 import "../styles/minput.css";
 import Minput from "../common/Minput";
 import Button from "../common/Button";
-import Lock from "../assets/Ico/Lock";
-import User from "../assets/Ico/User";
+import Lock from "@/assets/Ico/Lock";
+import User from "@/assets/Ico/User";
 import Text from "../common/Text";
 
 const Login = () => {
@@ -23,13 +23,13 @@ const Login = () => {
         placeholder="contraseña"
       />
       <Button
-        href="/pages/home"
+        href="/api/home"
         bgc="bg-green text-blue"
         position="mx-auto mt-7"
         text="ingresar"
       />
       <Button
-        href="/pages/register"
+        href="/api/register"
         bgc="bg-none text-white"
         position="mx-auto mt-3"
         text="crear cuenta"

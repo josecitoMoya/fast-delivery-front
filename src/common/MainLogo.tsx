@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Mainlogo from "../assets/Ico/Mainlogo";
+import Mainlogo from "@/assets/Ico/Mainlogo";
 
 interface Props {
   position: string;

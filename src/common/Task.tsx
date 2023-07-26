@@ -1,6 +1,6 @@
 import { NextPage } from "next";
-import Box from "../assets/Ico/Box";
-import Trash from "../assets/Ico/Trash";
+import Box from "@/assets/Ico/Box";
+import Trash from "@/assets/Ico/Trash";
 interface Props {
   id: String;
   dir: String;
@@ -8,16 +8,16 @@ interface Props {
   bg: String;
 }
 const Task: NextPage<Props> = ({ id, dir, state, bg }) => (
-  <div className="task mt-3 flex flex-row">
+  <div className="task mt-3  flex flex-row">
     <Box />
     <div className="line"></div>
     <div className="ml-3 info">
-      <h3 className="id mt-1">{id}</h3>
+      <h3 className="id mt-2">{id}</h3>
       <p className="dir mt-1">{dir}</p>
     </div>
-    <div className="colorBtns mt-1 mx-2 align-end">
+    <div className="colorBtns mt-2 ml-3">
       <p className={bg + " pending text-center"}>{state}</p>
-      <div className="mt-4 ml-20">
+      <div className="mt-4">
         <Trash />
       </div>
     </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Exit from "../assets/Ico/Exit";
+import Exit from "@/assets/Ico/Exit";
 import { NextPage } from "next";
 interface Props {
   position: string;
