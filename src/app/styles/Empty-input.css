@@ -1,0 +1,37 @@
+.empty-input-cont {
+  border: 0.1px solid #fff9;
+  border-radius: 10px;
+  padding: 7px;
+}
+.w-80 {
+  width: 80vw;
+}
+
+.w-70 {
+  width: 72vw;
+}
+
+.border-blue {
+  border: 0.1px solid var(--blue);
+}
+
+.empty-input {
+  background: none;
+  width: 90%;
+  border: none;
+  border-bottom: 0.1px solid transparent;
+  transition: border-bottom 0.2s ease; /* Añadimos una transición suave */
+}
+
+.empty-input:focus {
+  outline: none;
+  border-bottom: 1.5px solid var(--blue); /* O el color que desees para el resaltado */
+}
+
+.placeholder-blue::placeholder {
+  color: var(--blue);
+}
+
+.placeholder-white::placeholder {
+  color: #fff;
+}
