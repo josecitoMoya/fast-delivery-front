@@ -30,7 +30,7 @@ const Register = () => {
         placeholder="confirmar contraseña"
       />
       <Button
-        href="/pages/home"
+        href="/api/home"
         bgc="bg-green text-blue"
         position="mx-auto mt-20"
         text="crear"

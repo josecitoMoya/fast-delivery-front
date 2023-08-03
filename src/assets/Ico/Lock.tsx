@@ -5,7 +5,7 @@ interface Color {
 
 const Lock: NextPage<Color> = ({ color }) => (
   <svg
-    className="my-auto"
+    className="ml-2 my-auto"
     xmlns="http://www.w3.org/2000/svg"
     width="14"
     height="16"

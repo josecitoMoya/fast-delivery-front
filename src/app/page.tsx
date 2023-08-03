@@ -1,5 +1,5 @@
-import MainLogo from "./common/MainLogo";
-import Login from "./components/Login";
+import MainLogo from "@/common/MainLogo";
+import Login from "@/components/Login";
 
 export default function Home() {
   return (
