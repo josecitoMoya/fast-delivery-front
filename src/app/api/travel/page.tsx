@@ -1,8 +1,8 @@
-import Button from "../../common/Button";
-import GreenScreen from "../../components/GreenScreen";
-import Travel from "../../components/Travel";
-import Nav from "../../components/Nav";
-import "../../styles/travel.css";
+import Button from "@/common/Button";
+import GreenScreen from "@/components/GreenScreen";
+import Travel from "@/components/Travel";
+import Nav from "@/components/Nav";
+import "@/styles/travel.css";
 const Home = () => (
   <div>
     <Nav />
@@ -17,7 +17,7 @@ const Home = () => (
       }
     />
     <Button
-      href="/pages/get-products"
+      href="/api/get-products"
       bgc="bg-none text-white"
       position="mx-auto my-5 "
       text="Cancelar entrega"
