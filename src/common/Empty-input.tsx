@@ -1,7 +1,8 @@
 import { NextPage } from "next";
 import "../styles/Empty-input.css";
+import { HTMLInputTypeAttribute } from "react";
 interface Props {
-  type: string;
+  type: HTMLInputTypeAttribute;
   color: string;
   position: string;
   placeholder: string;

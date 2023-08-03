@@ -1,11 +1,13 @@
 import { NextPage } from "next";
 import Box from "../assets/Ico/Box";
 import Trash from "../assets/Ico/Trash";
+import "../styles/task.css";
+import State from "../common/State";
 interface Props {
-  id: String;
-  dir: String;
-  state: String;
-  bg: String;
+  id: string;
+  dir: string;
+  state: string;
+  bg: string;
 }
 const Task: NextPage<Props> = ({ id, dir, state, bg }) => (
   <div className="task mt-3 flex flex-row">
@@ -16,7 +18,8 @@ const Task: NextPage<Props> = ({ id, dir, state, bg }) => (
       <p className="dir mt-1">{dir}</p>
     </div>
     <div className="colorBtns mt-1 mx-2 align-end">
-      <p className={bg + " pending text-center"}>{state}</p>
+      <State bg={bg} state={state} />
+
       <div className="mt-4 ml-20">
         <Trash />
       </div>
