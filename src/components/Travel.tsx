@@ -5,29 +5,26 @@ interface Props {
   id: string;
   destinatario: string;
 }
-const Travel: NextPage<Props> = ({ dir, id, destinatario }) => {
-  let url: URL = "/api/home";
-  return (
-    <div>
-      <div className="img mx-auto"></div>
-      <div className="info ml-5">
-        <p>
-          <span>Destino:</span> {dir}
-        </p>
-        <p>
-          <span>Numero de paquete:</span> {id}
-        </p>
-        <p>
-          <span>Recibe:</span> {destinatario}
-        </p>
-      </div>
-      <Button
-        href={}
-        bgc="bg-green text-blue"
-        position="mx-auto my-5"
-        text="Finalizar"
-      ></Button>
+const Travel: NextPage<Props> = ({ dir, id, destinatario }) => (
+  <div>
+    <div className="img mx-auto"></div>
+    <div className="info ml-5">
+      <p>
+        <span>Destino:</span> {dir}
+      </p>
+      <p>
+        <span>Numero de paquete:</span> {id}
+      </p>
+      <p>
+        <span>Recibe:</span> {destinatario}
+      </p>
     </div>
-  );
-};
+    <Button
+      href={"/api/home"}
+      bgc="bg-green text-blue"
+      position="mx-auto my-5"
+      text="Finalizar"
+    ></Button>
+  </div>
+);
 export default Travel;
