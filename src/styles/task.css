@@ -1,0 +1,26 @@
+.line {
+  width: 0.5px;
+  height: 60px;
+  background: #3d1df377;
+}
+
+.task {
+  padding: 5px;
+  border: 1px solid #3d1df377;
+  border-radius: 10px;
+}
+
+.info {
+  width: 100px;
+}
+
+.id {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dir {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+}

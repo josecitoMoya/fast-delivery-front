@@ -13,9 +13,9 @@ const Product: NextPage<Props> = ({ dir, cuantity }) => {
         <Check />
       </div>
       <div className="infoCont ">
-        <p className="dir ml-2">{dir}</p>
+        <p className="dir ml-3">{dir}</p>
       </div>
-      <div className="flex cuantity my-auto mx-3">
+      <div className="flex cuantity my-auto ml-10">
         <div className="mx-1 my-auto">
           <Minus />
         </div>

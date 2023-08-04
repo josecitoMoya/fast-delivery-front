@@ -1,17 +1,16 @@
 import { NextPage } from "next";
 import Arrow from "../assets/Ico/Arrow";
 import "../styles/foldingCont.css";
-import Task from "../common/Task";
-import { ReactNode } from "react";
+import Task from "./Task";
 interface Object {
-  id: String;
-  dir: String;
-  state: String;
-  bg: String;
+  id: string;
+  dir: string;
+  state: string;
+  bg: string;
 }
 interface Props {
-  text: String;
-  position: String;
+  text: string;
+  position: string;
   tasks: Array<Object>;
 }
 const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => (
