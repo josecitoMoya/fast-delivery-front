@@ -1,0 +1,27 @@
+h2 {
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.switchCont {
+  margin: 15px;
+  border-radius: 30px;
+  width: 35px;
+  height: 20px;
+  border: 1px solid #3d1df377;
+  display: flex;
+  justify-content: end;
+}
+
+.on-of {
+  width: 50%;
+  height: 90%;
+  background: var(--lightgreen);
+  border-radius: 50%;
+  margin: 1px;
+}
+
+.photo {
+  margin: 15px;
+}
