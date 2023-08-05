@@ -1,4 +1,4 @@
-import Porcentaje from "@/assets/Porcentaje";
+import Porcentaje from "@/assets/Ico/Porcentaje";
 import Photo from "@/common/Photo";
 import See from "@/common/See";
 
@@ -15,7 +15,7 @@ const DetailsChild = () => (
         <p>2/10 activos</p>
       </div>
     </div>
-    <div className="seeCont mt-2">
+    <div className="seeCont">
       <div className="flex ml-3">
         <Photo scale="mini" />
         <Photo scale="mini" />
