@@ -1,0 +1,29 @@
+.week {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 0px 10px;
+}
+
+.Day {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 10px 12px;
+  border-radius: 15%;
+  border: 1px solid;
+  border-color: #3d1df377;
+  margin: 2px;
+}
+
+.selected {
+  background: var(--lightgreen);
+}
+
+.Day p {
+  margin-left: 2px;
+  line-height: 5px;
+  font-size: 12px;
+  font-weight: 1000;
+}

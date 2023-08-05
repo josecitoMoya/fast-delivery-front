@@ -1,0 +1,20 @@
+.photoCont {
+  border-radius: 57px;
+  background: #000;
+  outline: 2px solid #fff;
+}
+
+.pbig {
+  width: 47px;
+  height: 47px;
+}
+
+.psmall {
+  width: 40px;
+  height: 40px;
+}
+
+.pmini {
+  width: 15px;
+  height: 15px;
+}
