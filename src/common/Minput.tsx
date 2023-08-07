@@ -1,12 +1,14 @@
 import { NextPage } from "next";
 import "../styles/minput.css";
 import { ReactNode } from "react";
+
 interface Props {
   type: string;
   color: string;
   position: string;
   placeholder: string;
   ico: ReactNode;
+  data: object;
 }
 
 const Minput: NextPage<Props> = ({
@@ -15,6 +17,7 @@ const Minput: NextPage<Props> = ({
   position,
   ico,
   color,
+  data,
 }) => {
   return (
     <div
@@ -25,6 +28,7 @@ const Minput: NextPage<Props> = ({
         type={type}
         className={`ml-3  minput placeholder-${color} text-${color}`}
         placeholder={placeholder}
+        {...data}
       />
     </div>
   );
