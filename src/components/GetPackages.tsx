@@ -20,7 +20,7 @@ const GetPackages = () => {
       </div>
       {fakeData.map((item, index) => (
         <div key={index} className="mb-2">
-          <Packages dir={item.adress} city={item.city} />
+          <Packages id={item.id} dir={item.adress} city={item.city} />
         </div>
       ))}
     </>
