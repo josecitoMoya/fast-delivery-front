@@ -57,6 +57,7 @@ const AddProduct = () => {
         bgc="bg-green text-blue"
         position="mx-auto mb-5 mt-2"
         text="Agregar"
+        type="submit"
       />
     </div>
   );
