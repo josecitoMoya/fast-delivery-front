@@ -19,8 +19,9 @@
   background: none;
   width: 90%;
   border: none;
-  border-bottom: 0.1px solid transparent;
-  transition: border-bottom 0.2s ease; /* Añadimos una transición suave */
+  border-bottom: 0.1px solid var(--blue); /* Agregamos el estilo de border-bottom */
+  /* border-bottom: 0.1px solid transparent; */
+  /* transition: border-bottom 0.2s ease; Añadimos una transición suave */
 }
 
 .empty-input:focus {
@@ -34,4 +35,15 @@
 
 .placeholder-white::placeholder {
   color: #fff;
+}
+
+.quantity-container {
+  border: 1px solid var(--blue); /* Puedes cambiar el color del borde aquí */
+  border-radius: 10px; /* Bordes redondeados */
+  outline: none;
+
+  /* Centrar contenido horizontal y verticalmente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
