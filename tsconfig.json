@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/components/GetProducts.jsx"
+    "src/app/components/GetProducts.jsx",
+    "src/common/Package.stsx"
   ],
   "exclude": ["node_modules"]
 }

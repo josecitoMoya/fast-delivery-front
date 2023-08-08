@@ -8,17 +8,17 @@ import axios from "axios";
 import useInput from "@/hooks/useInput";
 
 const Login = () => {
-  const email = useInput();
-  const password = useInput();
-  const confirmacion = useInput();
+  // const email = useInput();
+  // const password = useInput();
+  // const confirmacion = useInput();
 
-  const handleLogin = async () => {
-    const user = await axios.post(`http://localhost:3001/api/users/login`, {
-      password,
-      email,
-    });
-    return user.data;
-  };
+  // const handleLogin = async () => {
+  //   const user = await axios.post(`http://localhost:3001/api/users/login`, {
+  //     password,
+  //     email,
+  //   });
+  //   return user.data;
+  // };
 
   return (
     <>
