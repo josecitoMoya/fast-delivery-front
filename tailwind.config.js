@@ -1,10 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
+
+purge:{content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  options:{
+    safelist:[
+      'lightgreen',
+    ],
+  },
+
+
+},
   theme: {
     extend: {
       colors: {
@@ -12,6 +21,8 @@ module.exports = {
         green: "#00EA77",
         lightgreen: "#C7FFB1",
         yellow: "#F8E169",
+
+
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
