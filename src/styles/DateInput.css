@@ -1,0 +1,17 @@
+/* DateInput.module.css */
+
+.dateInput {
+  width: 120px; /* Ajusta el ancho según tus necesidades */
+  padding: 8px 12px;
+  border: 1px solid var(--blue); /* Puedes cambiar el color del borde aquí */
+  border-radius: 10px; /* Bordes redondeados */
+  outline: none;
+}
+
+/* Opcional: Estilos para resaltar el borde cuando el input está enfocado */
+.dateInput:focus {
+  border-color: var(
+    --blue
+  ); /* Cambiar el color del borde cuando el input está enfocado */
+  box-shadow: 0 0 4px rgba(0, 0, 255, 0.4); /* Sombras al enfocar */
+}

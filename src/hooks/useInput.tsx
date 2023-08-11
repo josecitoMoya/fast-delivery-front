@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 const useInput = () => {
@@ -6,7 +8,7 @@ const useInput = () => {
   const onChange = (e: any) => {
     setValue(e.target.value);
   };
-  return { onChange, setValue, value };
+  return { onChange, value };
 };
 
 export default useInput;

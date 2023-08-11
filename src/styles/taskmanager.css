@@ -1,0 +1,34 @@
+.adminCont {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+}
+
+h2 {
+  line-height: 15px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+p {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.seeCont {
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.see {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  background: var(--green);
+  padding: 3px 12px;
+  border-radius: 15px;
+}
