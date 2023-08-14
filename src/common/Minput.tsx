@@ -1,6 +1,6 @@
 import { NextPage } from "next";
-import "../styles/minput.css";
 import { ReactNode } from "react";
+import "../styles/minput.css";
 
 interface Props {
   type: string;
@@ -8,7 +8,7 @@ interface Props {
   position: string;
   placeholder: string;
   ico: ReactNode;
-  data: object;
+  data?: object;
 }
 
 const Minput: NextPage<Props> = ({

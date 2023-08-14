@@ -2,12 +2,10 @@ import { Package } from "./package";
 
 export interface UserRegister {
   name: string;
-  lastname: string;
+  last_name: string;
   password: string;
-  confirmpassword: string;
+  confirmpassword?: string;
   email: string;
-  urlphoto: string;
-  is_admin?: boolean;
 }
 export interface User {
   _id: string;
@@ -25,6 +23,7 @@ export interface User {
   historyPackages: Package[];
   token: string;
 }
+
 export interface UserLogin {
   email: string;
   password: string;
