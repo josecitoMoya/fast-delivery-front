@@ -1,38 +1,41 @@
 "use client";
-
+//styles
 import "../styles/minput.css";
+//commons
 import Minput from "../common/Minput";
 import Button from "../common/Button";
+import Text from "../common/Text";
+//assets
 import Lock from "../assets/Ico/Lock";
 import User from "../assets/Ico/User";
-import Text from "../common/Text";
+//hooks
 import useInput from "@/hooks/useInput";
-import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
-import axios from "axios";
+// services
+import User_Service from "@/services/user.services";
+const userService = new User_Service();
+//types
+import { UserRegister } from "@/types/user.types";
 
 const Register = () => {
   const email = useInput();
   const password = useInput();
-  const confirmacion = useInput();
+  const name = useInput();
+  const last_name = useInput();
+  const confirmPassword = useInput();
 
-  const handleSignup = async (e: any) => {
-    e.preventDefault();
-    const newUser = {
+  const handleSignup = async () => {
+    const newUser: UserRegister = {
       email: email.value,
       password: password.value,
-      confirmacion: confirmacion.value,
+      name: name.value,
+      last_name: last_name.value,
     };
 
-    const user = await axios.post(`http://localhost:3001/api/users/signup`, {
-      email,
-      password,
-    });
-
-    return user.data;
+    await userService.register(newUser);
   };
 
   return (
-    <form className="register" onSubmit={handleSignup}>
+    <>
       <Minput
         data={email}
         color="blue"
@@ -50,12 +53,20 @@ const Register = () => {
         placeholder="contraseña"
       />
       <Minput
-        data={confirmacion}
+        data={name}
         color="blue"
-        type="password"
-        ico={<Lock color="blue" />}
+        type="text"
+        ico={<User color="blue" />}
         position="mx-auto my-3 w-70"
-        placeholder="confirmar contraseña"
+        placeholder="introduzca su nombre"
+      />
+      <Minput
+        data={last_name}
+        color="blue"
+        type="text"
+        ico={<User color="blue" />}
+        position="mx-auto my-3 w-70"
+        placeholder="introduzca su apellido"
       />
       <Button
         type={"submit"}
@@ -63,6 +74,7 @@ const Register = () => {
         bgc="bg-green text-blue"
         position="mx-auto mt-20"
         text="crear"
+        onClick={handleSignup}
       />
       <Text
         position="mx-auto mt-2"
@@ -76,7 +88,7 @@ const Register = () => {
         position="mx-auto mb-5 mt-2"
         text="iniciar sesion"
       />
-    </form>
+    </>
   );
 };
 

@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import Box from "../assets/Ico/Box";
 import Trash from "../assets/Ico/Trash";
-import "../styles/task.css";
 import State from "../common/State";
+import "../styles/task.css";
 interface Props {
   id: string;
   dir: string;
