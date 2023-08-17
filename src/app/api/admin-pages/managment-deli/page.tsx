@@ -1,5 +1,3 @@
-console.log("AQUI ESTARA LA VISTA");
-import Button from "@/common/Button";
 import GreenScreen from "@/components/GreenScreen";
 import Nav from "@/components/Nav";
 import Deliverys from "@/components/Deliverys";
