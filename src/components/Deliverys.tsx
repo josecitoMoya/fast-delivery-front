@@ -68,7 +68,7 @@ const Deliverys = () => {
       percentage: 80,
     },
   ];
-  const href = `/api/admin-pages/pofile`;
+  const href = `/admin-pages/pofile`;
 
   return (
     <>

@@ -17,7 +17,8 @@ const Home = () => (
       }
     />
     <Button
-      href="/api/get-products"
+      type="button"
+      href="/user/get-products"
       bgc="bg-none text-white"
       position="mx-auto my-5 "
       text="Cancelar entrega"

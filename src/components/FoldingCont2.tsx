@@ -27,7 +27,7 @@ const FoldingCont: NextPage<Props> = ({ text, subText, position, tasks }) => (
       <p className="font-normal text-xs mb-2">sin repartos pendientes</p>
     )}
     <div className="flex justify-end">
-      <Link href={`/api/admin-pages/add-product`}>
+      <Link href={`/admin-pages/add-product`}>
         <button
           title="Add New"
           className="group  cursor-pointer hover:rotate-90 active:scale-100 duration-200 rounded-full bg-[#00EA77]"

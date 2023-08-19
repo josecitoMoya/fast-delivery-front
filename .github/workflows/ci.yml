@@ -24,8 +24,8 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-#      - name: Run tests
-#        run: npm test
+      #      - name: Run tests
+      #        run: npm test
 
       - name: Prevent Push on Failure
         run: exit 1

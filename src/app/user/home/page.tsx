@@ -43,7 +43,8 @@ const Home = () => (
       text={"Repartos terminados"}
     />
     <Button
-      href="/api/get-products"
+      type="button"
+      href="/user/get-products"
       bgc="bg-green text-blue"
       position="mx-auto mt-4 mb-4"
       text="Obtener paquetes"

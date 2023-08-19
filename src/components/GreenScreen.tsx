@@ -10,7 +10,7 @@ interface Props {
 const GreenScreen: NextPage<Props> = ({ content, h2 }) => (
   <div className="greenCont mx-auto mt-3 flex flex-col ">
     <div className="flex flex-row gHeader">
-      <Link href="/api/home" className="ml-5">
+      <Link href="/home" className="ml-5">
         <Rewind />
       </Link>
       <h2 className="h2 my-auto ml-10 ">{h2}</h2>
