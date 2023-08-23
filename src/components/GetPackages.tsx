@@ -1,5 +1,5 @@
-import Packages from "@/common/Packages";
 import "../styles/greenScreen.css";
+import Task from "./Task";
 
 const GetPackages = () => {
   const fakeData = [
@@ -20,7 +20,12 @@ const GetPackages = () => {
       </div>
       {fakeData.map((item, index) => (
         <div key={index} className="mb-2">
-          <Packages id={item.id} dir={item.adress} city={item.city} />
+          <Task
+            bg="none"
+            id={item.id}
+            dir={item.adress + " " + item.city}
+            state={""}
+          />
         </div>
       ))}
     </>

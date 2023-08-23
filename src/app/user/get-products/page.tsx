@@ -7,7 +7,8 @@ const Home = () => (
     <Nav />
     <GreenScreen h2="Obtener paquetes" content={<GetProducts />} />
     <Button
-      href="/api/travel"
+      type="button"
+      href="/user/travel"
       bgc="bg-green text-blue"
       position="mx-auto my-5 "
       text="Iniciar jornada"
