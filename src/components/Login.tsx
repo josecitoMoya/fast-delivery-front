@@ -47,7 +47,7 @@ const Login = () => {
         data={password}
       />
       <Button
-        href="/home"
+        href="/user/home"
         bgc="bg-green text-blue"
         position="mx-auto mt-7"
         text="ingresar"
