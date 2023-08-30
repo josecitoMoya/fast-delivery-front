@@ -24,8 +24,12 @@ const fakedata2 = [
 ];
 const Profile = () => (
   <div>
-    <Nav />
-    <GreenScreen h2="Perfil del repartidor" content={<ProfileState />} />
+    <Nav href="/admin/diary" lHref="/" />
+    <GreenScreen
+      href="admin/dealers"
+      h2="Perfil del repartidor"
+      content={<ProfileState />}
+    />
     <FoldingCont text="Repartos pendientes" tasks={[]} position="mt-2" />
     <FoldingCont
       tasks={fakedata2}

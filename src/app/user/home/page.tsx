@@ -31,7 +31,7 @@ const fakedata2 = [
 ];
 const Home = () => (
   <div>
-    <Nav />
+    <Nav href="/user/home" lHref="/" />
     <FoldingCont
       tasks={fakedata}
       position="mt-5"

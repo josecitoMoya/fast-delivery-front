@@ -6,8 +6,12 @@ import "@/styles/minput.css";
 export const Packages = () => {
   return (
     <div>
-      <Nav />
-      <GreenScreen h2="Package Managment" content={<GetPackages />} />
+      <Nav href="/admin/diary" lHref="/" />
+      <GreenScreen
+        href="/admin/diary"
+        h2="Paquetes"
+        content={<GetPackages />}
+      />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import Photo from "@/common/Photo";
 import State from "@/common/State";
 import "../styles/profileState.css";
+import Switch from "@/common/Switch";
 const ProfileState = () => (
   <div className="flex items-center justify-between">
     <div className="flex items-center">
@@ -12,9 +13,7 @@ const ProfileState = () => (
         <State state="ACTIVO" bg="bg-lightgreen" />
       </div>
     </div>
-    <div className="switchCont">
-      <div className="on-of"></div>
-    </div>
+    <Switch />
   </div>
 );
 export default ProfileState;
