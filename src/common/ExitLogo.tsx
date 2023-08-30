@@ -9,16 +9,17 @@ const userServices = new User_Service();
 
 interface Props {
   position: string;
+  href: string;
 }
 
-const Exitlogo: NextPage<Props> = ({ position }) => {
+const Exitlogo: NextPage<Props> = ({ position, href }) => {
   const handleLogout = async () => {
     await userServices.logoutUser();
   };
 
   return (
     <div className={position + " shadow borderX"} onClick={handleLogout}>
-      <Link href="/">
+      <Link href={href}>
         <Exit />
       </Link>
     </div>

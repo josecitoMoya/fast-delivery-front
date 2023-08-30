@@ -5,8 +5,9 @@ import Nav from "@/components/Nav";
 import "@/styles/travel.css";
 const Home = () => (
   <div>
-    <Nav />
+    <Nav href="/user/home" lHref="/" />
     <GreenScreen
+      href="/user/get-products"
       h2="Reparto en curso"
       content={
         <Travel

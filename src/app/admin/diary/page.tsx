@@ -4,8 +4,8 @@ import TaskManager from "@/components/TaskManager";
 
 const Diary = () => (
   <>
-    <Nav />
-    <GreenScreen h2="Gestionar pedidos" content={<TaskManager />} />
+    <Nav href="/admin/diary" lHref="/" />
+    <GreenScreen href="/" h2="Gestionar pedidos" content={<TaskManager />} />
   </>
 );
 export default Diary;

@@ -4,8 +4,12 @@ import GetProducts from "@/components/GetProducts";
 import Nav from "@/components/Nav";
 const Home = () => (
   <div>
-    <Nav />
-    <GreenScreen h2="Obtener paquetes" content={<GetProducts />} />
+    <Nav href="/user/home" lHref="/" />
+    <GreenScreen
+      href="/user/home"
+      h2="Obtener paquetes"
+      content={<GetProducts />}
+    />
     <Button
       type="button"
       href="/user/travel"

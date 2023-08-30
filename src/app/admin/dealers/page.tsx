@@ -3,8 +3,12 @@ import Nav from "@/components/Nav";
 import Deliverys from "@/components/Deliverys";
 const Home = () => (
   <div>
-    <Nav />
-    <GreenScreen h2="Repartidores" content={<Deliverys />} />
+    <Nav href="/admin/diary" lHref="/" />
+    <GreenScreen
+      href="/admin/diary"
+      h2="Repartidores"
+      content={<Deliverys />}
+    />
     <div></div>
   </div>
 );

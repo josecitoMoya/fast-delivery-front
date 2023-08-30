@@ -4,8 +4,12 @@ import Nav from "@/components/Nav";
 
 const Diary = () => (
   <>
-    <Nav />
-    <GreenScreen h2="Agregar Paquetes" content={<AddProduct />} />
+    <Nav href="/admin/diary" lHref="/" />
+    <GreenScreen
+      href="/admin/packages"
+      h2="Agregar Paquetes"
+      content={<AddProduct />}
+    />
   </>
 );
 export default Diary;

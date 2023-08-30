@@ -3,14 +3,16 @@ import Minilogo from "../assets/Ico/Minilogo";
 import { NextPage } from "next";
 interface Props {
   position: string;
+  href: string;
 }
-
-const Homelogo: NextPage<Props> = ({ position }) => (
-  <div className={position}>
-    <Link href="/home">
-      <Minilogo />
-    </Link>
-  </div>
-);
+const Homelogo: NextPage<Props> = ({ position, href }) => {
+  return (
+    <div className={position}>
+      <Link href={href}>
+        <Minilogo />
+      </Link>
+    </div>
+  );
+};
 
 export default Homelogo;

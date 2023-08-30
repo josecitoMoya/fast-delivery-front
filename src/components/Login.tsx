@@ -56,7 +56,7 @@ const Login = () => {
       />
 
       <Button
-        href="/register"
+        href="/user/register"
         bgc="bg-none text-white"
         position="mx-auto mt-3"
         text="crear cuenta"
