@@ -1,0 +1,15 @@
+.question {
+  display: flex;
+  justify-content: center;
+}
+
+.question p {
+  margin: 5px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5px;
+  border-radius: 10px;
+  border: 1px solid #00f;
+}
