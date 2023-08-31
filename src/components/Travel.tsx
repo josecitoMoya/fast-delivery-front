@@ -20,7 +20,7 @@ const Travel: NextPage<Props> = ({ dir, id, destinatario }) => (
       </p>
     </div>
     <Button
-      href={"/home"}
+      href={"/user/home"}
       bgc="bg-green text-blue"
       position="mx-auto my-5"
       text="Finalizar"
