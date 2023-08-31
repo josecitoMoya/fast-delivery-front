@@ -26,7 +26,7 @@ const Profile = () => (
   <div>
     <Nav href="/admin/diary" lHref="/" />
     <GreenScreen
-      href="admin/dealers"
+      href="/admin/dealers"
       h2="Perfil del repartidor"
       content={<ProfileState />}
     />

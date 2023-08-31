@@ -5,6 +5,7 @@
 }
 
 .task {
+  transition: 1s;
   padding: 5px;
   border: 1px solid #3d1df377;
   border-radius: 10px;

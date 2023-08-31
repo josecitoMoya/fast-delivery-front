@@ -8,7 +8,7 @@ interface Props {
 }
 const Product: NextPage<Props> = ({ dir, cuantity }) => {
   return (
-    <div className="task flex flex-row">
+    <div className="task flex flex-row mx-2 mt-2 mb-3">
       <div className="ml-3 my-auto">
         <Check />
       </div>

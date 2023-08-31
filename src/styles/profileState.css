@@ -11,15 +11,24 @@ h2 {
   height: 20px;
   border: 1px solid #3d1df377;
   display: flex;
-  justify-content: end;
 }
 
-.on-of {
+.on-off {
   width: 50%;
   height: 90%;
-  background: var(--lightgreen);
   border-radius: 50%;
   margin: 1px;
+  transition: 0.3s;
+}
+
+.on {
+  transform: translateX(14px);
+  background: var(--lightgreen);
+}
+
+.off {
+  transform: translateX(1px);
+  background: #f33;
 }
 
 .photo {
