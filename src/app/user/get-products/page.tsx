@@ -12,7 +12,7 @@ const Home = () => (
     />
     <Button
       type="button"
-      href="/user/travel"
+      href="/user/incidency"
       bgc="bg-green text-blue"
       position="mx-auto my-5 "
       text="Iniciar jornada"

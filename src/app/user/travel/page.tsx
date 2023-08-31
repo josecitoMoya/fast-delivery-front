@@ -7,7 +7,7 @@ const Home = () => (
   <div>
     <Nav href="/user/home" lHref="/" />
     <GreenScreen
-      href="/user/get-products"
+      href="/user/incidency"
       h2="Reparto en curso"
       content={
         <Travel
