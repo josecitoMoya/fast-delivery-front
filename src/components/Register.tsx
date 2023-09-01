@@ -41,7 +41,7 @@ const Register = () => {
         color="blue"
         type="text"
         ico={<User color="blue" />}
-        position="mt-20 mx-auto w-70"
+        position="mt-10 mx-auto w-70"
         placeholder="email@contraseña.com"
       />
       <Minput
@@ -72,7 +72,7 @@ const Register = () => {
         type={"submit"}
         href="/home"
         bgc="bg-green text-blue"
-        position="mx-auto mt-20"
+        position="mx-auto mt-10"
         text="crear"
         onClick={handleSignup}
       />
@@ -85,7 +85,7 @@ const Register = () => {
         type="submit"
         href="/"
         bgc="bg-none text-blue"
-        position="mx-auto mb-5 mt-2"
+        position="mx-auto mb-3 mt-2"
         text="iniciar sesion"
       />
     </>
