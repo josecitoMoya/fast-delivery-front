@@ -8,19 +8,21 @@ interface Props {
 }
 const Product: NextPage<Props> = ({ dir, cuantity }) => {
   return (
-    <div className="task flex flex-row">
-      <div className="ml-3 my-auto">
-        <Check />
+    <div className="product  mx-2 mt-2 mb-3">
+      <div className="flex flex-row">
+        <div className="ml-3 my-auto">
+          <Check />
+        </div>
+        <div className="infoCont ">
+          <p className="dir ml-3">{dir}</p>
+        </div>
       </div>
-      <div className="infoCont ">
-        <p className="dir ml-3">{dir}</p>
-      </div>
-      <div className="flex cuantity my-auto ml-10">
-        <div className="mx-1 my-auto">
+      <div className="flex cuantity my-auto mx-2">
+        <div className="my-auto">
           <Minus />
         </div>
         <p className="number">{cuantity}</p>
-        <div className="mx-1 my-">
+        <div className="my-auto">
           <Addition />
         </div>
       </div>

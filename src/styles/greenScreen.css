@@ -1,12 +1,3 @@
-.task {
-  border: 0.5px solid var(--blue);
-  border-radius: 10px;
-  margin: 10px 10px;
-  padding: 5px 0px;
-}
-.task:last-child {
-  margin-bottom: 20px;
-}
 .greenCont {
   width: 80vw;
   background: var(--lightgreen);
@@ -17,7 +8,14 @@
   padding: 12px 0;
 }
 
-.h2 {
+.rewind {
+  position: absolute;
+  margin: 0px 20px;
+}
+
+.h2G {
+  width: 100%;
+  text-align: center;
   font-weight: 800;
 }
 .infoCont {
@@ -48,5 +46,18 @@ h3 {
 
 .cuantity {
   border: 0.5px solid #3d1df377;
-  border-radius: 5px;
+  border-radius: 10px;
+  padding: 3px 5px;
+}
+
+.cuantity p {
+  margin: 0px 3px;
+}
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 0.5px solid #3d1df377;
+  border-radius: 10px;
+  padding: 5px 0px;
 }

@@ -9,7 +9,7 @@ interface Props {
 const State: NextPage<Props> = ({ state, bg }) => {
   return (
     <>
-      <p className={bg + " pending text-center"}>{state}</p>
+      <p className={bg + " pending text-center "}>{state}</p>
     </>
   );
 };
