@@ -4,8 +4,7 @@
   height: 240px;
   border: 1px solid var(--blue);
   border-radius: 10px;
-  background: url(https://s3-alpha-sig.figma.com/img/62bc/8b63/afab67095fcba27049d8d906a2533167?Expires=1691366400&Signature=bM1KaU8OmeaiehAJMe6UAIHGNx75rQ1vl0lIO5ZQlBk6--NJCu-TI7wjdpnmZ1m3lRntCwRVRXVaw7x08m2e0xLT5cvE57td~qPUy1xGA0nFgIb9eCqO8ZYH5N4v6rryAqXc6HyKeQ5~x7eZNFOo6WE1oZQ6QlN4kQSn4WfIF0cO2Nek4flinhSQnboiZoTUthjmF5TxpiDVaDtmGtea4YMjwn19aw02bTu81ls7To~K4C9rt7GVHm23GwlgXPEoiJL2usgWcRnIFAKW5zbxallJHJsq-xLCq46Q8rSLN2mz47DgXSSeBmy943BP06aINvaXatrM3ikXRw7gT15Mcw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4),
-    lightgray 50% / cover no-repeat;
+  background: lightgray 50% / cover no-repeat;
 }
 
 .info {

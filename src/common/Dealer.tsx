@@ -20,7 +20,7 @@ const Dealer = () => {
             </div>
           </div>
         </div>
-        <div className="mx-2">
+        <div className="mr-5">
           <Photo scale="small"></Photo>
         </div>
       </div>

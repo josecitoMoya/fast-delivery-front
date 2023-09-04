@@ -34,7 +34,7 @@ const Home = () => (
     <Nav href="/user/home" lHref="/" />
     <FoldingCont
       tasks={fakedata}
-      position="mt-5"
+      position="mt-3"
       text={"Repartos pendientes"}
     />
     <FoldingCont

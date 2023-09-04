@@ -7,7 +7,7 @@ const TaskManager = () => (
     <div className="adminCont">
       <Photo scale="big" />
       <div className="ml-3">
-        <h2>¡Hola Admin!</h2>
+        <h2 className="h2TaskMan">¡Hola Admin!</h2>
         <p>Estos son los pedidos del dia</p>
       </div>
     </div>

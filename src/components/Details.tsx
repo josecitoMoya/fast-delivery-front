@@ -8,7 +8,7 @@ const Details = () => {
   return (
     <div className="detailsCont">
       <div className="details">
-        <h2>Detalles</h2>
+        <h2 className="h2TaskMan">Detalles</h2>
         <div className="flex">
           <p>03/01/23</p>
           <div
@@ -22,8 +22,8 @@ const Details = () => {
         </div>
       </div>
       <div className={display}>
-        <DetailsChild />
-        <DetailsChild />
+        <DetailsChild title="repartidores" href="/admin/dealers" />
+        <DetailsChild title="paquetes" href="/admin/packages" />
       </div>
     </div>
   );

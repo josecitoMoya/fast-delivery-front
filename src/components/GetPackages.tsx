@@ -11,15 +11,15 @@ const GetPackages = () => {
   return (
     <>
       <div>
-        <h1 className=" ml-4 text-left mt-3 font-bold">
+        <h2 className=" ml-4 text-left text-sm mt-3 font-bold">
           {fakeData.length} paquetes
-        </h1>
-        <h2 className=" ml-4 text-left">
-          con el criterio de filtrado seleccionado
         </h2>
+        <p className=" ml-4 text-left text-xs">
+          con el criterio de filtrado seleccionado
+        </p>
       </div>
       {fakeData.map((item, index) => (
-        <div key={index} className="mb-2">
+        <div key={index} className="mb-2 mx-3">
           <Task
             bg="none"
             id={item.id}
