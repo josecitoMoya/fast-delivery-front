@@ -15,21 +15,17 @@ const Incidency = () => (
             con un margen de 24hs confirma si...
           </h2>
           <div>
-            <div className="question">
-              <p>
-                has ingerido alcohol <Switch />
-              </p>
+            <div className="question mx-auto my-2">
+              <p>has ingerido alcohol</p>
+              <Switch />
             </div>
-            <div className="question">
-              <p>
-                has ingerido drogas
-                <Switch />
-              </p>
+            <div className="question mx-auto my-2">
+              <p>has ingerido drogas</p>
+              <Switch />
             </div>
-            <div className="question">
-              <p>
-                has sentido estres <Switch />
-              </p>
+            <div className="question mx-auto my-2">
+              <p>has sentido estres</p>
+              <Switch />
             </div>
           </div>
           <Button

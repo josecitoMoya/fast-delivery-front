@@ -30,22 +30,23 @@ const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
           <Arrow />
         </div>
       </div>
-      {tasks.length > 0 ? (
-        tasks.map((elem, key) => (
-          <Task
-            display={display}
-            key={key}
-            id={elem.id}
-            dir={elem.dir}
-            state={elem.state}
-            bg={elem.bg}
-          />
-        ))
-      ) : (
-        <p className={"font-normal text-xs mb-2 " + display}>
-          sin repartos pendientes
-        </p>
-      )}
+      <div className={display}>
+        {tasks.length > 0 ? (
+          tasks.map((elem, key) => (
+            <Task
+              key={key}
+              id={elem.id}
+              dir={elem.dir}
+              state={elem.state}
+              bg={elem.bg}
+            />
+          ))
+        ) : (
+          <p className={"font-normal text-xs mb-2 " + display}>
+            sin repartos pendientes
+          </p>
+        )}
+      </div>
     </div>
   );
 };

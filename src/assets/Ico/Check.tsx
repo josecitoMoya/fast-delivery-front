@@ -1,4 +1,11 @@
-const Check = () => (
+import { NextPage } from "next";
+
+interface Props {
+  bg: string;
+  check: string;
+}
+
+const Check: NextPage<Props> = ({ bg, check }) => (
   <svg
     className="my-auto"
     xmlns="http://www.w3.org/2000/svg"
@@ -13,12 +20,12 @@ const Check = () => (
       width="13"
       height="13"
       rx="4.5"
-      fill="#C7FFB1"
+      fill={bg}
       stroke="#3D1DF3"
     />
     <path
       d="M3 7.6L5.28571 10L11 4"
-      stroke="#3D1DF3"
+      stroke={check}
       strokeLinecap="round"
       strokeLinejoin="round"
     />

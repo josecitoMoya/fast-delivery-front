@@ -3,12 +3,12 @@ import "../styles/greenScreen.css";
 
 const GetProducts = () => {
   const fakeData = [
-    { dir: "CABA, Amenaba 100", cuantity: "3" },
-    { dir: "CABA, Amenaba 100", cuantity: "6" },
-    { dir: "CABA, Amenaba 100", cuantity: "4" },
-    { dir: "CABA, Amenaba 100", cuantity: "8" },
-    { dir: "CABA, Amenaba 100", cuantity: "2" },
-    { dir: "CABA, Amenaba 100", cuantity: "7" },
+    { dir: "CABA, Amenaba 100", cuantity: 3 },
+    { dir: "CABA, Amenaba 100", cuantity: 6 },
+    { dir: "CABA, Amenaba 100", cuantity: 4 },
+    { dir: "CABA, Amenaba 100", cuantity: 8 },
+    { dir: "CABA, Amenaba 100", cuantity: 2 },
+    { dir: "CABA, Amenaba 100", cuantity: 7 },
   ];
   return (
     <>

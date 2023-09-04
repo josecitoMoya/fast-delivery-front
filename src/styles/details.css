@@ -39,3 +39,11 @@
     transparent 1px
   );
 }
+
+.hidePhoto {
+  position: absolute;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-5px);
+}
