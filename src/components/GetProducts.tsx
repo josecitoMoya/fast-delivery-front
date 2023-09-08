@@ -1,4 +1,4 @@
-import Product from "../common/Product";
+import Product from "./Product";
 import "../styles/greenScreen.css";
 
 const GetProducts = () => {

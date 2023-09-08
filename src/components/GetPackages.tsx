@@ -1,25 +1,22 @@
 import "../styles/greenScreen.css";
 import Task from "./Task";
-
-const GetPackages = () => {
-  const fakeData = [
-    { id: "#0A235", adress: "Castillo 1356", city: "CABA" },
-    { id: "#0H167", adress: "AV.Carabobo y Rivadavia", city: "CABA" },
-    { id: "#0H166", adress: "Mendoza 1810", city: "CABA" },
-    { id: "#0B540", adress: "Scalabrini Ortiz 5073", city: "CABA" },
-  ];
+import { NextPage } from "next";
+interface props {
+  tasks: Array<{ id: string; adress: string; city: string }>;
+}
+const GetPackages: NextPage<props> = ({ tasks }) => {
   return (
     <>
       <div>
         <h2 className=" ml-4 text-left text-sm mt-3 font-bold">
-          {fakeData.length} paquetes
+          {tasks.length} paquetes
         </h2>
         <p className=" ml-4 text-left text-xs">
           con el criterio de filtrado seleccionado
         </p>
       </div>
-      {fakeData.map((item, index) => (
-        <div key={index} className="mb-2 mx-3">
+      {tasks.map((item, index) => (
+        <div data-testid="task" key={index} className="mb-2 mx-3">
           <Task
             bg="none"
             id={item.id}

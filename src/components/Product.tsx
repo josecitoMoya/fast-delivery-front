@@ -35,7 +35,9 @@ const Product: NextPage<Props> = ({ dir, cuantity }) => {
         >
           <Minus />
         </div>
-        <p className="number">{pack}</p>
+        <p data-testid="quantity-text" className="number">
+          {pack}
+        </p>
         <div
           className="my-auto"
           onClick={() => {

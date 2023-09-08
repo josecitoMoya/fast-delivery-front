@@ -18,7 +18,11 @@ const Exitlogo: NextPage<Props> = ({ position, href }) => {
   };
 
   return (
-    <div className={position + " shadow borderX"} onClick={handleLogout}>
+    <div
+      data-testid="exitlogo"
+      className={position + " shadow borderX"}
+      onClick={handleLogout}
+    >
       <Link href={href}>
         <Exit />
       </Link>

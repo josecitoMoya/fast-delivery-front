@@ -7,7 +7,7 @@ interface Props {
 }
 const Homelogo: NextPage<Props> = ({ position, href }) => {
   return (
-    <div className={position}>
+    <div data-testid="homelogo" className={position}>
       <Link href={href}>
         <Minilogo />
       </Link>

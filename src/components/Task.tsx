@@ -15,7 +15,10 @@ interface Props {
 const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
   const [display, setDisplay] = useState("");
   return (
-    <div className={"task mt-3  flex justify-between " + display}>
+    <div
+      data-testid="task-cont"
+      className={"task mt-3  flex justify-between " + display}
+    >
       <div className="flex flex-row ">
         <div className="flex items-center">
           <Link href="/user/travel">
@@ -33,6 +36,7 @@ const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
         <div
           className={"mt-4 " + (state == "TERMINADA" ? "d-none" : "")}
           onClick={() => setDisplay("d-none")}
+          data-testid="trash"
         >
           <Trash />
         </div>
