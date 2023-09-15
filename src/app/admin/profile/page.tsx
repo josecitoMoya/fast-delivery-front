@@ -1,7 +1,7 @@
 import FoldingCont from "@/components/FoldingCont";
 import GreenScreen from "@/components/GreenScreen";
 import Nav from "@/components/Nav";
-import ProfileState from "@/components/ProfileState";
+import ProfileState from "@/content/ProfileState";
 const fakedata2 = [
   {
     id: "#f0245",
@@ -31,11 +31,7 @@ const Profile = () => (
       content={<ProfileState />}
     />
     <FoldingCont text="Repartos pendientes" tasks={[]} position="mt-2" />
-    <FoldingCont
-      tasks={fakedata2}
-      position="mt-2"
-      text={"Repartos terminados"}
-    />
+    <FoldingCont tasks={fakedata2} position="mt-2" text="Repartos terminados" />
   </div>
 );
 export default Profile;

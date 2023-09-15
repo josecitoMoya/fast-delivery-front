@@ -16,7 +16,7 @@ const userService = new User_Service();
 //types
 import { UserRegister } from "@/types/user.types";
 
-const Register = () => {
+const RegisterContent = () => {
   const email = useInput();
   const password = useInput();
   const name = useInput();
@@ -92,4 +92,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterContent;

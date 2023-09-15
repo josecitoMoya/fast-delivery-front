@@ -1,5 +1,5 @@
 import "../styles/greenScreen.css";
-import Task from "./Task";
+import Task from "../components/Task";
 import { NextPage } from "next";
 interface props {
   tasks: Array<{ id: string; adress: string; city: string }>;

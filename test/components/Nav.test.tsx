@@ -10,9 +10,11 @@ describe("Nav Component", () => {
     render(<Nav href="/" lHref="/logout" />);
 
     const homeLogo = screen.getByTestId("homelogo");
+
     const exitLogo = screen.getByTestId("exitlogo");
 
     expect(homeLogo).toBeTruthy();
+
     expect(exitLogo).toBeTruthy();
   });
 
@@ -23,6 +25,7 @@ describe("Nav Component", () => {
     const Link: HTMLAnchorElement[] = screen.queryAllByRole("link");
 
     expect(Link[0].href).toEqual("http://localhost/");
+
     expect(Link[1].href).toEqual("http://localhost/logout");
   });
 });

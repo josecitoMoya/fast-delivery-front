@@ -6,7 +6,7 @@ import DateInput from "../common/DateInput";
 import React, { useState } from "react";
 import QuantityEditor from "@/common/QuantityEditor";
 
-const AddProduct = () => {
+const AddProductContent = () => {
   const [date, setDate] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(0);
 
@@ -63,4 +63,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default AddProductContent;

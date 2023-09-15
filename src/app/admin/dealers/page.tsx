@@ -1,7 +1,7 @@
 import GreenScreen from "@/components/GreenScreen";
 import Nav from "@/components/Nav";
-import Deliverys from "@/components/Deliverys";
-const Home = () => (
+import Deliverys from "@/content/Deliverys";
+const Dealers = () => (
   <div>
     <Nav href="/admin/diary" lHref="/" />
     <GreenScreen
@@ -12,4 +12,4 @@ const Home = () => (
     <div></div>
   </div>
 );
-export default Home;
+export default Dealers;
