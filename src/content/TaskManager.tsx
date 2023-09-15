@@ -1,6 +1,6 @@
 import Photo from "@/common/Photo";
-import Week from "./Week";
-import Details from "./Details";
+import Week from "../components/Week";
+import Details from "../components/Details";
 import "../styles/taskmanager.css";
 const TaskManager = () => (
   <div>

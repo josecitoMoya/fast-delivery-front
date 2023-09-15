@@ -12,12 +12,16 @@ describe("FoldingCont Component", () => {
     render(<FoldingCont text="Título" position="mx-6" tasks={ejemploTasks} />);
 
     expect(screen.getByText("Título"));
+
     expect(screen.getByText("Dir1"));
+
     expect(screen.getByText("Dir2"));
+
     expect(screen.getByTestId("arrow"));
   });
   it("should render correctly without tasks", () => {
     render(<FoldingCont text="Título" position="mx-6" tasks={[]} />);
+
     expect(screen.getByText("sin repartos pendientes"));
   });
 

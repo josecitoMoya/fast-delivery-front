@@ -1,6 +1,6 @@
 import GreenScreen from "@/components/GreenScreen";
 import Nav from "@/components/Nav";
-import TaskManager from "@/components/TaskManager";
+import TaskManager from "@/content/TaskManager";
 
 const Diary = () => (
   <>

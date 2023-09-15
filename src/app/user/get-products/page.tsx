@@ -1,14 +1,14 @@
 import Button from "@/common/Button";
 import GreenScreen from "@/components/GreenScreen";
-import GetProducts from "@/components/GetProducts";
+import GetProductsContent from "@/content/GetProductsContent";
 import Nav from "@/components/Nav";
-const Home = () => (
+const GetProducts = () => (
   <div>
     <Nav href="/user/home" lHref="/" />
     <GreenScreen
       href="/user/home"
       h2="Obtener paquetes"
-      content={<GetProducts />}
+      content={<GetProductsContent />}
     />
     <Button
       type="button"
@@ -20,4 +20,4 @@ const Home = () => (
     <div></div>
   </div>
 );
-export default Home;
+export default GetProducts;

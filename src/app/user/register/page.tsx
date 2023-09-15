@@ -1,11 +1,11 @@
 import GreenScreen from "@/components/GreenScreen";
 import Nav from "@/components/Nav";
-import Register from "@/components/Register";
+import RegisterContent from "@/content/RegisterContent";
 
-const register = () => (
+const Register = () => (
   <div>
     <Nav href="/user/home" lHref="/" />
-    <GreenScreen href="/" h2="Creá tu cuenta" content={<Register />} />
+    <GreenScreen href="/" h2="Creá tu cuenta" content={<RegisterContent />} />
   </div>
 );
-export default register;
+export default Register;

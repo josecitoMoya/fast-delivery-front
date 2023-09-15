@@ -1,6 +1,6 @@
 import GreenScreen from "@/components/GreenScreen";
 import Nav from "@/components/Nav";
-import GetPackages from "@/components/GetPackages";
+import GetPackages from "@/content/GetPackages";
 import "@/styles/minput.css";
 
 export const Packages = () => {

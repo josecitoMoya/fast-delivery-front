@@ -5,7 +5,7 @@ interface Props {
   id: string;
   destinatario: string;
 }
-const Travel: NextPage<Props> = ({ dir, id, destinatario }) => (
+const TravelContent: NextPage<Props> = ({ dir, id, destinatario }) => (
   <div>
     <div className="img mx-auto"></div>
     <div className="info ml-5">
@@ -28,4 +28,4 @@ const Travel: NextPage<Props> = ({ dir, id, destinatario }) => (
     ></Button>
   </div>
 );
-export default Travel;
+export default TravelContent;

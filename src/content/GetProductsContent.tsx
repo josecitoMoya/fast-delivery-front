@@ -1,7 +1,7 @@
-import Product from "./Product";
+import Product from "../components/Product";
 import "../styles/greenScreen.css";
 
-const GetProducts = () => {
+const GetProductsContent = () => {
   const fakeData = [
     { dir: "CABA, Amenaba 100", cuantity: 3 },
     { dir: "CABA, Amenaba 100", cuantity: 6 },
@@ -14,9 +14,9 @@ const GetProducts = () => {
     <>
       <h3 className="text-center mt-3">¿Cuántos paquetes repartirás hoy?</h3>
       {fakeData.map((elem, id) => (
-        <Product dir={elem.dir + id} cuantity={elem.cuantity} />
+        <Product key={id} dir={elem.dir + id} cuantity={elem.cuantity} />
       ))}
     </>
   );
 };
-export default GetProducts;
+export default GetProductsContent;
