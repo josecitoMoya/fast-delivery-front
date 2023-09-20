@@ -1,20 +1,45 @@
-import Product from "../components/Product";
-import "../styles/greenScreen.css";
+'use client';
+
+//Components
+import Product from '../components/Product';
+import '../styles/greenScreen.css';
+//Services
+import Packages_Services from '@/services/packages.services';
+//React
+import { useEffect } from 'react';
+//Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { setPackages } from '@/store/allPackages';
+//Types
+import { PackagesTypes } from '@/types/package.types';
 
 const GetProductsContent = () => {
-  const fakeData = [
-    { dir: "CABA, Amenaba 100", cuantity: 3 },
-    { dir: "CABA, Amenaba 100", cuantity: 6 },
-    { dir: "CABA, Amenaba 100", cuantity: 4 },
-    { dir: "CABA, Amenaba 100", cuantity: 8 },
-    { dir: "CABA, Amenaba 100", cuantity: 2 },
-    { dir: "CABA, Amenaba 100", cuantity: 7 },
-  ];
+  const dispatch = useDispatch();
+  const packages = useSelector((state: any) => state.packages);
+
+  useEffect(() => {
+    const getPackages = async () => {
+      try {
+        const data = await Packages_Services.getAllPackages();
+        dispatch(setPackages(data));
+      } catch (error) {
+        console.error('Error geting packages : ', error);
+      }
+    };
+    getPackages();
+  }, []);
+
+  console.log('SOY PACKAGES : ', packages);
+
   return (
     <>
       <h3 className="text-center mt-3">¿Cuántos paquetes repartirás hoy?</h3>
-      {fakeData.map((elem, id) => (
-        <Product key={id} dir={elem.dir + id} cuantity={elem.cuantity} />
+      {packages.map((elem: PackagesTypes, id: number) => (
+        <Product
+          key={id}
+          destination={elem.destination + id}
+          quantity={elem.quantity}
+        />
       ))}
     </>
   );
