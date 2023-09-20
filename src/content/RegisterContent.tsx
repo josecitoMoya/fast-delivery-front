@@ -70,7 +70,7 @@ const RegisterContent = () => {
       />
       <Button
         type={"submit"}
-        href="/home"
+        href="/"
         bgc="bg-green text-blue"
         position="mx-auto mt-10"
         text="crear"

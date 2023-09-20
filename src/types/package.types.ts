@@ -1,3 +1,15 @@
+export interface PackagesTypes {
+  id: string;
+  client: string;
+  quantity: number;
+  destination: string;
+  is_delivered: boolean;
+  package_weight: number;
+  additional_information: string;
+  deadline_date: string;
+  creation_date: string;
+}
+
 export interface Package {
   _id: string;
   title: string;
@@ -7,7 +19,7 @@ export interface Package {
   deliveryMan: string | null;
   weight: number | null;
   deliveredAt: Date | null;
-  status: "taken" | "in_progress" | "delivered" | null;
+  status: 'taken' | 'in_progress' | 'delivered' | null;
   deadlines: Date;
   city?: string;
   coordinatesPackage?: {
