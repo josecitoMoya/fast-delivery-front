@@ -4,3 +4,5 @@ services:
     container_name: fast-delivery-frontend
     ports:
       - '3000:3000'
+    volumes:
+      - .:/app
