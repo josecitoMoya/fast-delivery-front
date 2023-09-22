@@ -21,7 +21,7 @@ const Details = () => {
           </div>
         </div>
       </div>
-      <div className={display}>
+      <div data-testid="testCont" className={display}>
         <DetailsChild title="repartidores" href="/admin/dealers" />
         <DetailsChild title="paquetes" href="/admin/packages" />
       </div>

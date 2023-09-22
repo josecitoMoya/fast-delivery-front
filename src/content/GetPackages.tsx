@@ -1,14 +1,14 @@
-'use client';
-import '../styles/greenScreen.css';
-import Task from '../components/Task';
+"use client";
+import "../styles/greenScreen.css";
+import Task from "../components/Task";
 //Redux
-import { useDispatch, useSelector } from 'react-redux';
-import { setPackages } from '@/store/allPackages';
+import { useDispatch, useSelector } from "react-redux";
+import { setPackages } from "@/store/allPackages";
 //Types
-import { PackagesTypes } from '@/types/package.types';
+import { PackagesTypes } from "@/types/package.types";
 //Services
-import Packages_Services from '@/services/packages.services';
-import { useEffect } from 'react';
+import Packages_Services from "@/services/packages.services";
+import { useEffect } from "react";
 
 const GetPackages = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const GetPackages = () => {
         const data = await Packages_Services.getAllPackages();
         dispatch(setPackages(data));
       } catch (error) {
-        console.error('Error geting packages : ', error);
+        console.error("Error geting packages : ", error);
       }
     };
     getPackages();
@@ -41,8 +41,8 @@ const GetPackages = () => {
           <Task
             bg="none"
             id={item.id}
-            dir={item.destination + ' '}
-            state={''}
+            dir={item.destination + " "}
+            state={""}
           />
         </div>
       ))}
