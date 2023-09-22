@@ -10,7 +10,7 @@ const Switch = () => {
         on == "on" ? setOn("off") : setOn("on");
       }}
     >
-      <div className={"on-off " + on}></div>
+      <div data-testid="switch" className={"on-off " + on}></div>
     </div>
   );
 };
