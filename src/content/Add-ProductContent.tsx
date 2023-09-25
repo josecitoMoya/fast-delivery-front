@@ -39,14 +39,12 @@ const AddProductContent = () => {
       />
 
       <div className="flex items-center  justify-center  h-10 p-4 w-[65%]">
-        {/* DateInput a la izquierda */}
         <DateInput
           value={date}
           onChange={handleDateChange}
           className="w-28 h-full border-blue p-4 text-center quantity-container"
         />
 
-        {/* Div para bordes redondeados */}
         <div className="w-28 h-full p-4 border-blue  quantity-container">
           <QuantityEditor quantity={quantity} />
         </div>

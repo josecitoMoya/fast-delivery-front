@@ -5,14 +5,16 @@ import "@/styles/minput.css";
 
 const Packages = () => {
   return (
-    <div>
-      <Nav href="/admin/diary" lHref="/" />
-      <GreenScreen
-        href="/admin/diary"
-        h2="Paquetes"
-        content={<GetPackages />}
-      />
-    </div>
+    <Providers>
+      <div>
+        <Nav href="/admin/diary" lHref="/" />
+        <GreenScreen
+          href="/admin/diary"
+          h2="Paquetes"
+          content={<GetPackages />}
+        />
+      </div>
+    </Providers>
   );
 };
 

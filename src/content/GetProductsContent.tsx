@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
 //Components
-import Product from '../components/Product';
-import '../styles/greenScreen.css';
+import Product from "../components/Product";
+import "../styles/greenScreen.css";
 //Services
-import Packages_Services from '@/services/packages.services';
+import Packages_Services from "@/services/packages.services";
 //React
-import { useEffect } from 'react';
+import { useEffect } from "react";
 //Redux
-import { useDispatch, useSelector } from 'react-redux';
-import { setPackages } from '@/store/allPackages';
+import { useDispatch, useSelector } from "react-redux";
+import { setPackages } from "@/store/allPackages";
 //Types
-import { PackagesTypes } from '@/types/package.types';
+import { PackagesTypes } from "@/types/package.types";
 
 const GetProductsContent = () => {
   const dispatch = useDispatch();
@@ -23,13 +23,11 @@ const GetProductsContent = () => {
         const data = await Packages_Services.getAllPackages();
         dispatch(setPackages(data));
       } catch (error) {
-        console.error('Error geting packages : ', error);
+        console.error("Error geting packages : ", error);
       }
     };
     getPackages();
   }, []);
-
-  console.log('SOY PACKAGES : ', packages);
 
   return (
     <>
