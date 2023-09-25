@@ -1,9 +1,9 @@
-import GreenScreen from '@/components/GreenScreen';
-import Nav from '@/components/Nav';
-import GetPackages from '@/content/GetPackages';
-import '@/styles/minput.css';
+import GreenScreen from "@/components/GreenScreen";
+import Nav from "@/components/Nav";
+import GetPackages from "@/content/GetPackages";
+import "@/styles/minput.css";
 
-export const Packages = () => {
+const Packages = () => {
   return (
     <div>
       <Nav href="/admin/diary" lHref="/" />
