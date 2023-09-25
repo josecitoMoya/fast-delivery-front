@@ -1,4 +1,4 @@
-import { Package } from "./package";
+import { Package } from "./package.types";
 
 export interface UserRegister {
   name: string;
