@@ -8,7 +8,7 @@ interface Props {
 const TravelContent: NextPage<Props> = ({ dir, id, destinatario }) => (
   <div>
     <div className="img mx-auto"></div>
-    <div className="info ml-5">
+    <div className="info mx-auto ml-2">
       <p>
         <span>Destino:</span> {dir}
       </p>

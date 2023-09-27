@@ -1,4 +1,5 @@
 .greenCont {
+  max-width: 500px;
   width: 80vw;
   background: var(--lightgreen);
   border-radius: 5px;
