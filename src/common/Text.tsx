@@ -10,7 +10,7 @@ interface Props {
 const Text: NextPage<Props> = ({ position, text, textColor }) => {
   return (
     <div className={position}>
-      <p className={`text-center text-${textColor}`}>{text}</p>
+      <p className={`text-center text-${textColor} text`}>{text}</p>
     </div>
   );
 };
