@@ -1,6 +1,9 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { UserLogin, UserRegister } from '@/types/user.types';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const apiURL = process.env.API_URL || 'http://localhost:3001/api';
 

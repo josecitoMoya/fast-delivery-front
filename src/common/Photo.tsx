@@ -4,6 +4,6 @@ interface Props {
   scale: string;
 }
 const Photo: NextPage<Props> = ({ scale }) => (
-  <div className={"photoCont " + "p" + scale}></div>
+  <div data-testid="Photo" className={"photoCont " + "p" + scale}></div>
 );
 export default Photo;

@@ -1,4 +1,5 @@
 .btnCont {
+  max-width: 400px;
   padding: 3px;
   border-radius: 40px;
   width: 75vw;

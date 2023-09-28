@@ -4,7 +4,7 @@ import Day from "@/common/Day";
 import "../styles/week.css";
 
 const Week = () => (
-  <div className="week">
+  <div data-testid="Week" className="week">
     <LeftA />
     <Day date="lun" number="01" selected="false" />
     <Day date="mar" number="02" selected="false" />
