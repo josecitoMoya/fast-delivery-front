@@ -1,8 +1,11 @@
-import axios from 'axios';
-import Cookies from 'js-cookie';
-import { UserLogin, UserRegister } from '@/types/user.types';
+import axios from "axios";
+import Cookies from "js-cookie";
+import { UserLogin, UserRegister } from "@/types/user.types";
+import dotenv from "dotenv";
 
-const apiURL = 'http://localhost:3001/api';
+dotenv.config();
+
+const apiURL: string = process.env.API_URL || "";
 
 export default class User_Service {
   async register(userData: UserRegister) {
@@ -22,7 +25,7 @@ export default class User_Service {
       );
       return user.data;
     } catch (error) {
-      console.log('register error : ', error);
+      console.log("register error : ", error);
     }
   }
 
@@ -40,18 +43,18 @@ export default class User_Service {
 
       return user.data;
     } catch (error) {
-      console.log('login error : ', error);
+      console.log("login error : ", error);
     }
   }
 
   async logoutUser() {
     try {
-      Cookies.remove('token');
+      Cookies.remove("token");
       await axios.post(`${apiURL}/users/logout`, {
         withCredentials: true,
       });
     } catch (error) {
-      console.log('logout error', error);
+      console.log("logout error", error);
     }
   }
 
