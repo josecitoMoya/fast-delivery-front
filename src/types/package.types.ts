@@ -7,7 +7,9 @@ export interface PackagesTypes {
   package_weight: number;
   additional_information: string;
   deadline_date: string;
-  creation_date: string;
+  creation_date: string;  _id: string;
+  state:string;
+  bg:string;
 }
 
 export interface Package {

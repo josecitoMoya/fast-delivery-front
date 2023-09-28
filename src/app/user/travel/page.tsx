@@ -4,6 +4,7 @@ import TravelContent from "@/content/TravelContent";
 import Nav from "@/components/Nav";
 import "@/styles/travel.css";
 const Travel = () => (
+  
   <div>
     <Nav href="/user/home" lHref="/" />
     <GreenScreen
@@ -23,6 +24,7 @@ const Travel = () => (
       bgc="bg-none text-white"
       position="mx-auto my-5 "
       text="Cancelar entrega"
+      
     />
     <div></div>
   </div>

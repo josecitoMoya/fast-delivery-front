@@ -6,6 +6,7 @@ import State from "../common/State";
 import "../styles/task.css";
 import { useState } from "react";
 import Link from "next/link";
+import TakedPackagesService from '../services/deliveryMan.services'
 interface Props {
   id: string;
   dir: string;
@@ -14,6 +15,20 @@ interface Props {
 }
 const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
   const [display, setDisplay] = useState("");
+
+  const handleClick= ()=>{
+    setDisplay("d-none")
+
+    try {
+       TakedPackagesService.DeleteTakePackage(id);
+      console.log('funciono');
+      
+    } catch (error) {
+      console.error("Error taking packages: ", error);
+    }
+  }
+  
+  
   return (
     <div
       data-testid="task-cont"
@@ -35,7 +50,7 @@ const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
         <State bg={bg} state={state} />
         <div
           className={"mt-4 " + (state == "TERMINADA" ? "d-none" : "")}
-          onClick={() => setDisplay("d-none")}
+          onClick={handleClick}
           data-testid="trash"
         >
           <Trash />

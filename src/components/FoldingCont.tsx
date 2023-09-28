@@ -5,10 +5,11 @@ import "../styles/foldingCont.css";
 import Task from "./Task";
 import { useState } from "react";
 interface Object {
-  id: string;
-  dir: string;
+  _id: string;
+  destination: string;
   state: string;
   bg: string;
+  is_delivered: boolean
 }
 interface Props {
   text: string;
@@ -17,6 +18,21 @@ interface Props {
 }
 const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
   const [display, setDisplay] = useState("");
+
+  tasks.map((elem) => {
+    console.log(elem.is_delivered);
+    if (elem.is_delivered === false) {
+      elem.state = "EN CURSO";
+      elem.bg = "bg-yellow";
+    } else {
+      elem.state = "TERMINADA";
+      elem.bg = "bg-green";
+    }
+
+  });
+  
+
+
   return (
     <div className={position + " mx-auto folding"}>
       <div className="flex flex-row justify-between">
@@ -35,8 +51,8 @@ const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
           tasks.map((elem, key) => (
             <Task
               key={key}
-              id={elem.id}
-              dir={elem.dir}
+              id={elem._id}
+              dir={elem.destination}
               state={elem.state}
               bg={elem.bg}
             />
