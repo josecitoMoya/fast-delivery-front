@@ -1,14 +1,13 @@
 .empty-input-cont {
-  border: 0.1px solid #fff9;
   border-radius: 10px;
-  padding: 7px;
+  padding: 10px;
 }
 .w-80 {
-  width: 80vw;
+  width: 80%;
 }
 
 .w-70 {
-  width: 72vw;
+  width: 90%;
 }
 
 .border-blue {
@@ -19,14 +18,12 @@
   background: none;
   width: 90%;
   border: none;
-  border-bottom: 0.1px solid var(--blue); /* Agregamos el estilo de border-bottom */
-  /* border-bottom: 0.1px solid transparent; */
-  /* transition: border-bottom 0.2s ease; Añadimos una transición suave */
+  border-bottom: 0.1px solid var(--blue);
 }
 
 .empty-input:focus {
   outline: none;
-  border-bottom: 1.5px solid var(--blue); /* O el color que desees para el resaltado */
+  border-bottom: 1.5px solid var(--blue);
 }
 
 .placeholder-blue::placeholder {
@@ -38,12 +35,13 @@
 }
 
 .quantity-container {
-  border: 1px solid var(--blue); /* Puedes cambiar el color del borde aquí */
-  border-radius: 10px; /* Bordes redondeados */
-  outline: none;
+  width: 80%;
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  padding: 5px;
+}
 
-  /* Centrar contenido horizontal y verticalmente */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.dateInput {
+  width: auto;
+  background: none;
 }
