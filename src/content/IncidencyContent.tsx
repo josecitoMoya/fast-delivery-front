@@ -5,15 +5,15 @@ const IncidencyContent = () => (
   <div>
     <h2 className="text-center my-5">con un margen de 24hs confirma si...</h2>
     <div>
-      <div className="question mx-auto mt-2">
+      <div className="question mx-auto">
         <p>has ingerido alcohol</p>
         <Switch />
       </div>
-      <div className="question mx-auto mt-2">
+      <div className="question mx-auto ">
         <p>has ingerido drogas</p>
         <Switch />
       </div>
-      <div className="question mx-auto mt-2">
+      <div className="question mx-auto">
         <p>has sentido estres</p>
         <Switch />
       </div>
