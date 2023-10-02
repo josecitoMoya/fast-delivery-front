@@ -9,6 +9,8 @@ import { PackagesTypes } from '@/types/package.types';
 //Services
 import Packages_Services from '@/services/packages.services';
 import { useEffect } from 'react';
+import AddPack from '@/assets/Ico/AddPack';
+import Link from 'next/link';
 
 const GetPackages = () => {
   const dispatch = useDispatch();
@@ -29,10 +31,10 @@ const GetPackages = () => {
   return (
     <>
       <div>
-        <h2 className=" ml-4 text-left text-sm mt-3 font-bold">
+        <h2 className=" mx-2 text-left text-sm mt-3 font-bold">
           {packages.length} paquetes
         </h2>
-        <p className=" ml-4 text-left text-xs">
+        <p className=" mx-2 text-left text-xs">
           con el criterio de filtrado seleccionado
         </p>
       </div>
@@ -48,6 +50,11 @@ const GetPackages = () => {
           </div>
         );
       })}
+      <div className="addCont">
+        <Link href="/admin/add-product" className="btnPack">
+          <AddPack />
+        </Link>
+      </div>
     </>
   );
 };

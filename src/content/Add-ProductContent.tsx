@@ -45,7 +45,6 @@ const AddProductContent = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <br />
       <EmptyInput
         color="blue"
         type="text"
@@ -97,11 +96,12 @@ const AddProductContent = () => {
       <Button
         href="/"
         bgc="bg-green text-blue"
-        position="mx-auto mb-5 mt-2"
+        position="mx-auto mb-3 mt-2"
         text="Agregar"
         type="submit"
         onClick={handleCreatePackage}
       />
+      <div className="mt-3"></div>
     </div>
   );
 };

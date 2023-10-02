@@ -1,6 +1,6 @@
 'use client';
 //Icons
-import Porcentaje from '@/assets/Ico/Porcentaje';
+import Porcentaje from '@/common/Porcentaje';
 import State from './State';
 import Photo from './Photo';
 import { useEffect, useState } from 'react';
@@ -34,7 +34,7 @@ const Dealer = () => {
             <div className="flex items-center justify-between ">
               <div className="flex items-center">
                 <div className="mx-2">
-                  <Porcentaje></Porcentaje>
+                  <Porcentaje percentage={45} />
                 </div>
                 <div className="flex flex-col">
                   <h2 className="font-bold">

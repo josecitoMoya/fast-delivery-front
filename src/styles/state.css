@@ -8,3 +8,7 @@
 .bg-purple {
   background-color: #b1a5fa;
 }
+
+.bg-lightgreen {
+  background: var(--lightgreen);
+}
