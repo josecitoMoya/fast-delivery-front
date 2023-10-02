@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const apiURL: string = process.env.API_URL || "http://localhost:3001/api";
+//const apiURL: string = process.env.API_URL || "http://localhost:3001/api";
+const apiURL: string = "https://container-back.9ohbn2ri32dkq.us-east-1.cs.amazonlightsail.com/api"
 
 class PackagesService {
   async getAllPackages() {
