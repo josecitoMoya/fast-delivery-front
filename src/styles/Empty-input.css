@@ -1,3 +1,8 @@
+.line {
+  width: 1px;
+  height: 60px;
+  background: #3d1df377;
+}
 .empty-input-cont {
   border-radius: 10px;
   padding: 10px;

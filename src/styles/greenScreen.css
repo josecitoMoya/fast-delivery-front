@@ -62,3 +62,23 @@ h3 {
   border-radius: 10px;
   padding: 5px 0px;
 }
+
+.btnPack {
+  margin: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--lightgreen);
+}
+
+.btnPack * {
+  display: inline-block;
+}
+
+.addCont {
+  display: flex;
+  justify-content: end;
+}
