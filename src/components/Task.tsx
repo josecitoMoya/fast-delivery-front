@@ -1,15 +1,15 @@
-'use client';
-import '../styles/task.css';
-import { NextPage } from 'next';
-import { useState } from 'react';
-import Link from 'next/link';
+"use client";
+import "../styles/task.css";
+import { NextPage } from "next";
+import { useState } from "react";
+import Link from "next/link";
 //Icons
-import Box from '../assets/Ico/Box';
-import Trash from '../assets/Ico/Trash';
+import Box from "../assets/Ico/Box";
+import Trash from "../assets/Ico/Trash";
 //Commons
-import State from '../common/State';
+import State from "../common/State";
 //Service
-import Admin_Service from '@/services/admin.services';
+import Admin_Service from "@/services/admin.services";
 const adminService = Admin_Service.getInstance();
 
 interface Props {
@@ -19,7 +19,7 @@ interface Props {
   bg: string;
 }
 const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
-  const [display, setDisplay] = useState('');
+  const [display, setDisplay] = useState("");
 
   const handleDeletePackage = async () => {
     await adminService.deletePackage(id);
@@ -28,7 +28,7 @@ const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
   return (
     <div
       data-testid="task-cont"
-      className={'task mt-3  flex justify-between ' + display}
+      className={"task mt-3  flex justify-between " + display}
     >
       <div className="flex flex-row ">
         <div className="flex items-center">
@@ -46,7 +46,7 @@ const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
         <State bg={bg} state={state} />
         <div
           className={
-            'mt-4 cursor-pointer' + (state == 'TERMINADA' ? 'd-none' : '')
+            "mt-4 cursor-pointer " + (state == "TERMINADA" ? "d-none" : "")
           }
           // onClick={() => setDisplay('d-none')}
           onClick={handleDeletePackage}
