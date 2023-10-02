@@ -6,29 +6,37 @@ import State from "../common/State";
 import "../styles/task.css";
 import { useState } from "react";
 import Link from "next/link";
-import TakedPackagesService from '../services/deliveryMan.services'
+import deliveryManServices from "../services/deliveryMan.services";
 interface Props {
   id: string;
   dir: string;
   state: string;
   bg: string;
+  name: string;
+  quantity_taked: number;
 }
-const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
+const Task: NextPage<Props> = ({
+  id,
+  dir,
+  state,
+  bg,
+  name,
+  quantity_taked,
+}) => {
   const [display, setDisplay] = useState("");
-
-  const handleClick= ()=>{
-    setDisplay("d-none")
-
+  const [quantityTaked, setQuantityTaked] = useState(quantity_taked);
+  const handleClick = () => {
     try {
-       TakedPackagesService.DeleteTakePackage(id);
-      console.log('funciono');
-      
+      if (quantityTaked <= 1) {
+        setDisplay("d-none");
+      }
+      deliveryManServices.UntakePackage(id);
+      setQuantityTaked(quantityTaked - 1);
     } catch (error) {
       console.error("Error taking packages: ", error);
     }
-  }
-  
-  
+  };
+
   return (
     <div
       data-testid="task-cont"
@@ -36,14 +44,15 @@ const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
     >
       <div className="flex flex-row ">
         <div className="flex items-center">
-          <Link href="/user/travel">
+          <Link href={`/user/travel/${id}`}>
             <Box />
           </Link>
         </div>
         <div className="line"></div>
         <div className="ml-3 info">
-          <h3 className="id mt-1">{id}</h3>
+          <h3 className="id mt-1">{name}</h3>
           <p className="dir mt-1">{dir}</p>
+          <p className="dir mt-1">packages: {quantityTaked}</p>
         </div>
       </div>
       <div className="colorBtns mt-1 mx-2 flex flex-col items-end">

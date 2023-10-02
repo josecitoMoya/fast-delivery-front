@@ -13,7 +13,7 @@ import { setPackages } from "@/store/allPackages";
 //Types
 import { PackagesTypes } from "@/types/package.types";
 import Button from "@/common/Button";
-import TakedPackagesService from '../services/deliveryMan.services'
+import deliveryManServices from "@/services/deliveryMan.services";
 
 const GetProductsContent = () => {
   const dispatch = useDispatch();
@@ -31,38 +31,41 @@ const GetProductsContent = () => {
     };
     getPackages();
   }, []);
-  
-const handleSubmit = async () => {
-  try {
-    await TakedPackagesService.TakePackage(packagesId);
-    console.log('funciono');
-    
-  } catch (error) {
-    console.error("Error taking packages: ", error);
-  }
 
-  
-};
+  const handleSubmit = async () => {
+    try {
+      await deliveryManServices.TakePackage(packagesId);
+    } catch (error) {
+      console.error("Error taking packages: ", error);
+    }
+  };
+
+
   return (
     <>
       <h3 className="text-center mt-3">¿Cuántos paquetes repartirás hoy?</h3>
-      {packages.map((elem: PackagesTypes, id: string) => (
-        <Product
-          key={id}
-          id={elem._id}
-          destination={elem.destination + id}
-          quantity={elem.quantity}
-          setPackagesId={setPackagesId}
-          packageId={packagesId}
-        />
-      ))}
-    <Button
-      type="button"
-      href="/user/incidency"
-      bgc="bg-green text-blue"
-      position="mx-auto my-5 "
-      text="Iniciar jornada"
-      onClick={handleSubmit} /> 
+      {packages.map((elem: PackagesTypes, id: string) =>
+        elem.quantity !== 0 ? (
+          <Product
+            key={id}
+            id={elem._id}
+            destination={elem.destination + id}
+            quantity={elem.quantity}
+            setPackagesId={setPackagesId}
+            packageId={packagesId}
+          />
+        ) : (
+          ""
+        )
+      )}
+      <Button
+        type="button"
+        href="/user/incidency"
+        bgc="bg-green text-blue"
+        position="mx-auto my-5 "
+        text="Iniciar jornada"
+        onClick={handleSubmit}
+      />
     </>
   );
 };

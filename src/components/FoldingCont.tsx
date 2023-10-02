@@ -9,7 +9,9 @@ interface Object {
   destination: string;
   state: string;
   bg: string;
-  is_delivered: boolean
+  is_delivered: boolean;
+  client: string;
+  quantity_taked: number;
 }
 interface Props {
   text: string;
@@ -20,7 +22,6 @@ const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
   const [display, setDisplay] = useState("");
 
   tasks.map((elem) => {
-    console.log(elem.is_delivered);
     if (elem.is_delivered === false) {
       elem.state = "EN CURSO";
       elem.bg = "bg-yellow";
@@ -28,10 +29,7 @@ const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
       elem.state = "TERMINADA";
       elem.bg = "bg-green";
     }
-
   });
-  
-
 
   return (
     <div className={position + " mx-auto folding"}>
@@ -52,9 +50,11 @@ const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
             <Task
               key={key}
               id={elem._id}
+              name={elem.client}
               dir={elem.destination}
               state={elem.state}
               bg={elem.bg}
+              quantity_taked={elem.quantity_taked}
             />
           ))
         ) : (

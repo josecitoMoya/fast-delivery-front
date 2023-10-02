@@ -10,6 +10,7 @@ export interface PackagesTypes {
   creation_date: string;  _id: string;
   state:string;
   bg:string;
+  quantity_taked:number
 }
 
 export interface Package {
