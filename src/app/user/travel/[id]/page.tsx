@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { PackagesTypes } from "@/types/package.types";
+import deliveryManServices from "@/services/deliveryMan.services";
 const Travel = () => {
   //para obtener el id por parametro
   const pathname = usePathname();
@@ -23,18 +24,21 @@ const Travel = () => {
         const response = await axios.get(`${apiURL}/packages/${id}`, {
           withCredentials: true,
         });
-
-        // Actualiza el estado con los datos del paquete
         setPackageData(response.data.message);
       } catch (error) {
         console.error("Error al obtener el paquete:", error);
-        // Manejo de errores, puedes mostrar un mensaje de error en la interfaz
       }
     };
 
     fetchData();
   }, []);
-
+const handleSubmit = ()=>{
+  try {
+    deliveryManServices.UntakeAllPackage(id)
+  } catch (error) {
+    console.error("Error taking packages: ", error);
+  }
+}
   return (
     <div>
       <Nav href="/user/home" lHref="/" />
@@ -43,8 +47,8 @@ const Travel = () => {
         h2="Reparto en curso"
         content={
           <TravelContent
-            destinatario={packageData ? packageData.client : ""}
-            dir={packageData ? packageData.destination : ""}
+            client={packageData ? packageData.client : ""}
+            destination={packageData ? packageData.destination : ""}
             id={id} // Usa el valor de 'id' como sea necesario en tu página
           />
         }
@@ -54,6 +58,7 @@ const Travel = () => {
         href="/user/get-products"
         bgc="bg-none text-white"
         position="mx-auto my-5 "
+onClick={handleSubmit}
         text="Cancelar entrega"
       />
  

@@ -52,6 +52,26 @@ class DeliveryManService {
     return pack;
   }
 
-}
+  async UntakeAllPackage(packageId: string) {
+    const pack = await axios.delete(
+      `${apiURL}/delivery-man/untake-all-package/${packageId}`,
+      {
+        withCredentials: true,
+      }
+    );
+    return pack;
+  }
+
+async MarkDeliveredPackage(packageId: string) {
+  const pack = await axios.post(
+    `${apiURL}/delivery-man/mark-delivered-package/${packageId}`,
+    {
+      withCredentials: true,
+    }
+  );
+  return pack;
+}}
+
+
 
 export default new DeliveryManService();

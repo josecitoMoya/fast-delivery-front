@@ -1,22 +1,34 @@
 import { NextPage } from "next";
 import Button from "../common/Button";
+import deliveryManServices from "@/services/deliveryMan.services";
 interface Props {
-  dir: string;
+  destination: string;
   id: string;
-  destinatario: string;
+  client: string;
 }
-const TravelContent: NextPage<Props> = ({ dir, id, destinatario }) => (
+const TravelContent: NextPage<Props> = ({ destination, id, client }) => {
+
+  const handleSubmit = () => {
+    try {
+      deliveryManServices.MarkDeliveredPackage(id)
+    } catch (error) {
+      console.error("Error taking packages: ", error);
+    }
+  };
+
+
+  return(
   <div>
     <div className="img mx-auto"></div>
     <div className="info mx-auto ">
       <p>
-        <span>Destino:</span> {dir}
+        <span>Destino:</span> {destination}
       </p>
       <p>
         <span>Numero de paquete:</span> {id}
       </p>
       <p>
-        <span>Recibe:</span> {destinatario}
+        <span>Recibe:</span> {client}
       </p>
     </div>
     <Button
@@ -24,8 +36,9 @@ const TravelContent: NextPage<Props> = ({ dir, id, destinatario }) => (
       bgc="bg-green text-blue"
       position="mx-auto my-5"
       text="Finalizar"
+      onClick={handleSubmit}
       type="button"
     ></Button>
-  </div>
-);
+  </div>)
+}
 export default TravelContent;

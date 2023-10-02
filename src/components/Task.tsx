@@ -12,7 +12,7 @@ interface Props {
   dir: string;
   state: string;
   bg: string;
-  name: string;
+  client: string;
   quantity_taked: number;
 }
 const Task: NextPage<Props> = ({
@@ -20,7 +20,7 @@ const Task: NextPage<Props> = ({
   dir,
   state,
   bg,
-  name,
+  client,
   quantity_taked,
 }) => {
   const [display, setDisplay] = useState("");
@@ -50,7 +50,7 @@ const Task: NextPage<Props> = ({
         </div>
         <div className="line"></div>
         <div className="ml-3 info">
-          <h3 className="id mt-1">{name}</h3>
+          <h3 className="id mt-1">{client}</h3>
           <p className="dir mt-1">{dir}</p>
           <p className="dir mt-1">packages: {quantityTaked}</p>
         </div>

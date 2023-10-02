@@ -23,7 +23,7 @@ const IncidencyContent = () => (
       text="enviar"
       position="mx-auto my-5"
       type="button"
-      href="/user/travel"
+      href="/user/home"
     />
   </div>
 );
