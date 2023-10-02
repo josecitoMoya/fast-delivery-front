@@ -1,18 +1,18 @@
-'use client';
-import '../styles/Empty-input.css';
-import React, { useState } from 'react';
+"use client";
+import "../styles/Empty-input.css";
+import React, { useState } from "react";
 //Commons
-import EmptyInput from '../common/Empty-input';
-import Button from '../common/Button';
-import DateInput from '../common/DateInput';
-import QuantityEditor from '@/common/QuantityEditor';
+import EmptyInput from "../common/Empty-input";
+import Button from "../common/Button";
+import DateInput from "../common/DateInput";
+import QuantityEditor from "@/common/QuantityEditor";
 //Hooks
-import useInput from '@/hooks/useInput';
+import useInput from "@/hooks/useInput";
 //Services
-import Admin_Service from '@/services/admin.services';
+import Admin_Service from "@/services/admin.services";
 const adminService = Admin_Service.getInstance();
 //Dto
-import { createPackageDto } from '@/services/dto/admin.dto';
+import { createPackageDto } from "@/services/dto/admin.dto";
 
 const AddProductContent = () => {
   const [date, setDate] = useState<Date | null>();
@@ -34,7 +34,7 @@ const AddProductContent = () => {
       };
       await adminService.addNewPackage(newPackage);
     } else {
-      return alert('El Peso Del Paquete Debe Ser Un Numero');
+      return alert("El Peso Del Paquete Debe Ser Un Numero");
     }
   };
 
@@ -78,18 +78,14 @@ const AddProductContent = () => {
       />
 
       <div className="flex items-center justify-between h-10 p-4 w-[65%]">
-        <div className="flex items-center" style={{ flexBasis: '48%' }}>
-          <DateInput
-            selected={date}
-            setDate={handleDateChange}
-            className="w-full h-full border-blue p-4 text-center quantity-container"
-          />
-        </div>
+        <DateInput
+          selected={date}
+          setDate={handleDateChange}
+          className="w-full h-full border-blue p-4 text-center quantity-container"
+        />
 
-        <div className="flex items-center" style={{ flexBasis: '48%' }}>
-          <div className="w-full h-full p-4 border-blue quantity-container">
-            <QuantityEditor quantity={quantity} setQuantity={setQuantity} />
-          </div>
+        <div className="w-full h-full p-4 border-blue quantity-container">
+          <QuantityEditor quantity={quantity} setQuantity={setQuantity} />
         </div>
       </div>
 

@@ -1,6 +1,6 @@
-import React from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import React from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 interface DateInputProps {
   selected?: Date | null;
@@ -14,12 +14,12 @@ const DateInput: React.FC<DateInputProps> = ({
   className,
 }) => {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`mx-2 relative ${className}`}>
       <DatePicker
         selected={selected}
         onChange={(date) => setDate?.(date)}
         withPortal
-        className="border border-blue-500 rounded-lg outline-none px-2 py-2 text-center"
+        className="dateInput border border-blue-500 rounded-lg outline-none px-2 py-2 text-center"
       />
     </div>
   );
