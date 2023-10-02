@@ -1,14 +1,14 @@
-"use client";
-import "../styles/greenScreen.css";
-import Task from "../components/Task";
+'use client';
+import '../styles/greenScreen.css';
+import Task from '../components/Task';
 //Redux
-import { useDispatch, useSelector } from "react-redux";
-import { setPackages } from "@/store/allPackages";
+import { useDispatch, useSelector } from 'react-redux';
+import { setPackages } from '@/store/allPackages';
 //Types
-import { PackagesTypes } from "@/types/package.types";
+import { PackagesTypes } from '@/types/package.types';
 //Services
-import Packages_Services from "@/services/packages.services";
-import { useEffect } from "react";
+import Packages_Services from '@/services/packages.services';
+import { useEffect } from 'react';
 
 const GetPackages = () => {
   const dispatch = useDispatch();
@@ -20,11 +20,11 @@ const GetPackages = () => {
         const data = await Packages_Services.getAllPackages();
         dispatch(setPackages(data));
       } catch (error) {
-        console.error("Error geting packages : ", error);
+        console.error('Error geting packages : ', error);
       }
     };
     getPackages();
-  }, []);
+  }, [packages]);
 
   return (
     <>
@@ -36,16 +36,18 @@ const GetPackages = () => {
           con el criterio de filtrado seleccionado
         </p>
       </div>
-      {packages.map((item: PackagesTypes, index: number) => (
-        <div data-testid="task" key={index} className="mb-2 mx-3">
-          <Task
-            bg="none"
-            id={item.id}
-            dir={item.destination + " "}
-            state={""}
-          />
-        </div>
-      ))}
+      {packages.map((item: PackagesTypes, index: number) => {
+        return (
+          <div data-testid="task" key={index} className="mb-2 mx-3">
+            <Task
+              bg="none"
+              id={item._id}
+              dir={item.destination + ' '}
+              state={''}
+            />
+          </div>
+        );
+      })}
     </>
   );
 };

@@ -1,9 +1,9 @@
-"use client";
-import { NextPage } from "next";
-import Link from "next/link";
-import "../styles/button.css";
+'use client';
+import { NextPage } from 'next';
+import Link from 'next/link';
+import '../styles/button.css';
 
-type ButtonType = "button" | "submit" | "reset";
+type ButtonType = 'button' | 'submit' | 'reset';
 
 interface Props {
   bgc: string;
@@ -28,7 +28,7 @@ const Button: NextPage<Props> = ({
     }
   };
   return (
-    <div className={position + " btnCont flex " + bgc}>
+    <div className={position + ' btnCont flex ' + bgc}>
       {onClick ? (
         <button className="btn mx-auto " type={type} onClick={handleClick}>
           {href ? <Link href={href}>{text}</Link> : text}

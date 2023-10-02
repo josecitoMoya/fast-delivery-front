@@ -1,25 +1,35 @@
-import React from "react";
-import { NextPage } from "next";
-import Addition from "@/assets/Ico/Addition";
-import Minus from "@/assets/Ico/Minus";
+import React from 'react';
+import Minus from '../assets/Ico/Minus';
+import Addition from '../assets/Ico/Addition';
+import { NextPage } from 'next';
 interface Props {
   quantity: number;
+  setQuantity: (quantity: number) => void;
 }
-const QuantityEditor: NextPage<Props> = ({ quantity }) => {
+
+const QuantityEditor: NextPage<Props> = ({ quantity, setQuantity }) => {
   return (
-    <>
-      <div className="flex items-center justify-center w-28  ">
-        <div className="flex cuantity my-auto mx-auto">
-          <div className="mx-1 my-auto">
-            <Minus />
-          </div>
-          <p className="number">{quantity}</p>
-          <div className="mx-1 my-auto">
-            <Addition />
-          </div>
-        </div>
+    <div className="flex my-auto mx-2">
+      <div
+        className="my-auto"
+        onClick={() => {
+          quantity > 0 && setQuantity(quantity - 1);
+        }}
+      >
+        <Minus />
       </div>
-    </>
+      <p data-testid="quantity-text" className="number">
+        {quantity}
+      </p>
+      <div
+        className="my-auto"
+        onClick={() => {
+          quantity < 50 && setQuantity(quantity + 1);
+        }}
+      >
+        <Addition />
+      </div>
+    </div>
   );
 };
 
