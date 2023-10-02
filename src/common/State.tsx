@@ -1,5 +1,5 @@
-import { NextPage } from "next";
-import "../styles/state.css";
+import { NextPage } from 'next';
+import '../styles/state.css';
 
 interface Props {
   state: string;
@@ -9,7 +9,15 @@ interface Props {
 const State: NextPage<Props> = ({ state, bg }) => {
   return (
     <>
-      <p className={bg + " pending text-center"}>{state}</p>
+      <p
+        className={
+          bg !== 'bg-purple'
+            ? `pending text-center ${bg}`
+            : ' bg-purple pending text-center'
+        }
+      >
+        {state}
+      </p>
     </>
   );
 };
