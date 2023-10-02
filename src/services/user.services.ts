@@ -1,9 +1,9 @@
-import axios from 'axios';
-import Cookies from 'js-cookie';
-import { UserLogin, UserRegister } from '@/types/user.types';
+import axios from "axios";
+import Cookies from "js-cookie";
+import { UserLogin, UserRegister } from "@/types/user.types";
 
-const apiURL = 'http://localhost:3001/api';
-
+// "https://container-back.9ohbn2ri32dkq.us-east-1.cs.amazonlightsail.com/api"
+const apiURL: string = process.env.API_URL || "http://localhost:3001/api";
 export default class User_Service {
   async register(userData: UserRegister) {
     try {
@@ -22,7 +22,7 @@ export default class User_Service {
       );
       return user.data;
     } catch (error) {
-      console.log('register error : ', error);
+      console.log("register error : ", error);
     }
   }
 
@@ -40,18 +40,18 @@ export default class User_Service {
 
       return user.data;
     } catch (error) {
-      console.log('login error : ', error);
+      console.log("login error : ", error);
     }
   }
 
   async logoutUser() {
     try {
-      Cookies.remove('token');
+      Cookies.remove("token");
       await axios.post(`${apiURL}/users/logout`, {
         withCredentials: true,
       });
     } catch (error) {
-      console.log('logout error', error);
+      console.log("logout error", error);
     }
   }
 

@@ -5,15 +5,15 @@ import Product from "@/components/Product";
 describe("Product Component", () => {
   it("debería renderizar correctamente con props", () => {
     const dir = "Dirección de ejemplo";
-    const cuantity = 5;
-    render(<Product dir={dir} cuantity={cuantity} />);
+
+    render(<Product destination={dir} quantity={5} />);
 
     expect(screen.getByText(dir));
 
-    expect(screen.getByText(cuantity.toString()));
+    expect(screen.getByText("5"));
   });
   it("should change the quantity of packages", async () => {
-    render(<Product dir="Dirección de ejemplo" cuantity={5} />);
+    render(<Product destination="Dirección de ejemplo" quantity={5} />);
 
     const incrementButton = screen.getByTestId("increment-button");
     const decrementButton = screen.getByTestId("decrement-button");

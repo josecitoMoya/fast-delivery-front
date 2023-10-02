@@ -1,6 +1,8 @@
 "use client";
 
+
 //Components
+
 import Product from "../components/Product";
 import "../styles/greenScreen.css";
 //Services
@@ -8,6 +10,7 @@ import Packages_Services from "@/services/packages.services";
 //React
 import { useEffect, useState } from "react";
 //Redux
+
 import { useDispatch, useSelector } from "react-redux";
 import { setPackages } from "@/store/allPackages";
 //Types
@@ -27,6 +30,7 @@ const GetProductsContent = () => {
         dispatch(setPackages(data));
       } catch (error) {
         console.error("Error geting packages : ", error);
+        
       }
     };
     getPackages();

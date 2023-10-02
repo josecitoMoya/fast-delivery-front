@@ -1,14 +1,16 @@
-'use client';
-import '../styles/greenScreen.css';
-import Task from '../components/Task';
+"use client";
+import "../styles/greenScreen.css";
+import Task from "../components/Task";
 //Redux
-import { useDispatch, useSelector } from 'react-redux';
-import { setPackages } from '@/store/allPackages';
+import { useDispatch, useSelector } from "react-redux";
+import { setPackages } from "@/store/allPackages";
 //Types
-import { PackagesTypes } from '@/types/package.types';
+import { PackagesTypes } from "@/types/package.types";
 //Services
-import Packages_Services from '@/services/packages.services';
-import { useEffect } from 'react';
+import Packages_Services from "@/services/packages.services";
+import { useEffect } from "react";
+import AddPack from "@/assets/Ico/AddPack";
+import Link from "next/link";
 
 const GetPackages = () => {
   const dispatch = useDispatch();
@@ -20,7 +22,7 @@ const GetPackages = () => {
         const data = await Packages_Services.getAllPackages();
         dispatch(setPackages(data));
       } catch (error) {
-        console.error('Error geting packages : ', error);
+        console.error("Error geting packages : ", error);
       }
     };
     getPackages();
@@ -29,10 +31,10 @@ const GetPackages = () => {
   return (
     <>
       <div>
-        <h2 className=" ml-4 text-left text-sm mt-3 font-bold">
+        <h2 className=" mx-2 text-left text-sm mt-3 font-bold">
           {packages.length} paquetes
         </h2>
-        <p className=" ml-4 text-left text-xs">
+        <p className=" mx-2 text-left text-xs">
           con el criterio de filtrado seleccionado
         </p>
       </div>
@@ -41,11 +43,16 @@ const GetPackages = () => {
           <Task
             bg="none"
             id={item.id}
-            dir={item.destination + ' '}
-            state={''}
+            dir={item.destination + " "}
+            state={""}
           />
         </div>
       ))}
+      <div className="addCont">
+        <Link href="/admin/add-product" className="btnPack">
+          <AddPack />
+        </Link>
+      </div>
     </>
   );
 };

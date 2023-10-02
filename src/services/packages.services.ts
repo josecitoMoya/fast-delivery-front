@@ -1,6 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
+import dotenv from "dotenv";
 
-const apiURL = 'http://localhost:3001/api';
+dotenv.config();
+
+const apiURL: string = process.env.API_URL || "http://localhost:3001/api";
+
 
 class PackagesService {
   async getAllPackages() {
@@ -10,7 +14,7 @@ class PackagesService {
       });
       return response.data.message;
     } catch (error) {
-      console.error('Error al obtener los paquetes:', error);
+      console.error("Error al obtener los paquetes:", error);
       throw error;
     }
   }

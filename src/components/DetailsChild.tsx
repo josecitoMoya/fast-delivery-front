@@ -1,4 +1,4 @@
-import Porcentaje from "@/assets/Ico/Porcentaje";
+import Porcentaje from "@/common/Porcentaje";
 import Photo from "@/common/Photo";
 import See from "@/common/See";
 import { NextPage } from "next";
@@ -11,10 +11,8 @@ const DetailsChild: NextPage<props> = ({ href, title }) => (
   <div className="mb-3">
     <div className="line"></div>
     <div className="flex row ml-3">
-      <div className="porcentaje">
-        <h2 className="h2TaskMan">20%</h2>
-        <Porcentaje />
-      </div>
+      <Porcentaje percentage={20} />
+
       <div className="my-auto ml-3">
         <h2 className="h2TaskMan">{title}</h2>
         <p>2/10 {title == "repartidores" ? "activos" : "repartidos"}</p>

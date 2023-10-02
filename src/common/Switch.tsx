@@ -5,12 +5,12 @@ const Switch = () => {
   const [on, setOn] = useState("on");
   return (
     <div
-      className="switchCont"
+      className="switchCont "
       onClick={() => {
         on == "on" ? setOn("off") : setOn("on");
       }}
     >
-      <div className={"on-off " + on}></div>
+      <div data-testid="switch" className={"on-off " + on}></div>
     </div>
   );
 };
