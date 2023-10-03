@@ -6,24 +6,20 @@ const apiURL = process.env.API_URL || 'http://localhost:3001/api';
 
 export default class User_Service {
   async register(userData: UserRegister) {
-    try {
-      const { email, password, last_name, name } = userData;
-      const user = await axios.post(
-        `${apiURL}/users/signup`,
-        {
-          email,
-          password,
-          last_name,
-          name,
-        },
-        {
-          withCredentials: true,
-        }
-      );
-      return user.data;
-    } catch (error: any) {
-      console.log('register error : ', error.response.data);
-    }
+    const { email, password, last_name, name } = userData;
+    const user = await axios.post(
+      `${apiURL}/users/signup`,
+      {
+        email,
+        password,
+        last_name,
+        name,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    return user.data;
   }
 
   async loginUser(userData: UserLogin) {

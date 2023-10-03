@@ -1,22 +1,24 @@
-"use client";
+'use client';
+import { useState } from 'react';
 //styles
-import "../styles/minput.css";
+import '../styles/minput.css';
 //commons
-import Minput from "../common/Minput";
-import Button from "../common/Button";
-import Text from "../common/Text";
+import Minput from '../common/Minput';
+import Button from '../common/Button';
+import Text from '../common/Text';
 // assets
-import Lock from "../assets/Ico/Lock";
-import User from "../assets/Ico/User";
+import Lock from '../assets/Ico/Lock';
+import User from '../assets/Ico/User';
 //hooks
-import useInput from "@/hooks/useInput";
+import useInput from '@/hooks/useInput';
 //types
-import { UserLogin } from "@/types/user.types";
+import { UserLogin } from '@/types/user.types';
 // services
-import User_Service from "@/services/user.services";
+import User_Service from '@/services/user.services';
 const userService = new User_Service();
 
 const Login = () => {
+  const [error, setError] = useState<string | null>(null);
   const email = useInput();
   const password = useInput();
   const confirmacion = useInput();
@@ -26,7 +28,11 @@ const Login = () => {
       email: email.value,
       password: password.value,
     };
-    await userService.loginUser(userData);
+    try {
+      await userService.loginUser(userData);
+    } catch (error) {
+      setError('Datos inválidos. Por favor, verifica tu email y contraseña.');
+    }
   };
   return (
     <>
