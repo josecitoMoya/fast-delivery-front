@@ -57,7 +57,7 @@ class DeliveryManService {
 
     const pack = await axios.post(
       `${apiURL}/delivery-man/mark-deli`,
-      {packageId},
+      { packageId },
       {
         withCredentials: true,
       }

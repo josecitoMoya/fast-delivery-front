@@ -1,7 +1,7 @@
-import axios from 'axios';
-import { createPackageDto } from './dto/admin.dto';
+import axios from "axios";
+import { createPackageDto } from "./dto/admin.dto";
 
-const apiURL = process.env.API_URL || 'http://localhost:3001/api';
+const apiURL = process.env.API_URL || "http://localhost:3001/api";
 
 export default class Admin_Service {
   private static instance: Admin_Service | null = null;
@@ -20,9 +20,9 @@ export default class Admin_Service {
       await axios.post(`${apiURL}/packages/create`, packageInfo, {
         withCredentials: true,
       });
-      return alert('Package Added Succesfully');
+      return alert("Package Added Succesfully");
     } catch (error: any) {
-      console.log('addingPackage error : ', error.response.data);
+      console.log("addingPackage error : ", error.response.data);
     }
   }
 
@@ -31,9 +31,9 @@ export default class Admin_Service {
       await axios.delete(`${apiURL}/packages/delete/${packageId}`, {
         withCredentials: true,
       });
-      return console.log('Package Deleted Succesfully');
+      return console.log("Package Deleted Succesfully");
     } catch (error: any) {
-      console.log('deletingPackage error : ', error.response.data);
+      console.log("deletingPackage error : ", error.response.data);
     }
   }
 
@@ -46,7 +46,7 @@ export default class Admin_Service {
 
       return registeredDeliverymans;
     } catch (error: any) {
-      console.log('geting deliverymans error : ', error.response.data);
+      console.log("geting deliverymans error : ", error.response.data);
     }
   }
 }
