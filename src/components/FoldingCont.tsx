@@ -2,13 +2,17 @@
 import { NextPage } from "next";
 import Arrow from "../assets/Ico/Arrow";
 import "../styles/foldingCont.css";
-import Task from "./Task";
 import { useState } from "react";
+import TaskDM from "./TaskDM";
 interface Object {
-  id: string;
-  dir: string;
+  _id: string;
+  destination: string;
   state: string;
   bg: string;
+  is_delivered: boolean;
+  client: string;
+  quantity_taked: number;
+  quantity: number;
 }
 interface Props {
   text: string;
@@ -17,6 +21,17 @@ interface Props {
 }
 const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
   const [display, setDisplay] = useState("");
+
+  tasks.map((elem) => {
+    if (elem.is_delivered === false) {
+      elem.state = "EN CURSO";
+      elem.bg = "bg-yellow";
+    } else {
+      elem.state = "TERMINADA";
+      elem.bg = "bg-green";
+    }
+  });
+
   return (
     <div className={position + " mx-auto folding"}>
       <div className="flex flex-row justify-between">
@@ -33,12 +48,15 @@ const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
       <div data-testid="d-none?" className={display}>
         {tasks.length > 0 ? (
           tasks.map((elem, key) => (
-            <Task
+            <TaskDM
               key={key}
-              id={elem.id}
-              dir={elem.dir}
+              id={elem._id}
+              client={elem.client}
+              dir={elem.destination}
               state={elem.state}
               bg={elem.bg}
+              quantity_taked={elem.quantity_taked}
+              quantity={elem.quantity}
             />
           ))
         ) : (
