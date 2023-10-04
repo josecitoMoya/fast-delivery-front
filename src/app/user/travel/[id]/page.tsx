@@ -16,7 +16,7 @@ const Travel = () => {
   const parts = pathname.split("/");
   const id = parts[parts.length - 1];
 
-  const [packageData, setPackageData] = useState<PackagesTypes[]>([]);
+  const [packageData, setPackageData] = useState<PackagesTypes>();
   const apiURL = "http://localhost:3001/api";
   useEffect(() => {
     const fetchData = async () => {
@@ -32,13 +32,13 @@ const Travel = () => {
 
     fetchData();
   }, []);
-const handleSubmit = ()=>{
-  try {
-    deliveryManServices.UntakePackage(id)
-  } catch (error) {
-    console.error("Error taking packages: ", error);
-  }
-}
+  const handleSubmit = () => {
+    try {
+      deliveryManServices.UntakePackage(id);
+    } catch (error) {
+      console.error("Error taking packages: ", error);
+    }
+  };
 
   return (
     <div>
@@ -51,20 +51,19 @@ const handleSubmit = ()=>{
             client={packageData ? packageData.client : ""}
             destination={packageData ? packageData.destination : ""}
             id={id} // Usa el valor de 'id' como sea necesario en tu página
-          quantity_taked={packageData.quantity_taked}
+            quantity_taked={packageData ? packageData.quantity_taked : 0}
           />
         }
       />
-     
+
       <Button
         type="button"
         href="/user/get-products"
         bgc="bg-none text-white"
         position="mx-auto my-5 "
-onClick={handleSubmit}
+        onClick={handleSubmit}
         text="Cancelar entrega"
       />
- 
     </div>
   );
 };
