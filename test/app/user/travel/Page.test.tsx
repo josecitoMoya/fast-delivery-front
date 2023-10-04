@@ -1,4 +1,4 @@
-import Travel from "@/app/user/travel/page";
+import Travel from "@/app/user/travel/[id]/page";
 import { render, screen } from "@testing-library/react";
 
 describe("Travel Page", () => {

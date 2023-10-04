@@ -23,7 +23,6 @@ export default class User_Service {
   }
 
   async loginUser(userData: UserLogin) {
-    try {
       const { password, email } = userData;
       const user = await axios.post(
         `${apiURL}/users/login`,
@@ -33,11 +32,7 @@ export default class User_Service {
         },
         { withCredentials: true }
       );
-
       return user.data;
-    } catch (error: any) {
-      console.log('register error : ', error.response.data);
-    }
   }
 
   async logoutUser() {
