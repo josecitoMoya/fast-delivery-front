@@ -1,3 +1,5 @@
+"use client";
+
 import FoldingCont from "@/components/FoldingCont";
 import GreenScreen from "@/components/GreenScreen";
 import Nav from "@/components/Nav";
