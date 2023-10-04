@@ -29,6 +29,7 @@ const Home = () => {
     getTakedPack();
   }, []);
 
+
   return (
     <div>
       <Nav href="/user/home" lHref="/" />

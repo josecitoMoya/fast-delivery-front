@@ -1,7 +1,4 @@
 import axios from "axios";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const apiURL: string = process.env.API_URL || "http://localhost:3001/api";
 

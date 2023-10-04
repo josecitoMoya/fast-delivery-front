@@ -3,10 +3,10 @@ import Cookies from "js-cookie";
 import { UserLogin, UserRegister } from "@/types/user.types";
 
 // "https://container-back.9ohbn2ri32dkq.us-east-1.cs.amazonlightsail.com/api"
-const apiURL: string = process.env.API_URL || "http://localhost:3001/api";
+const apiURL: string = process.env.API_URL || "http://localhost:3001/api"; 
 export default class User_Service {
   async register(userData: UserRegister) {
-    try {
+try {
       const { email, password, last_name, name } = userData;
       const user = await axios.post(
         `${apiURL}/users/signup`,
@@ -21,13 +21,12 @@ export default class User_Service {
         }
       );
       return user.data;
-    } catch (error) {
+} catch (error) {
       console.log("register error : ", error);
     }
   }
 
   async loginUser(userData: UserLogin) {
-    try {
       const { password, email } = userData;
       const user = await axios.post(
         `${apiURL}/users/login`,
@@ -37,11 +36,7 @@ export default class User_Service {
         },
         { withCredentials: true }
       );
-
       return user.data;
-    } catch (error) {
-      console.log("login error : ", error);
-    }
   }
 
   async logoutUser() {

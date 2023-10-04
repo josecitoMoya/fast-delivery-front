@@ -4,7 +4,7 @@ import Box from "../assets/Ico/Box";
 import Trash from "../assets/Ico/Trash";
 import State from "../common/State";
 import "../styles/task.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import deliveryManServices from "../services/deliveryMan.services";
 interface Props {
@@ -14,6 +14,7 @@ interface Props {
   bg: string;
   client: string;
   quantity_taked: number;
+  quantity: number;
 }
 const Task: NextPage<Props> = ({
   id,
@@ -22,16 +23,15 @@ const Task: NextPage<Props> = ({
   bg,
   client,
   quantity_taked,
+  quantity
 }) => {
   const [display, setDisplay] = useState("");
-  const [quantityTaked, setQuantityTaked] = useState(quantity_taked);
-  const handleClick = () => {
+
+  
+  const handleClick = () => {  
+    setDisplay("d-none");
     try {
-      if (quantityTaked <= 1) {
-        setDisplay("d-none");
-      }
       deliveryManServices.UntakePackage(id);
-      setQuantityTaked(quantityTaked - 1);
     } catch (error) {
       console.error("Error taking packages: ", error);
     }
@@ -52,7 +52,7 @@ const Task: NextPage<Props> = ({
         <div className="ml-3 info">
           <h3 className="id mt-1">{client}</h3>
           <p className="dir mt-1">{dir}</p>
-          <p className="dir mt-1">packages: {quantityTaked}</p>
+          <p className="dir mt-1">packages: {quantity_taked}</p>
         </div>
       </div>
       <div className="colorBtns mt-1 mx-2 flex flex-col items-end">

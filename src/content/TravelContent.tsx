@@ -5,18 +5,17 @@ interface Props {
   destination: string;
   id: string;
   client: string;
+  quantity_taked:string
 }
-const TravelContent: NextPage<Props> = ({ destination, id, client }) => {
-
-  const handleSubmit = () => {
+const TravelContent: NextPage<Props> = ({ destination, id, client, quantity_taked }) => {
+  const handleSubmit2 = () => {
     try {
+      console.log('travel',id);
       deliveryManServices.MarkDeliveredPackage(id)
     } catch (error) {
       console.error("Error taking packages: ", error);
     }
   };
-
-
   return(
   <div>
     <div className="img mx-auto"></div>
@@ -28,6 +27,9 @@ const TravelContent: NextPage<Props> = ({ destination, id, client }) => {
         <span>Numero de paquete:</span> {id}
       </p>
       <p>
+        <span>Cantidad de paquetes:</span> {quantity_taked}
+      </p>
+      <p>
         <span>Recibe:</span> {client}
       </p>
     </div>
@@ -36,7 +38,7 @@ const TravelContent: NextPage<Props> = ({ destination, id, client }) => {
       bgc="bg-green text-blue"
       position="mx-auto my-5"
       text="Finalizar"
-      onClick={handleSubmit}
+      onClick={handleSubmit2}
       type="button"
     ></Button>
   </div>)

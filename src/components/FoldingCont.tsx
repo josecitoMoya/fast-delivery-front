@@ -12,6 +12,7 @@ interface Object {
   is_delivered: boolean;
   client: string;
   quantity_taked: number;
+  quantity: number;
 }
 interface Props {
   text: string;
@@ -50,11 +51,12 @@ const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
             <Task
               key={key}
               id={elem._id}
-              name={elem.client}
+              client={elem.client}
               dir={elem.destination}
               state={elem.state}
               bg={elem.bg}
               quantity_taked={elem.quantity_taked}
+              quantity={elem.quantity}
             />
           ))
         ) : (

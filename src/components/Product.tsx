@@ -1,8 +1,6 @@
 "use client";
 import { NextPage } from "next";
-import Addition from "../assets/Ico/Addition";
 import Check from "../assets/Ico/Check";
-import Minus from "../assets/Ico/Minus";
 import { useEffect, useState } from "react";
 interface Props {
   destination: string;
@@ -22,24 +20,10 @@ const Product: NextPage<Props> = ({
   
 
 }) => {
-  const [pack, setQuantity] = useState(quantity);
   const [color, setColor] = useState("");
 
 
-  useEffect(() => {
-    setQuantity(quantity)
-  }, [quantity]);
-  const handleDecrease = () => {
-    if (pack > 0) {
-      setQuantity(pack - 1);
-    }
-  };
 
-  const handleIncrease = () => {
-    if (pack < quantity) {
-      setQuantity(pack + 1);
-    }
-  };
 
   return (
     <div className="product mx-2 mt-2 mb-3">
@@ -69,15 +53,13 @@ const Product: NextPage<Props> = ({
         </div>
       </div>
       <div className="flex cuantity my-auto mx-2">
-        <div className="my-auto" onClick={handleDecrease}>
-          <Minus />
+        <div className="my-auto">
+         <p className="number">Cantidad:</p>
         </div>
         <p data-testid="quantity-text" className="number">
-          {pack!==quantity?(pack):(quantity)}
+          {quantity}
         </p>
-        <div className="my-auto" onClick={handleIncrease}>
-          <Addition />
-        </div>
+       
       </div>
     </div>
   );

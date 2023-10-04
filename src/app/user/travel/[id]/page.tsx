@@ -34,11 +34,12 @@ const Travel = () => {
   }, []);
 const handleSubmit = ()=>{
   try {
-    deliveryManServices.UntakeAllPackage(id)
+    deliveryManServices.UntakePackage(id)
   } catch (error) {
     console.error("Error taking packages: ", error);
   }
 }
+
   return (
     <div>
       <Nav href="/user/home" lHref="/" />
@@ -50,9 +51,11 @@ const handleSubmit = ()=>{
             client={packageData ? packageData.client : ""}
             destination={packageData ? packageData.destination : ""}
             id={id} // Usa el valor de 'id' como sea necesario en tu página
+          quantity_taked={packageData.quantity_taked}
           />
         }
       />
+     
       <Button
         type="button"
         href="/user/get-products"
