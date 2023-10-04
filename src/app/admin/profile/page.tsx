@@ -22,13 +22,14 @@ const fakedata2 = [
     bg: "bg-green",
   },
 ];
+
 const Profile = () => (
   <div>
     <Nav href="/admin/diary" lHref="/" />
     <GreenScreen
       href="/admin/dealers"
       h2="Perfil del repartidor"
-      content={<ProfileState />}
+      content={<ProfileState userName={"userName"} isActive={true} />}
     />
     <FoldingCont text="Repartos pendientes" tasks={[]} position="mt-2" />
     <FoldingCont tasks={fakedata2} position="mt-2" text="Repartos terminados" />

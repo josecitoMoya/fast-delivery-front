@@ -1,37 +1,36 @@
-"use client";
-import React, { useState } from "react";
-import { NextPage } from "next";
-import Addition from "@/assets/Ico/Addition";
-import Minus from "@/assets/Ico/Minus";
+'use client';
+import { useState } from 'react';
+import Minus from '../assets/Ico/Minus';
+import Addition from '../assets/Ico/Addition';
+import { NextPage } from 'next';
 interface Props {
   quantity: number;
+  setQuantity: (quantity: number) => void;
 }
-const QuantityEditor: NextPage<Props> = ({ quantity }) => {
-  const [pack, setPack] = useState(0);
+
+const QuantityEditor: NextPage<Props> = ({ quantity, setQuantity }) => {
   return (
-    <>
-      <div className="flex cuantity my-auto mx-2">
-        <div
-          className="my-auto"
-          onClick={() => {
-            pack > 0 ? setPack(pack - 1) : setPack(pack);
-          }}
-        >
-          <Minus />
-        </div>
-        <p data-testid="quantity-text" className="number">
-          {pack}
-        </p>
-        <div
-          className="my-auto"
-          onClick={() => {
-            pack < quantity ? setPack(pack + 1) : setPack(pack);
-          }}
-        >
-          <Addition />
-        </div>
+    <div className="flex my-auto mx-2">
+      <div
+        className="my-auto"
+        onClick={() => {
+          quantity > 0 && setQuantity(quantity - 1);
+        }}
+      >
+        <Minus />
       </div>
-    </>
+      <p data-testid="quantity-text" className="number">
+        {quantity}
+      </p>
+      <div
+        className="my-auto"
+        onClick={() => {
+          quantity < 50 && setQuantity(quantity + 1);
+        }}
+      >
+        <Addition />
+      </div>
+    </div>
   );
 };
 

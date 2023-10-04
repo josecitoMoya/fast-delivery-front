@@ -1,49 +1,27 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 interface DateInputProps {
-  value: string;
-  onChange: (date: string) => void;
-  className?: string; // Permitimos la prop className opcional
+  selected?: Date | null;
+  setDate?: (date: Date | null) => void;
+  className?: string;
 }
 
 const DateInput: React.FC<DateInputProps> = ({
-  value,
-  onChange,
+  selected,
+  setDate,
   className,
 }) => {
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const inputValue = e.target.value;
-    // Expresión regular para permitir solo números y /
-    const numericRegex = /^[0-9/]*$/;
-
-    // Verifica si el valor cumple con el formato fecha
-    if (numericRegex.test(inputValue)) {
-      // Si el valor es válido toma el formato "00/00/00"
-      const formattedValue = formatDate(inputValue);
-      onChange?.(formattedValue);
-    }
-  };
-
-  const formatDate = (value: string) => {
-    // Formatea el valor para que tenga el formato de fecha "00/00/00"
-    let formattedValue = value.replace(/\D/g, ""); // Eliminar todos los caracteres que no sean números
-    formattedValue = formattedValue.slice(0, 6); // Limitar el valor a 6 caracteres
-    formattedValue = formattedValue.replace(
-      /^(\d{2})(\d{2})(\d{2})$/,
-      "$1/$2/$3"
-    ); // Formatear como "00/00/00"
-
-    return formattedValue;
-  };
-
   return (
-    <input
-      type="text"
-      className={`dateInput ${className}`} // Usamos className aquí para aplicar estilos adicionales
-      placeholder="00/00/00"
-      value={value}
-      onChange={handleChange}
-    />
+    <div className={`mx-2 relative ${className}`}>
+      <DatePicker
+        selected={selected}
+        onChange={(date) => setDate?.(date)}
+        withPortal
+        className="dateInput border border-blue-500 rounded-lg outline-none px-2 py-2 text-center"
+      />
+    </div>
   );
 };
 

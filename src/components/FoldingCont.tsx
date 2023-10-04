@@ -2,8 +2,8 @@
 import { NextPage } from "next";
 import Arrow from "../assets/Ico/Arrow";
 import "../styles/foldingCont.css";
-import Task from "./Task";
 import { useState } from "react";
+import TaskDM from "./TaskDM";
 interface Object {
   _id: string;
   destination: string;
@@ -48,7 +48,7 @@ const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
       <div data-testid="d-none?" className={display}>
         {tasks.length > 0 ? (
           tasks.map((elem, key) => (
-            <Task
+            <TaskDM
               key={key}
               id={elem._id}
               client={elem.client}

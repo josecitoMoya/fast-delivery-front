@@ -5,6 +5,7 @@
 :root {
   --blue: #3d1df3;
   --green: #00ea77;
+  --purple: #8b5cf6;
   --lightgreen: #c7ffb1;
 }
 
@@ -21,14 +22,14 @@ body {
   background: var(--blue);
 }
 
-.d-none {
-  display: none;
-}
-
 .mr-5 {
   margin-right: 20px;
 }
 
 .text-center {
   text-align: center;
+}
+
+.d-none {
+  display: none;
 }

@@ -1,28 +1,42 @@
 "use client";
 import "../styles/task.css";
 import { NextPage } from "next";
-import { useState } from "react";
-import Link from "next/link";
 //Icons
 import Box from "../assets/Ico/Box";
 import Trash from "../assets/Ico/Trash";
 //Commons
 import State from "../common/State";
-//Service
-import Admin_Service from "@/services/admin.services";
-const adminService = Admin_Service.getInstance();
-
+import "../styles/task.css";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import deliveryManServices from "../services/deliveryMan.services";
 interface Props {
   id: string;
   dir: string;
   state: string;
   bg: string;
+  client: string;
+  quantity_taked: number;
+  quantity: number;
 }
-const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
+const TaskDM: NextPage<Props> = ({
+  id,
+  dir,
+  state,
+  bg,
+  client,
+  quantity_taked,
+  quantity
+}) => {
   const [display, setDisplay] = useState("");
 
-  const handleDeletePackage = async () => {
-    await adminService.deletePackage(id);
+  const handleClick = () => {  
+    setDisplay("d-none");
+    try {
+      deliveryManServices.UntakePackage(id);
+    } catch (error) {
+      console.error("Error taking packages: ", error);
+    }
   };
 
   return (
@@ -32,24 +46,22 @@ const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
     >
       <div className="flex flex-row ">
         <div className="flex items-center">
-          <Link href="/user/travel">
+          <Link href={`/user/travel/${id}`}>
             <Box />
           </Link>
         </div>
         <div className="line"></div>
         <div className="ml-3 info">
-          <h3 className="id mt-1">{id}</h3>
+          <h3 className="id mt-1">{client}</h3>
           <p className="dir mt-1">{dir}</p>
+          <p className="dir mt-1">packages: {quantity_taked}</p>
         </div>
       </div>
       <div className="colorBtns mt-1 mx-2 flex flex-col items-end">
         <State bg={bg} state={state} />
         <div
-          className={
-            "mt-4 cursor-pointer " + (state == "TERMINADA" ? "d-none" : "")
-          }
-          // onClick={() => setDisplay('d-none')}
-          onClick={handleDeletePackage}
+          className={"mt-4 " + (state == "TERMINADA" ? "d-none" : "")}
+          onClick={handleClick}
           data-testid="trash"
         >
           <Trash />
@@ -58,4 +70,4 @@ const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
     </div>
   );
 };
-export default Task;
+export default TaskDM;
