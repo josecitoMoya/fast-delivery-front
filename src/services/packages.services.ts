@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const apiURL: string = process.env.API_URL || "http://localhost:3001/api";
 
 
@@ -11,7 +12,7 @@ class PackagesService {
       });
       return response.data.message;
     } catch (error) {
-      console.error('Error al obtener los paquetes:', error);
+      console.error("Error al obtener los paquetes:", error);
       throw error;
     }
   }
