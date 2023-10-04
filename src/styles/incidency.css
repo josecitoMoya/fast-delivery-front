@@ -5,13 +5,13 @@
   border-radius: 10px;
   border: 1px solid #00f;
   width: 80%;
-  padding: 10px 0;
-  margin: 15px auto;
+  padding: .5vw 0;
+  margin: 1vw auto;
 }
 
 .question p {
-  width: 80%;
+  width: 60%;
   display: flex;
   align-items: center;
-  padding: 0px 25px;
+  padding: 0px 1vw;
 }
