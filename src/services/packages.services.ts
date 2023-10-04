@@ -1,13 +1,7 @@
 import axios from "axios";
 
-<<<<<<< HEAD
-const apiURL: string = process.env.API_URL || "http://localhost:3001/api";
-=======
-
 const apiURL: string = process.env.API_URL || "http://localhost:3001/api";
 
-
->>>>>>> 8ee6b891f4a7e57b5331562997433fb7ad310c97
 class PackagesService {
   async getAllPackages() {
     try {
