@@ -1,13 +1,23 @@
 import { NextPage } from "next";
 import Button from "../common/Button";
 import deliveryManServices from "@/services/deliveryMan.services";
+import Map from "./Map";
+
 interface Props {
   destination: string;
   id: string;
   client: string;
-  quantity_taked:string
+  quantity_taked:number
 }
 const TravelContent: NextPage<Props> = ({ destination, id, client, quantity_taked }) => {
+  const handleSubmit = ()=>{
+    try {
+      deliveryManServices.UntakePackage(id)
+    } catch (error) {
+      console.error("Error taking packages: ", error);
+    }
+  }
+
   const handleSubmit2 = () => {
     try {
       console.log('travel',id);
@@ -18,7 +28,9 @@ const TravelContent: NextPage<Props> = ({ destination, id, client, quantity_take
   };
   return(
   <div>
-    <div className="img mx-auto"></div>
+    <div className="img mx-auto">
+<Map/>
+    </div>
     <div className="info mx-auto ">
       <p>
         <span>Destino:</span> {destination}
@@ -41,6 +53,15 @@ const TravelContent: NextPage<Props> = ({ destination, id, client, quantity_take
       onClick={handleSubmit2}
       type="button"
     ></Button>
+
+<Button
+        type="button"
+        href="/user/get-products"
+        bgc="bg-green text-blue"
+        position="mx-auto my-5 "
+onClick={handleSubmit}
+        text="Cancelar entrega"
+      />
   </div>)
 }
 export default TravelContent;
