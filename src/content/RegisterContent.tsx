@@ -1,24 +1,24 @@
-'use client';
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 //styles
-import '../styles/minput.css';
+import "../styles/minput.css";
 //commons
-import Minput from '../common/Minput';
-import Button from '../common/Button';
-import Text from '../common/Text';
+import Minput from "../common/Minput";
+import Button from "../common/Button";
+import Text from "../common/Text";
 //assets
-import Lock from '../assets/Ico/Lock';
-import User from '../assets/Ico/User';
+import Lock from "../assets/Ico/Lock";
+import User from "../assets/Ico/User";
 //hooks
-import useInput from '@/hooks/useInput';
+import useInput from "@/hooks/useInput";
 // services
-import User_Service from '@/services/user.services';
+import User_Service from "@/services/user.services";
 const userService = new User_Service();
 //types
-import { UserRegister } from '@/types/user.types';
+import { UserRegister } from "@/types/user.types";
 //Alerts
-import { FailedSignup, PasswordSignupError } from '@/common/alerts/alerts';
-import { useRouter } from 'next/navigation';
+import { FailedSignup, PasswordSignupError } from "@/common/alerts/alerts";
+import { useRouter } from "next/navigation";
 
 const RegisterContent = () => {
   const [error, setError] = useState<string | null>(null);
@@ -38,14 +38,14 @@ const RegisterContent = () => {
     };
 
     if (password.value.length < 8 || !/[A-Z]/.test(password.value)) {
-      setError('Password Error');
+      setError("Password Error");
       return;
     } else {
       try {
         await userService.register(newUser);
-        navigate.push('/');
+        navigate.push("/");
       } catch (error) {
-        setError('Signup Error');
+        setError("Signup Error");
       }
     }
   };
@@ -53,7 +53,7 @@ const RegisterContent = () => {
   return (
     <>
       {error ? (
-        error === 'Password Error' ? (
+        error === "Password Error" ? (
           <>
             {PasswordSignupError()}
             {setError(null)}
@@ -65,7 +65,7 @@ const RegisterContent = () => {
           </>
         )
       ) : (
-        ''
+        ""
       )}
       <Minput
         data={email}
@@ -100,7 +100,7 @@ const RegisterContent = () => {
         placeholder="introduzca su apellido"
       />
       <Button
-        type={'button'}
+        type={"button"}
         bgc="bg-green text-blue"
         position="mx-auto mt-10"
         text="crear"
@@ -116,7 +116,7 @@ const RegisterContent = () => {
         type="button"
         href="/"
         bgc="bg-none text-blue"
-        position="mx-auto mb-3 mt-2"
+        position="mx-auto mt-2 mb-2"
         text="iniciar sesion"
       />
     </>

@@ -66,7 +66,7 @@ const IncidencyContent = () => {
       <Button
         bgc="bg-green"
         text="enviar"
-        position="mx-auto my-5"
+        position="mx-auto my-5 mb-3"
         type="button"
         onClick={handleSubmit}
       />
