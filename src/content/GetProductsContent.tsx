@@ -52,6 +52,7 @@ const GetProductsContent = () => {
 
   const handleSubmit = () => {
     let quantity = 0;
+    let quantityDispo = 10 - deliManInfo.current_deliveries;
     for (let i = 0; i < packages.length; i++) {
       for (let e = 0; e < packagesId.length; e++) {
         if (packages[i]._id == packagesId[e]) {
@@ -59,14 +60,14 @@ const GetProductsContent = () => {
         }
       }
     }
-console.log(quantity+deliManInfo.current_deliveries);
-if (deliManInfo.current_deliveries === 10 || quantity >= 10) {
-  alert("Máximo de paquetes seleccionados.");
-} else if (packagesId.length > 0) {
-  navigation.push("/user/incidency");
-} else {
-  alert("Seleccione un paquete");
-}
+    if (quantity + deliManInfo.current_deliveries > 10) {
+      alert(`Máximo de paquetes seleccionados.
+      ${quantityDispo === 0 ? "" : `Solo puede seleccionar ${quantityDispo}`}`);
+    } else if (packagesId.length > 0) {
+      navigation.push("/user/incidency");
+    } else {
+      alert("Seleccione un paquete");
+    }
   };
 
   return (
