@@ -10,25 +10,26 @@
     "test": "jest"
   },
   "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.39",
+    "@react-google-maps/api": "^2.7.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/next": "^9.0.0",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "formik": "^2.4.5",
     "js-cookie": "^3.0.5",
-    "leaflet": "^1.9.4",
     "next": "^13.5.4-canary.11",
     "postcss": "8.4.26",
     "react": "^18.2.0",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
-    "react-leaflet": "^4.2.1",
     "react-slick": "^0.29.0",
     "redux": "^4.2.1",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.7.31",
     "tailwindcss": "3.3.3",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "use-places-autocomplete": "^4.0.1"
   },
   "devDependencies": {
     "@jest/globals": "^29.6.4",
