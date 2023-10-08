@@ -2,6 +2,23 @@ import axios from "axios";
 
 const apiURL: string = process.env.API_URL || "http://localhost:3001/api";
 class DeliveryManService {
+
+  async getDeliveryManInfo() {
+    try {
+   const deliveryManInfo =  await axios.get(
+        `${apiURL}/delivery-man/one`,
+        {
+          withCredentials: true,
+        }
+      );
+      return deliveryManInfo;
+    } catch (error) {
+      console.error("Error al obtener la informacion del deliveryMan:", error);
+      throw error;
+    }
+  }
+
+
   async getTakedPackages() {
     try {
       const packages = await axios.get(
@@ -53,8 +70,6 @@ class DeliveryManService {
   }
 
   async MarkDeliveredPackage(packageId: string) {
-    console.log("markdelivered", packageId);
-
     const pack = await axios.post(
       `${apiURL}/delivery-man/mark-deli`,
       { packageId },

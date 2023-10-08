@@ -1,7 +1,8 @@
 .img {
   margin: 20px auto;
   width: 260px;
-  height: 240px;
+  height: 275px;
+  /* height: 240px; ORIGINAL */
   border: 1px solid var(--blue);
   border-radius: 10px;
   background: lightgray 50% / cover no-repeat;
@@ -13,7 +14,12 @@
   font-weight: 400;
   padding-left: 20px;
 }
-
+.info-travel {
+  margin-left: 8vw;
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 20px;
+  }
 span {
   display: inline;
   font-weight: 700;

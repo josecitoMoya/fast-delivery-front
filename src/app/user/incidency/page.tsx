@@ -1,3 +1,4 @@
+
 import GreenScreen from "@/components/GreenScreen";
 import IncidencyContent from "@/content/IncidencyContent";
 import Nav from "@/components/Nav";

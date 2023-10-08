@@ -9,7 +9,6 @@ export interface PackagesTypes {
   additional_information: string;
   deadline_date: string;
   creation_date: string;
-  _id: string;
   quantity_taked: number;
   state: string;
   bg: string;
