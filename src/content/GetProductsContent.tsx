@@ -1,7 +1,5 @@
 "use client";
-
 //Components
-
 import Product from "../components/Product";
 import "../styles/greenScreen.css";
 //Services
@@ -24,14 +22,21 @@ const GetProductsContent = () => {
   const dispatch = useDispatch();
   const packages = useSelector((state: any) => state.packages);
   const [packagesId, setPackagesId] = useState<string[]>([]);
-  const [deliManInfo, setDeliManInfo] = useState<DeliverymanType[]>([]);
+  const [deliManInfo, setDeliManInfo] = useState<DeliverymanType>({
+    _id: "",
+    current_deliveries: 0,
+    active: false,
+    drinked_alcohol: false,
+    taked_drugs: false,
+    sleeped_well: false,
+    packages: [],
+  });
   useEffect(() => {
     const getPackages = async () => {
       try {
         const data = await Packages_Services.getAllPackages();
         dispatch(setPackages(data));
         dispatch(setAllPackages(packagesId));
-        console.log(packagesId);
       } catch (error) {
         console.error("Error geting packages : ", error);
       }

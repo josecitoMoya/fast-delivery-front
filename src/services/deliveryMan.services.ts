@@ -70,8 +70,6 @@ class DeliveryManService {
   }
 
   async MarkDeliveredPackage(packageId: string) {
-    console.log("markdelivered", packageId);
-
     const pack = await axios.post(
       `${apiURL}/delivery-man/mark-deli`,
       { packageId },

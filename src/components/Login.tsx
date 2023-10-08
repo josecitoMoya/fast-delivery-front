@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 //styles
 import '../styles/minput.css';
 //commons
@@ -21,23 +20,36 @@ import { useRouter } from 'next/navigation';
 const userService = new User_Service();
 
 const Login = () => {
-  const [error, setError] = useState<string | null>(null);
   const email = useInput();
   const password = useInput();
-  const confirmacion = useInput();
+  const router = useRouter();
 
-const router = useRouter();
   const handleLogin = async () => {
-    try{
-    let userData: UserLogin = {
-      email: email.value,
-      password: password.value,
-    };
-    await userService.loginUser(userData);
-    router.push('/user/home')
-  }catch(error){
-    alert('Error al iniciar sesión. Verifique sus credenciales.')
-  }}
+    try {
+      let userData: UserLogin = {
+        email: email.value,
+        password: password.value,
+      };
+      const data = await userService.loginUser(userData);
+  
+      // Obtener el valor de la cookie que contiene el token
+      const tokenCookie = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('token='));
+      const token = tokenCookie ? tokenCookie.split('=')[1] : null;
+  
+      // Decodificar el token si existe
+      if (token) {
+        const tokenParts = token.split('.');
+        const payload = JSON.parse(atob(tokenParts[1]));
+        const isAdmin = payload.user.is_admin;
+        isAdmin?(router.push('/admin/diary')):(router.push('/user/home'))
+      }
+    } catch (error) {
+      alert('Error al iniciar sesión. Verifique sus credenciales.');
+    }
+  }
+  
   return (
     <>
       <Minput

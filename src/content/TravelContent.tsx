@@ -27,7 +27,6 @@ const TravelContent: NextPage<Props> = ({
 
   const handleFinish = () => {
     try {
-      console.log("travel", id);
       deliveryManServices.MarkDeliveredPackage(id);
     } catch (error) {
       console.error("Error taking packages: ", error);
