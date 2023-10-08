@@ -22,6 +22,7 @@ import { useRouter } from 'next/navigation';
 
 const RegisterContent = () => {
   const [error, setError] = useState<string | null>(null);
+
   const navigate = useRouter();
   const email = useInput();
   const password = useInput();
@@ -114,10 +115,12 @@ const RegisterContent = () => {
       />
       <Button
         type="button"
-        href="/"
         bgc="bg-none text-blue"
         position="mx-auto mb-3 mt-2"
         text="iniciar sesion"
+        onClick={() => {
+          navigate.push('/');
+        }}
       />
     </>
   );

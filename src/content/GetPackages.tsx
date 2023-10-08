@@ -1,6 +1,7 @@
 'use client';
 import '../styles/greenScreen.css';
-import Task from '../components/Task';
+import { useEffect } from 'react';
+import Link from 'next/link';
 //Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { setPackages } from '@/store/allPackages';
@@ -8,9 +9,10 @@ import { setPackages } from '@/store/allPackages';
 import { PackagesTypes } from '@/types/package.types';
 //Services
 import Packages_Services from '@/services/packages.services';
-import { useEffect } from 'react';
+//Components
+import Task from '../components/Task';
+//Icons
 import AddPack from '@/assets/Ico/AddPack';
-import Link from 'next/link';
 
 const GetPackages = () => {
   const dispatch = useDispatch();

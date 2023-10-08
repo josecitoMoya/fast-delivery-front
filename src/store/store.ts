@@ -3,6 +3,7 @@ import userReducer from './slices/userSlice';
 import allPackagesReducer from './allPackages';
 import deliverymanReducer from './deliveryman';
 import userInfoReducer from './userInfo';
+
 export const store = configureStore({
   reducer: {
     user: userReducer,

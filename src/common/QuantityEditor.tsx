@@ -1,5 +1,3 @@
-'use client';
-import { useState } from 'react';
 import Minus from '../assets/Ico/Minus';
 import Addition from '../assets/Ico/Addition';
 import { NextPage } from 'next';
