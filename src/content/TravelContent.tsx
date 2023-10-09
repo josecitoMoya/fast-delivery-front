@@ -41,7 +41,7 @@ const TravelContent: NextPage<Props> = ({
       <div className="img mx-auto">
         <Map coords={coords} />
       </div>
-      <div className="info-travel mx-auto ">
+      <div className="info-travel mx-auto mb-3">
         <p>
           <span>Destino:</span> {destination}
         </p>
@@ -57,29 +57,29 @@ const TravelContent: NextPage<Props> = ({
       </div>
 
       {is_delivered ? (
-        <br />
+        <></>
       ) : (
         <>
           {" "}
-          <br />
+          
           <Button
             href={"/user/home"}
             bgc="bg-green text-blue"
-            position="mx-auto my-5"
+            position="mx-auto my-3"
             text="finalizar"
             onClick={handleFinish}
             type="button"
           ></Button>{" "}
-          <br />
+          
           <Button
             type="button"
             href="/user/get-products"
             bgc="bg-green text-blue"
-            position="mx-auto my-5 "
+            position="mx-auto my-3"
             onClick={handleCancel}
             text="cancelar entrega"
           />
-          <br />
+          
         </>
       )}
     </div>
