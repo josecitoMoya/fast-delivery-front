@@ -37,9 +37,11 @@ const Login = () => {
         .split('; ')
         .find(row => row.startsWith('token='));
       const token = tokenCookie ? tokenCookie.split('=')[1] : null;
-  
+      console.log(token, "token")
+      router.push('/user/home')
       // Decodificar el token si existe
       if (token) {
+        console.log("OTRO COSO")
         const tokenParts = token.split('.');
         const payload = JSON.parse(atob(tokenParts[1]));
         const isAdmin = payload.user.is_admin;
