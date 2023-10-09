@@ -38,13 +38,8 @@ const Login = () => {
         .find(row => row.startsWith('token='));
       const token = tokenCookie ? tokenCookie.split('=')[1] : null;
       // Decodificar el token si existe
-      if (token) {
-        console.log("OTRO COSO")
-        const tokenParts = token.split('.');
-        const payload = JSON.parse(atob(tokenParts[1]));
-        const isAdmin = payload.user.is_admin;
-        isAdmin?(router.push('/admin/diary')):(router.push('/user/home'))
-      }
+      router.push('/admin/diary')
+     
     } catch (error) {
       alert('Error al iniciar sesión. Verifique sus credenciales.');
     }
