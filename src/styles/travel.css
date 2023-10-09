@@ -1,8 +1,7 @@
 .img {
   margin: 20px auto;
   width: 260px;
-  height: 275px;
-  /* height: 240px; ORIGINAL */
+  height: 240px;
   border: 1px solid var(--blue);
   border-radius: 10px;
   background: lightgray 50% / cover no-repeat;

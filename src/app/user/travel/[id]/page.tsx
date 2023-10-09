@@ -47,6 +47,7 @@ const Travel = () => {
             id={id}
           quantity_taked={packageData ? packageData.quantity_taked : 0}
           is_delivered={packageData ? packageData.is_delivered : false}
+          coords={packageData ? packageData.coords : { lat: 0, lng: 0 }}
           />
         }
       />

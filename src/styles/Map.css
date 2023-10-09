@@ -1,46 +1,5 @@
-/* ESTE ES EL ESTILO DEL MAPA DE ABAJO EN EL QUE SALE EL MAPA */
 .mapStyle{
   width: 100%;
   height: 237px;
 border-radius: 10px;
 }
-/* ESTE INPUT SERIA EL QUE SALDRIA DENTRO DEL MAPA PERO COMO LO QUIERO POR ARRIBA HICE LO QUE ESTA ABAJO EN ESTE ARCHIVO
- .inputStyle{
-  width: 240px;
-  height: 32px;
-  box-sizing: border-box;
-  border: 1px solid transparent;
-  padding: 0 12px;
-  border-radius: 3px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  font-size: 14px;
-  outline: none;
-  text-overflow: ellipses;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}  */
-
-/* ESTE ES EL ESTILO DEL INPUT QUE SALE ARRIBA DEL MAPA, AUNQUE NO SE VE EL INPUT DEBAJO ESTA UN MAPA SIN MAPA 
-OSEA PARA QUE FUNCIONE EL INPUT CON EL AUTORELLENO DE GOOGLE TUVE QUE ENVOLVERLO EN OTRO MAPA */
-.mapStyle2{
-  width: 100%;
-  height: 35px;
-border-radius: 10px;
-background-color: white;
-}
-.inputStyle2{
-   padding-left: 10px;
-  width: 100%;
-  height: 32px;
-  box-sizing: border-box;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  font-size: 14px;
-  outline: none;
-  text-overflow: ellipses;
-  position: absolute;
-
-}
-

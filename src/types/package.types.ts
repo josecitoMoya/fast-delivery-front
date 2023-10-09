@@ -1,3 +1,5 @@
+import { LatLngLiteral } from "@googlemaps/google-maps-services-js";
+
 export interface PackagesTypes {
   _id: string;
   id: string;
@@ -12,6 +14,7 @@ export interface PackagesTypes {
   quantity_taked: number;
   state: string;
   bg: string;
+  coords:LatLngLiteral;
 }
 
 export interface Package {

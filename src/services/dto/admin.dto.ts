@@ -4,4 +4,5 @@ export interface createPackageDto {
   destination: string;
   package_weigth: number;
   deadline_date: Date | null;
+  coords:object;
 }
