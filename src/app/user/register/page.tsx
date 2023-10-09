@@ -4,7 +4,7 @@ import RegisterContent from "@/content/RegisterContent";
 
 const Register = () => (
   <div>
-    <Nav href="/user/home" lHref="/" />
+    
     <GreenScreen href="/" h2="Creá tu cuenta" content={<RegisterContent />} />
   </div>
 );

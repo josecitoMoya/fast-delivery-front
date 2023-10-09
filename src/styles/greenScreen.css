@@ -82,3 +82,14 @@ h3 {
   display: flex;
   justify-content: end;
 }
+
+.productScroll {
+  padding-right: 2px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 10px 0;
+  border-top: 1px solid var(--blue);
+  border-bottom: 1px solid var(--blue)
+  
+}
