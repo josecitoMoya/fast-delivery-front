@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { UserLogin, UserRegister } from "@/types/user.types";
 
-const apiURL = process.env.API_URL || "http://localhost:3001/api";
+const apiURL: string = process.env.NEXT_PUBLIC_API_URL || "";
 
 export default class User_Service {
   async register(userData: UserRegister) {

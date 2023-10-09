@@ -1,14 +1,13 @@
 import axios from "axios";
 import { setUser, setUsers, setIsLoading, setError } from "../slices/userSlice";
 
-const fetchURL = "http://localhost:3001/api/users/";
-
+const fetchURL: string = process.env.NEXT_PUBLIC_API_URL || "";
 axios.defaults.withCredentials = true;
 
 export const fetchCreateUser = (data: object) => async (dispatch: any) => {
   try {
     dispatch(setIsLoading(true));
-    const response = await axios.post(`${fetchURL}signup`, data, {
+    const response = await axios.post(`${fetchURL}/users/signup`, data, {
       withCredentials: true,
     });
 
@@ -24,7 +23,7 @@ export const fetchCreateUser = (data: object) => async (dispatch: any) => {
 export const fetchLoginUser = (data: object) => async (dispatch: any) => {
   try {
     dispatch(setIsLoading(true));
-    const response = await axios.post(`${fetchURL}login`, data, {
+    const response = await axios.post(`${fetchURL}/users/login`, data, {
       withCredentials: true,
     });
 
@@ -40,7 +39,7 @@ export const fetchLoginUser = (data: object) => async (dispatch: any) => {
 export const fetchLogOut = () => async (dispatch: any) => {
   try {
     dispatch(setIsLoading(true));
-    const response = await axios.post(`${fetchURL}logout`);
+    const response = await axios.post(`${fetchURL}/users/logout`);
     dispatch(setIsLoading(false));
     dispatch(setUser([]));
   } catch (err) {

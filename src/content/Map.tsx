@@ -12,8 +12,9 @@ import usePlacesAutocomplete, {
 } from "use-places-autocomplete";
 
 const Map = () => {
+  const Key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyD2rNuUf2bYxH_YMVXe65Lsz1oIJ_LlvRU", //PORFA PONGANLA EN UN .ENV XQ SI SE LLEGA A COMPARTIR ME PUEDE VENIR CARA LA TARJETA :)
+    googleMapsApiKey: Key,
     libraries: ["places"],
   });
   const { value, setValue, clearSuggestions } = usePlacesAutocomplete();

@@ -57,7 +57,6 @@ const TravelContent: NextPage<Props> = ({
         <br />
       ) : (
         <>
-        <br/>
           <Button
             href={"/user/home"}
             bgc="bg-green text-blue"
@@ -66,7 +65,6 @@ const TravelContent: NextPage<Props> = ({
             onClick={handleFinish}
             type="button"
           ></Button>
-          <br/>
           <Button
             type="button"
             href="/user/get-products"
@@ -75,7 +73,6 @@ const TravelContent: NextPage<Props> = ({
             onClick={handleCancel}
             text="cancelar entrega"
           />
-          <br/>
         </>
       )}
     </div>
