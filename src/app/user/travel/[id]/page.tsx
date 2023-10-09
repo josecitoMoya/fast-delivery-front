@@ -16,7 +16,7 @@ const Travel = () => {
   const parts = pathname.split("/");
   const id = parts[parts.length - 1];
   const [packageData, setPackageData] = useState<PackagesTypes>();
-  const apiURL = "http://localhost:3001/api";
+  const apiURL: string = process.env.NEXT_PUBLIC_API_URL || "";
 
 
   useEffect(() => {
