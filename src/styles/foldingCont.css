@@ -9,3 +9,10 @@
 h2 {
   font-weight: 700;
 }
+
+.scroll {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 10px;
+  overflow-x: hidden;
+}

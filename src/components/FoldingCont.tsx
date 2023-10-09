@@ -45,7 +45,7 @@ const FoldingCont: NextPage<Props> = ({ text, position, tasks }) => {
           <Arrow />
         </div>
       </div>
-      <div data-testid="d-none?" className={display}>
+      <div data-testid="d-none?" className={display + "scroll"}>
         {tasks.length > 0 ? (
           tasks.map((elem, key) => (
             <TaskDM

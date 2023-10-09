@@ -78,20 +78,22 @@ const GetProductsContent = () => {
   return (
     <>
       <h3 className="text-center mt-3">¿Cuántos paquetes repartirás hoy?</h3>
-      {packages.map((elem: PackagesTypes, id: string) =>
-        elem.quantity !== 0 && elem.is_delivered === false ? (
-          <Product
-            key={id}
-            id={elem._id}
-            destination={elem.destination + id}
-            quantity={elem.quantity}
-            setPackagesId={setPackagesId}
-            packageId={packagesId}
-          />
-        ) : (
-          ""
-        )
-      )}
+      <div className="productScroll">
+        {packages.map((elem: PackagesTypes, id: string) =>
+          elem.quantity !== 0 && elem.is_delivered === false ? (
+            <Product
+              key={id}
+              id={elem._id}
+              destination={elem.destination + id}
+              quantity={elem.quantity}
+              setPackagesId={setPackagesId}
+              packageId={packagesId}
+            />
+          ) : (
+            ""
+          )
+          )}
+      </div>
       <Button
         type="button"
         onClick={handleSubmit}
