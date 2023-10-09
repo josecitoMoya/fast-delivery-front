@@ -52,7 +52,7 @@ const Product: NextPage<Props> = ({
           <p className="dir ml-3">{destination}</p>
         </div>
       </div>
-      <div className="flex cuantity my-auto mx-2">
+      <div className="flex cuantity my-auto mr-3">
         <div className="my-auto">
          <p className="number">Cantidad:</p>
         </div>

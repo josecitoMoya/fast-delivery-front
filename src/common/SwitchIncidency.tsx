@@ -17,7 +17,7 @@ const SwitchIncidency: React.FC<SwitchIncidencyProps>  = ({ state, onChange }) =
   const noClass = state === false ? "selected-si" : "";
 
   return (
-    <div className="mydict">
+    <div className="mydict mr-3">
       <div>
         <label>
           <input

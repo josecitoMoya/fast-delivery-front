@@ -48,7 +48,7 @@ const IncidencyContent = () => {
 
   return (
     <div>
-      <h2 className="text-center my-5">con un margen de 24hs confirma si...</h2>
+      <h2 className="text-center my-5 mt-2">con un margen de 24hs confirma si...</h2>
       <div>
         <div className="question mx-auto">
           <p>has ingerido alcohol</p>

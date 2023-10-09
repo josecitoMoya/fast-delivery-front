@@ -83,7 +83,7 @@ const Login = () => {
         text="crear cuenta"
         type="submit"
       />
-      <Text text="OLVIDÉ MI CONTRASEÑA" textColor="white" position="mt-3" />
+      
     </>
   );
 };
