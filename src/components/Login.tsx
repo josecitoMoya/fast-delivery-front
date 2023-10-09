@@ -14,7 +14,10 @@ import useInput from '@/hooks/useInput';
 //types
 import { UserLogin } from '@/types/user.types';
 // services
-import User_Service from '@/services/user.services';
+import User_Service from "@/services/user.services";
+import { useRouter } from 'next/navigation';
+
+
 const userService = new User_Service();
 
 const Login = () => {
@@ -23,17 +26,18 @@ const Login = () => {
   const password = useInput();
   const confirmacion = useInput();
 
+const router = useRouter();
   const handleLogin = async () => {
+    try{
     let userData: UserLogin = {
       email: email.value,
       password: password.value,
     };
-    try {
-      await userService.loginUser(userData);
-    } catch (error) {
-      setError('Datos inválidos. Por favor, verifica tu email y contraseña.');
-    }
-  };
+    await userService.loginUser(userData);
+    router.push('/user/home')
+  }catch(error){
+    alert('Error al iniciar sesión. Verifique sus credenciales.')
+  }}
   return (
     <>
       <Minput
@@ -53,7 +57,6 @@ const Login = () => {
         data={password}
       />
       <Button
-        href="/user/home"
         bgc="bg-green text-blue"
         position="mx-auto mt-7"
         text="ingresar"

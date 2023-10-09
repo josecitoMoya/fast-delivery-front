@@ -12,13 +12,7 @@ const GetProducts = () => (
         h2="Obtener paquetes"
         content={<GetProductsContent />}
       />
-      <Button
-        type="button"
-        href="/user/incidency"
-        bgc="bg-green text-blue"
-        position="mx-auto my-5 "
-        text="Iniciar jornada"
-      />
+
       <div></div>
     </div>
   </Providers>

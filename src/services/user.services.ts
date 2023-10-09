@@ -1,8 +1,8 @@
-import axios from 'axios';
-import Cookies from 'js-cookie';
-import { UserLogin, UserRegister } from '@/types/user.types';
+import axios from "axios";
+import Cookies from "js-cookie";
+import { UserLogin, UserRegister } from "@/types/user.types";
 
-const apiURL = process.env.API_URL || 'http://localhost:3001/api';
+const apiURL = process.env.API_URL || "http://localhost:3001/api";
 
 export default class User_Service {
   async register(userData: UserRegister) {
@@ -23,31 +23,26 @@ export default class User_Service {
   }
 
   async loginUser(userData: UserLogin) {
-    try {
-      const { password, email } = userData;
-      const user = await axios.post(
-        `${apiURL}/users/login`,
-        {
-          password,
-          email,
-        },
-        { withCredentials: true }
-      );
-
-      return user.data;
-    } catch (error: any) {
-      console.log('register error : ', error.response.data);
-    }
+    const { password, email } = userData;
+    const user = await axios.post(
+      `${apiURL}/users/login`,
+      {
+        password,
+        email,
+      },
+      { withCredentials: true }
+    );
+    return user.data;
   }
 
   async logoutUser() {
     try {
-      Cookies.remove('token');
+      Cookies.remove("token");
       await axios.post(`${apiURL}/users/logout`, {
         withCredentials: true,
       });
     } catch (error: any) {
-      console.log('register error : ', error.response.data);
+      console.log("register error : ", error.response.data);
     }
   }
 

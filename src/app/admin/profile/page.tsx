@@ -1,35 +1,39 @@
 'use client';
-//Components
+
 import FoldingCont from '@/components/FoldingCont';
 import GreenScreen from '@/components/GreenScreen';
 import Nav from '@/components/Nav';
-//Content
 import ProfileState from '@/content/ProfileState';
-import { useSelector } from 'react-redux';
-const fakedata2 = [
-  {
-    id: '#f0245',
-    dir: 'industria 2012, CABA',
-    state: 'TERMINADA',
-    bg: 'bg-green',
-  },
-  {
-    id: '#f0145',
-    dir: 'industria 2219, CABA',
-    state: 'TERMINADA',
-    bg: 'bg-green',
-  },
-  {
-    id: '#f0745',
-    dir: 'industria 2049, CABA',
-    state: 'TERMINADA',
-    bg: 'bg-green',
-  },
-];
+import deliveryManServices from '@/services/deliveryMan.services';
+import { PackagesTypes } from '@/types/package.types';
+import { useEffect, useState } from 'react';
 
 const Profile = () => {
-  const deliverymanInfo = useSelector((state: any) => state.deliverymanInfo);
-  console.log('vengo de page profile : ', deliverymanInfo);
+  const [packages, setPackages] = useState<PackagesTypes[]>([]);
+  const [packagesDelivered, setPackagesDelivered] = useState<PackagesTypes[]>(
+    []
+  );
+  useEffect(() => {
+    const getTakedPack = async () => {
+      try {
+        const data = await deliveryManServices.getTakedPackages();
+        const packages = data.data.message;
+
+        const nonDeliveredPackages = packages.filter(
+          (pack: PackagesTypes) => !pack.is_delivered
+        );
+        const deliveredPackages = packages.filter(
+          (pack: PackagesTypes) => pack.is_delivered
+        );
+
+        setPackages(nonDeliveredPackages);
+        setPackagesDelivered(deliveredPackages);
+      } catch (error) {
+        console.error('Error geting packages : ', error);
+      }
+    };
+    getTakedPack();
+  }, []);
   return (
     <div>
       <Nav href="/admin/diary" lHref="/" />
@@ -38,9 +42,13 @@ const Profile = () => {
         h2="Perfil del repartidor"
         content={<ProfileState />}
       />
-      <FoldingCont text="Repartos pendientes" tasks={[]} position="mt-2" />
       <FoldingCont
-        tasks={fakedata2}
+        text="Repartos pendientes"
+        tasks={packages}
+        position="mt-2"
+      />
+      <FoldingCont
+        tasks={packagesDelivered}
         position="mt-2"
         text="Repartos terminados"
       />

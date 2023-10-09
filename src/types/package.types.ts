@@ -9,6 +9,10 @@ export interface PackagesTypes {
   additional_information: string;
   deadline_date: string;
   creation_date: string;
+  _id: string;
+  quantity_taked: number;
+  state: string;
+  bg: string;
 }
 
 export interface Package {
@@ -37,4 +41,17 @@ export interface Package {
 export interface Coordinates {
   lat: number;
   lng: number;
+}
+
+export interface IndividualPackage {
+  _id: string;
+  client: string;
+  quantity: number;
+  destination: string;
+  is_delivered: boolean;
+  package_weight: number;
+  additional_information: string;
+  deadline_date: string;
+  creation_date: string;
+  __v: number;
 }

@@ -10,7 +10,7 @@ import Admin_Service from '@/services/admin.services';
 const adminService = Admin_Service.getInstance();
 //Redux
 import { setUserInfo } from '@/store/userInfo';
-import deliveryman, { setDeliveryman } from '@/store/deliveryman';
+import { setDeliveryman } from '@/store/deliveryman';
 import { useDispatch } from 'react-redux';
 //types
 import { UserProfileData } from '@/types/user.types';

@@ -13,10 +13,12 @@ import Packages_Services from '@/services/packages.services';
 import Task from '../components/Task';
 //Icons
 import AddPack from '@/assets/Ico/AddPack';
+import { useRouter } from 'next/navigation';
 
 const GetPackages = () => {
   const dispatch = useDispatch();
   const packages = useSelector((state: any) => state.packages);
+  const navigate = useRouter();
 
   useEffect(() => {
     const getPackages = async () => {
@@ -53,9 +55,12 @@ const GetPackages = () => {
         );
       })}
       <div className="addCont">
-        <Link href="/admin/add-product" className="btnPack">
+        <div
+          onClick={() => navigate.push('/admin/add-product')}
+          className="btnPack cursor-pointer"
+        >
           <AddPack />
-        </Link>
+        </div>
       </div>
     </>
   );

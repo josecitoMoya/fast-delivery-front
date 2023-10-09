@@ -3,13 +3,13 @@ import { useState } from 'react';
 //Commons
 import Photo from '@/common/Photo';
 import State from '@/common/State';
-import ProfileSwitch from '@/common/ProfileSwitch';
 import '../styles/profileState.css';
 //Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { setDeliveryman } from '@/store/deliveryman';
 //Services
 import Admin_Service from '@/services/admin.services';
+import Switch from '@/common/Switch';
 const adminService = Admin_Service.getInstance();
 
 const ProfileState = () => {
@@ -48,7 +48,7 @@ const ProfileState = () => {
         </div>
       </div>
       <div onClick={toggleActive}>
-        <ProfileSwitch />
+        <Switch />
       </div>
     </div>
   );
