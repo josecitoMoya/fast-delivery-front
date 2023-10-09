@@ -13,7 +13,12 @@
   font-weight: 400;
   padding-left: 20px;
 }
-
+.info-travel {
+  margin-left: 8vw;
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 20px;
+  }
 span {
   display: inline;
   font-weight: 700;

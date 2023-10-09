@@ -5,4 +5,5 @@ export interface createPackageDto {
   additional_information: string;
   package_weigth: number;
   deadline_date: Date | null;
+  coords:object;
 }

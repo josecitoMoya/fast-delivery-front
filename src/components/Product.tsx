@@ -22,8 +22,7 @@ const Product: NextPage<Props> = ({
 }) => {
   const [color, setColor] = useState("");
 
-
-
+const cleanDestination = destination.split(',').slice(0, 2).join(',')
 
   return (
     <div className="product mx-2 mt-2 mb-3">
@@ -49,7 +48,7 @@ const Product: NextPage<Props> = ({
           <Check bg={color} check={color === "" ? "" : "#3D1DF3"} />
         </div>
         <div className="infoCont">
-          <p className="dir ml-3">{destination}</p>
+          <p className="dir ml-3">{cleanDestination}</p>
         </div>
       </div>
       <div className="flex cuantity my-auto mx-2">

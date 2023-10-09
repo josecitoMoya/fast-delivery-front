@@ -1,3 +1,4 @@
+import { LatLngLiteral } from '@googlemaps/google-maps-services-js';
 import { createSlice } from '@reduxjs/toolkit';
 
 interface Package {
@@ -10,6 +11,7 @@ interface Package {
   additional_information: string;
   deadline_date: string;
   creation_date: string;
+  coords: LatLngLiteral;
   __v: number;
 }
 
