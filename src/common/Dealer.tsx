@@ -42,7 +42,8 @@ const Dealer = () => {
   };
 
   return (
-    <>
+    <div className='productScroll'>
+    
       {deliverymans.map((deliveryman) => {
         const correspondingUser = users.find(
           (user) => deliveryman._id === user.deliveryManInfo
@@ -94,7 +95,7 @@ const Dealer = () => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 

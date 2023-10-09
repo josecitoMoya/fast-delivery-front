@@ -42,6 +42,7 @@ const GetPackages = () => {
           con el criterio de filtrado seleccionado
         </p>
       </div>
+      <div className='productScroll'>
       {packages.map((item: PackagesTypes, index: number) => {
         return (
           <div data-testid="task" key={index} className="mb-2 mx-3">
@@ -54,6 +55,7 @@ const GetPackages = () => {
           </div>
         );
       })}
+      </div>
       <div className="addCont">
         <div
           onClick={() => navigate.push('/admin/add-product')}
