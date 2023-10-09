@@ -1,3 +1,4 @@
+import { LatLngLiteral } from '@googlemaps/google-maps-services-js';
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
 export const setPackages = createAction('SET_PACKAGES');
@@ -11,6 +12,7 @@ interface Package {
   additional_information: string;
   deadline_date: string;
   creation_date: string;
+  coords:LatLngLiteral;
   __v: number;
 }
 const initialState: Package[] = [];

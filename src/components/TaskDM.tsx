@@ -29,6 +29,7 @@ const TaskDM: NextPage<Props> = ({
   quantity
 }) => {
   const [display, setDisplay] = useState("");
+  const cleanDestination = dir.split(',').slice(0, 2).join(',')
 
   const handleClick = () => {  
     setDisplay("d-none");
@@ -53,7 +54,7 @@ const TaskDM: NextPage<Props> = ({
         <div className="line"></div>
         <div className="ml-3 info">
           <h3 className="id mt-1">{client}</h3>
-          <p className="dir mt-1">{dir}</p>
+          <p className="dir mt-1">{cleanDestination}</p>
           <p className="dir mt-1">packages: {quantity_taked}</p>
         </div>
       </div>

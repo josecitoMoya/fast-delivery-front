@@ -13,10 +13,31 @@ import Admin_Service from "@/services/admin.services";
 const adminService = Admin_Service.getInstance();
 //Dto
 import { createPackageDto } from "@/services/dto/admin.dto";
+//address autocomplete google
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng,
+} from "use-places-autocomplete";
+import {
+  GoogleMap,
+  useLoadScript,
+  StandaloneSearchBox,
+  Libraries,
+} from "@react-google-maps/api";
+
+const libraries: Libraries = ["places"];
 
 const AddProductContent = () => {
   const [date, setDate] = useState<Date | null>();
   const [quantity, setQuantity] = useState<number>(0);
+  const [coords, setCoords] = useState({ lat: 0, lng: 0 });
+  const Key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
+  const { value, setValue } = usePlacesAutocomplete();
+
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: Key,
+    libraries,
+  });
 
   const handleDateChange = (newDate: Date | null) => {
     setDate(newDate);
@@ -28,9 +49,10 @@ const AddProductContent = () => {
       const newPackage: createPackageDto = {
         client: clientName.value,
         quantity: quantity,
-        destination: adress.value,
+        destination: value,
         package_weigth: packageWeigthNumber,
         deadline_date: date ?? null,
+        coords: coords,
       };
       await adminService.addNewPackage(newPackage);
     } else {
@@ -38,20 +60,41 @@ const AddProductContent = () => {
     }
   };
 
-  let adress = useInput();
   let clientName = useInput();
   let aditionalInfo = useInput();
   let packageWeigth = useInput();
 
+  const handleSelect = async (address: any) => {
+    setValue(address, false);
+    const results = await getGeocode({ address });
+    const { lat, lng } = getLatLng(results[0]);
+    setCoords({ lat: lat, lng: lng });
+  };
   return (
     <div className="flex flex-col items-center justify-center">
-      <EmptyInput
-        color="blue"
-        type="text"
-        position="mx-auto my-3 w-70"
-        placeholder="Dirección"
-        {...adress}
-      />
+      <br />
+      <div className={`cont-input-address `}>
+        {!isLoaded ? (
+          <h1>Loading...</h1>
+        ) : (
+          <GoogleMap mapContainerClassName="map-input-address">
+            <StandaloneSearchBox>
+              <input
+                onBlur={(e) => {
+                  handleSelect(e.target.value);
+                }}
+                value={value}
+                onChange={(e) => {
+                  setValue(e.target.value);
+                }}
+                type="text"
+                placeholder="Dirección"
+                className="input-address"
+              />
+            </StandaloneSearchBox>
+          </GoogleMap>
+        )}
+      </div>
 
       <EmptyInput
         color="blue"

@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Button from "../common/Button";
 import deliveryManServices from "@/services/deliveryMan.services";
 import Map from "./Map";
+import { LatLngLiteral } from "@googlemaps/google-maps-services-js";
 
 interface Props {
   destination: string;
@@ -9,6 +10,7 @@ interface Props {
   client: string;
   quantity_taked: number;
   is_delivered: boolean;
+  coords: LatLngLiteral;
 }
 const TravelContent: NextPage<Props> = ({
   destination,
@@ -16,6 +18,7 @@ const TravelContent: NextPage<Props> = ({
   client,
   quantity_taked,
   is_delivered,
+  coords,
 }) => {
   const handleCancel = () => {
     try {
@@ -36,7 +39,7 @@ const TravelContent: NextPage<Props> = ({
   return (
     <div>
       <div className="img mx-auto">
-        <Map />
+        <Map coords={coords} />
       </div>
       <div className="info-travel mx-auto ">
         <p>
@@ -57,6 +60,8 @@ const TravelContent: NextPage<Props> = ({
         <br />
       ) : (
         <>
+          {" "}
+          <br />
           <Button
             href={"/user/home"}
             bgc="bg-green text-blue"
@@ -64,7 +69,8 @@ const TravelContent: NextPage<Props> = ({
             text="finalizar"
             onClick={handleFinish}
             type="button"
-          ></Button>
+          ></Button>{" "}
+          <br />
           <Button
             type="button"
             href="/user/get-products"
@@ -73,6 +79,7 @@ const TravelContent: NextPage<Props> = ({
             onClick={handleCancel}
             text="cancelar entrega"
           />
+          <br />
         </>
       )}
     </div>
