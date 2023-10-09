@@ -31,21 +31,24 @@ const Login = () => {
         password: password.value,
       };
       const data = await userService.loginUser(userData);
-  
+      console.log('Data from userService:', data);
       // Obtener el valor de la cookie que contiene el token
       const tokenCookie = document.cookie
         .split('; ')
         .find(row => row.startsWith('token='));
       const token = tokenCookie ? tokenCookie.split('=')[1] : null;
+
       // Decodificar el token si existe
       if (token) {
-        console.log("OTRO COSO")
         const tokenParts = token.split('.');
         const payload = JSON.parse(atob(tokenParts[1]));
         const isAdmin = payload.user.is_admin;
-        isAdmin?(router.push('/admin/diary')):(router.push('/user/home'))
+        isAdmin ? (router.push('/admin/diary')) : (router.push('/user/home'));
+      } else {
+        router.push('/user/home')
       }
     } catch (error) {
+      console.error('Error:', error);
       alert('Error al iniciar sesión. Verifique sus credenciales.');
     }
   }
