@@ -49,7 +49,7 @@ const DetailsPackages: NextPage<Props> = ({ href, title }) => {
         {deliveredCount === packages.length ? (
           <Porcentaje percentage={100} />
         ) : (
-          <Porcentaje percentage={(deliveredCount / packages.length) * 100} />
+          <Porcentaje percentage={Math.floor((deliveredCount / packages.length) * 100)} />
         )}
 
         <div className="my-auto ml-3">
