@@ -1,11 +1,15 @@
-import { createAction, createReducer } from '@reduxjs/toolkit';
-import { DeliverymanType } from '@/types/deliveryMan.type';
-export const setDeliveryman = createAction('SET_DELIVERYMAN');
+import { Deliveryman } from '@/types/deliveryman.types';
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState: DeliverymanType[] = [];
-
-export default createReducer(initialState, (builder) => {
-  builder.addCase(setDeliveryman, (state, action) => {
-    return action.payload;
-  });
+const deliverymanSlice = createSlice({
+  name: 'deliveryman',
+  initialState: null as Deliveryman | null,
+  reducers: {
+    setDeliveryman: (state, action) => {
+      return action.payload;
+    },
+  },
 });
+
+export const { setDeliveryman } = deliverymanSlice.actions;
+export default deliverymanSlice.reducer;

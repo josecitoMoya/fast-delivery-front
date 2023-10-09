@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import FoldingCont from "@/components/FoldingCont";
-import GreenScreen from "@/components/GreenScreen";
-import Nav from "@/components/Nav";
-import ProfileState from "@/content/ProfileState";
-import deliveryManServices from "@/services/deliveryMan.services";
-import { PackagesTypes } from "@/types/package.types";
-import { useEffect, useState } from "react";
+import FoldingCont from '@/components/FoldingCont';
+import GreenScreen from '@/components/GreenScreen';
+import Nav from '@/components/Nav';
+import ProfileState from '@/content/ProfileState';
+import deliveryManServices from '@/services/deliveryMan.services';
+import { PackagesTypes } from '@/types/package.types';
+import { useEffect, useState } from 'react';
 
 const Profile = () => {
   const [packages, setPackages] = useState<PackagesTypes[]>([]);
@@ -29,7 +29,7 @@ const Profile = () => {
         setPackages(nonDeliveredPackages);
         setPackagesDelivered(deliveredPackages);
       } catch (error) {
-        console.error("Error geting packages : ", error);
+        console.error('Error geting packages : ', error);
       }
     };
     getTakedPack();
@@ -40,7 +40,7 @@ const Profile = () => {
       <GreenScreen
         href="/admin/dealers"
         h2="Perfil del repartidor"
-        content={<ProfileState userName={"userName"} isActive={true} />}
+        content={<ProfileState />}
       />
       <FoldingCont
         text="Repartos pendientes"

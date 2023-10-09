@@ -26,7 +26,7 @@ export interface Package {
   deliveryMan: string | null;
   weight: number | null;
   deliveredAt: Date | null;
-  status: "taken" | "in_progress" | "delivered" | null;
+  status: 'taken' | 'in_progress' | 'delivered' | null;
   deadlines: Date;
   city?: string;
   coordinatesPackage?: {
@@ -43,4 +43,17 @@ export interface Package {
 export interface Coordinates {
   lat: number;
   lng: number;
+}
+
+export interface IndividualPackage {
+  _id: string;
+  client: string;
+  quantity: number;
+  destination: string;
+  is_delivered: boolean;
+  package_weight: number;
+  additional_information: string;
+  deadline_date: string;
+  creation_date: string;
+  __v: number;
 }

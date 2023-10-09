@@ -1,38 +1,46 @@
-"use client";
-import "../styles/Empty-input.css";
-import React, { useState } from "react";
+'use client';
+import '../styles/Empty-input.css';
+import React, { useState } from 'react';
 //Commons
-import EmptyInput from "../common/Empty-input";
-import Button from "../common/Button";
-import DateInput from "../common/DateInput";
-import QuantityEditor from "@/common/QuantityEditor";
+import EmptyInput from '../common/Empty-input';
+import Button from '../common/Button';
+import DateInput from '../common/DateInput';
+import QuantityEditor from '@/common/QuantityEditor';
 //Hooks
-import useInput from "@/hooks/useInput";
+import useInput from '@/hooks/useInput';
 //Services
-import Admin_Service from "@/services/admin.services";
+import Admin_Service from '@/services/admin.services';
 const adminService = Admin_Service.getInstance();
 //Dto
-import { createPackageDto } from "@/services/dto/admin.dto";
+import { createPackageDto } from '@/services/dto/admin.dto';
 //address autocomplete google
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
-} from "use-places-autocomplete";
+} from 'use-places-autocomplete';
 import {
   GoogleMap,
   useLoadScript,
   StandaloneSearchBox,
   Libraries,
-} from "@react-google-maps/api";
+} from '@react-google-maps/api';
+//Alerts
+import {
+  PackageEmptyFields,
+  PackageWeightExcedsLimit,
+  PackageWeightNaN,
+} from '@/common/alerts/admin.alerts';
+import { useRouter } from 'next/navigation';
 
-const libraries: Libraries = ["places"];
+const libraries: Libraries = ['places'];
 
 const AddProductContent = () => {
   const [date, setDate] = useState<Date | null>();
   const [quantity, setQuantity] = useState<number>(0);
   const [coords, setCoords] = useState({ lat: 0, lng: 0 });
-  const Key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
+  const Key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
   const { value, setValue } = usePlacesAutocomplete();
+  const navigate = useRouter();
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: Key,
@@ -43,27 +51,37 @@ const AddProductContent = () => {
     setDate(newDate);
   };
 
-  const handleCreatePackage = async () => {
-    const packageWeigthNumber = parseInt(packageWeigth.value, 10);
-    if (!isNaN(packageWeigthNumber)) {
-      const newPackage: createPackageDto = {
-        client: clientName.value,
-        quantity: quantity,
-        destination: value,
-        package_weigth: packageWeigthNumber,
-        deadline_date: date ?? null,
-        coords: coords,
-      };
-      await adminService.addNewPackage(newPackage);
-    } else {
-      return alert("El Peso Del Paquete Debe Ser Un Numero");
-    }
-  };
-
   let clientName = useInput();
   let aditionalInfo = useInput();
   let packageWeigth = useInput();
+  let newPackage: createPackageDto = {
+    client: clientName.value,
+    quantity: quantity,
+    destination: value,
+    package_weigth: 0,
+    additional_information: aditionalInfo.value,
+    deadline_date: date ?? null,
+    coords: coords,
+  };
 
+  const handleCreatePackage = async () => {
+    if (!clientName.value || !value || !aditionalInfo.value) {
+      PackageEmptyFields();
+      return;
+    }
+    const packageWeigthNumber = parseInt(packageWeigth.value, 10);
+
+    if (!isNaN(packageWeigthNumber)) {
+      if (packageWeigthNumber >= 0 && packageWeigthNumber <= 100) {
+        await adminService.addNewPackage(newPackage);
+        navigate.push('/admin/packages');
+      } else {
+        PackageWeightExcedsLimit();
+      }
+    } else {
+      PackageWeightNaN();
+    }
+  };
   const handleSelect = async (address: any) => {
     setValue(address, false);
     const results = await getGeocode({ address });
@@ -88,7 +106,7 @@ const AddProductContent = () => {
                   setValue(e.target.value);
                 }}
                 type="text"
-                placeholder="Dirección"
+                placeholder="DirecciÃ³n"
                 className="input-address"
               />
             </StandaloneSearchBox>

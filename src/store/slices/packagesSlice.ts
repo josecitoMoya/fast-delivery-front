@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PackagesTakedIdType } from "@/types/packageNew";
+import { createSlice } from '@reduxjs/toolkit';
+import type { PackagesTakedIdType } from '@/types/packageNew';
 const initialState: PackagesTakedIdType[] = [];
 
 export const packagesSlice = createSlice({
-  name: "packagesTaked",
+  name: 'packagesTaked',
   initialState,
   reducers: {
     setAllPackages: (state, action) => {

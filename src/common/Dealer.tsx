@@ -1,5 +1,6 @@
 'use client';
-//Icons
+import { useRouter } from 'next/navigation';
+//Commons
 import Porcentaje from '@/common/Porcentaje';
 import State from './State';
 import Photo from './Photo';
@@ -7,19 +8,38 @@ import { useEffect, useState } from 'react';
 //Service
 import Admin_Service from '@/services/admin.services';
 const adminService = Admin_Service.getInstance();
+//Redux
+import { setUserInfo } from '@/store/userInfo';
+import { setDeliveryman } from '@/store/deliveryman';
+import { useDispatch } from 'react-redux';
+//types
+import { UserProfileData } from '@/types/user.types';
+import { Deliveryman } from '@/types/deliveryman.types';
 
 const Dealer = () => {
   const [deliverymans, setDeliverymans] = useState<any[]>([]);
   const [users, setUsers] = useState<any[]>([]);
 
+  const dispatch = useDispatch();
+  const navigate = useRouter();
+
   useEffect(() => {
     const getDeliverymansData = async () => {
-      const data = await adminService.getAllDeliverymans();
-      setDeliverymans(data?.data.message.deliverymans);
-      setUsers(data?.data.message.users);
+      const response = await adminService.getAllDeliverymans();
+      setDeliverymans(response?.data.message.deliverymans);
+      setUsers(response?.data.message.users);
     };
     getDeliverymansData();
-  }, []);
+  }, [deliverymans]);
+
+  const handleDeliverymanProfile = async (
+    deliverymanData: Deliveryman,
+    userData: UserProfileData
+  ) => {
+    dispatch(setUserInfo(userData));
+    dispatch(setDeliveryman(deliverymanData));
+    navigate.push('/admin/profile');
+  };
 
   return (
     <>
@@ -37,7 +57,12 @@ const Dealer = () => {
                   <Porcentaje percentage={45} />
                 </div>
                 <div className="flex flex-col">
-                  <h2 className="font-bold">
+                  <h2
+                    className="font-bold ml-2 cursor-pointer  "
+                    onClick={() =>
+                      handleDeliverymanProfile(deliveryman, correspondingUser)
+                    }
+                  >
                     {correspondingUser
                       ? correspondingUser.name
                       : 'Nombre no encontrado'}
