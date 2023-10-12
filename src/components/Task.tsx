@@ -17,8 +17,9 @@ interface Props {
   dir: string;
   state: string;
   bg: string;
+  quantity: number
 }
-const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
+const Task: NextPage<Props> = ({ id, dir, state, bg, quantity }) => {
   const [display, setDisplay] = useState("");
 
   const handleDeletePackage = async () => {
@@ -38,8 +39,9 @@ const Task: NextPage<Props> = ({ id, dir, state, bg }) => {
         </div>
         <div className="line"></div>
         <div className="ml-3 info">
-          <h3 className="id mt-1">{id}</h3>
           <p className="dir mt-1">{dir}</p>
+          <p className="dir mt-1">Paquetes :{quantity}</p>
+          <h3 className="id mt-1">{id}</h3>
         </div>
       </div>
       <div className="colorBtns mt-1 mx-2 flex flex-col items-end">

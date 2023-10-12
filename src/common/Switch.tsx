@@ -1,16 +1,20 @@
 "use client";
 import { useState } from "react";
 import "../styles/profileState.css";
-const Switch = () => {
-  const [on, setOn] = useState("on");
+import { NextPage } from "next";
+interface Props {
+  state: string;
+  setState: (newState: string) => void;
+}
+const Switch: NextPage<Props> = ({ state, setState }) => {
   return (
     <div
       className="switchCont "
       onClick={() => {
-        on == "on" ? setOn("off") : setOn("on");
+        state == "on" ? setState("off") : setState("on");
       }}
     >
-      <div data-testid="switch" className={"on-off " + on}></div>
+      <div data-testid="switch" className={"on-off " + state}></div>
     </div>
   );
 };

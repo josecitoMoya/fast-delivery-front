@@ -2,22 +2,32 @@ import axios from "axios";
 
 const apiURL: string = process.env.NEXT_PUBLIC_API_URL || "";
 class DeliveryManService {
-
   async getDeliveryManInfo() {
     try {
-   const deliveryManInfo =  await axios.get(
-        `${apiURL}/delivery-man/one`,
-        {
-          withCredentials: true,
-        }
-      );
+      const deliveryManInfo = await axios.get(`${apiURL}/delivery-man/one`, {
+        withCredentials: true,
+      });
       return deliveryManInfo;
     } catch (error) {
       console.error("Error al obtener la informacion del deliveryMan:", error);
       throw error;
     }
   }
+  async getDeliveryManById(id: string) {
+    try {
+      const deliveryManInfo = await axios.get(
+        `${apiURL}/delivery-man/one/${id}`,
+        {
+          withCredentials: true,
+        }
+      );
 
+      return deliveryManInfo;
+    } catch (error) {
+      console.error("Error al obtener la informacion del deliveryMan:", error);
+      throw error;
+    }
+  }
 
   async getTakedPackages() {
     try {
@@ -73,6 +83,16 @@ class DeliveryManService {
     const pack = await axios.post(
       `${apiURL}/delivery-man/mark-deli`,
       { packageId },
+      {
+        withCredentials: true,
+      }
+    );
+    return pack;
+  }
+  async MarkActiveOrInactive(deliveryId: string) {
+    const pack = await axios.post(
+      `${apiURL}/delivery-man/mark-in-or-active`,
+      {deliveryId},
       {
         withCredentials: true,
       }

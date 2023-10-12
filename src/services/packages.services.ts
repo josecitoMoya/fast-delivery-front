@@ -14,6 +14,15 @@ class PackagesService {
       throw error;
     }
   }
+  async getPackageById(id:string) {
+    try {
+      const response = await axios.get(`${apiURL}/packages/${id}`);
+      return response.data.message;
+    } catch (error) {
+      console.error("Error al obtener el paquete:", error);
+      throw error;
+    }
+  }
 }
 
 export default new PackagesService();

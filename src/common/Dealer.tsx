@@ -19,9 +19,9 @@ import { Deliveryman } from '@/types/deliveryman.types';
 const Dealer = () => {
   const [deliverymans, setDeliverymans] = useState<any[]>([]);
   const [users, setUsers] = useState<any[]>([]);
-
   const dispatch = useDispatch();
   const navigate = useRouter();
+console.log(users);
 
   useEffect(() => {
     const getDeliverymansData = async () => {
@@ -30,7 +30,7 @@ const Dealer = () => {
       setUsers(response?.data.message.users);
     };
     getDeliverymansData();
-  }, [deliverymans]);
+  }, []);
 
   const handleDeliverymanProfile = async (
     deliverymanData: Deliveryman,
@@ -38,7 +38,7 @@ const Dealer = () => {
   ) => {
     dispatch(setUserInfo(userData));
     dispatch(setDeliveryman(deliverymanData));
-    navigate.push('/admin/profile');
+    navigate.push(`/admin/profile/${deliverymanData._id}`);
   };
 
   return (
@@ -46,16 +46,17 @@ const Dealer = () => {
     
       {deliverymans.map((deliveryman) => {
         const correspondingUser = users.find(
-          (user) => deliveryman._id === user.deliveryManInfo
-        );
-
+          (user) => deliveryman._id === user.deliveryManInfo,
+        ); 
+    
         return (
           <div key={deliveryman._id}>
-            <div className="border-dotted border-b-2 border-sky-500 mx-2 mt-5 mb-2"></div>
             <div className="flex items-center justify-between ">
               <div className="flex items-center">
                 <div className="mx-2">
-                  <Porcentaje percentage={45} />
+                <Porcentaje
+            percentage={deliveryman.current_deliveries!==0?Math.floor((deliveryman.delivered / deliveryman.current_deliveries) * 100):0}
+          />
                 </div>
                 <div className="flex flex-col">
                   <h2
@@ -68,28 +69,32 @@ const Dealer = () => {
                       ? correspondingUser.name
                       : 'Nombre no encontrado'}
                   </h2>
+                  
                   <div>
                     <State
                       state={
-                        deliveryman.active
-                          ? deliveryman.current_deliveries > 0
-                            ? 'EN CURSO'
-                            : 'ACTIVO'
-                          : 'INACTIVO'
+                         deliveryman.status
+                          ? deliveryman.current_deliveries === deliveryman.delivered
+                            ? 'ENTREGADOS'
+                            : 'EN CURSO'
+                          : 'PENDIENTE'
                       }
                       bg={
-                        deliveryman.active
-                          ? deliveryman.current_deliveries > 0
-                            ? 'bg-yellow'
-                            : 'bg-green'
+                        deliveryman.status
+                          ? deliveryman.current_deliveries === deliveryman.delivered
+                            ? 'bg-green'
+                            : 'bg-yellow'
                           : 'bg-purple'
                       }
                     ></State>
+                    {deliveryman.delivered}/{deliveryman.current_deliveries}
                   </div>
                 </div>
               </div>
               <div className="mr-5">
-                <Photo scale="small"></Photo>
+            
+    <Photo scale="small" photo={correspondingUser.profile_img} />
+
               </div>
             </div>
           </div>

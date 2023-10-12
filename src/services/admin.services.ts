@@ -2,7 +2,6 @@ import axios from 'axios';
 import { createPackageDto } from './dto/admin.dto';
 import { Deliveryman } from '@/types/deliveryman.types';
 
-
 const apiURL: string = process.env.NEXT_PUBLIC_API_URL || "";
 
 export default class Admin_Service {
