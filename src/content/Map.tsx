@@ -70,7 +70,7 @@ const Map: NextPage<Props> = ({ coords }) => {
     } else {
       console.error("El usuario no tiene disponible la geolocalización");
     }
-    console.log(center);
+  
 
     if (isLoaded) {
       calculateRoute();

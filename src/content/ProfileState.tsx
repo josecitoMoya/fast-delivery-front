@@ -24,9 +24,6 @@ const ProfileState: NextPage<Props> = ({ deliveryId, status }) => {
   const [active, setActive] = useState(status);
   const [on, setOn] = useState('');
   const dispatch = useDispatch();
-  console.log(active);
-  console.log('onnnn', on);
-
   useEffect(() => {
     setActive(status);
     setOn(status? "on" : "off")
@@ -36,8 +33,6 @@ const ProfileState: NextPage<Props> = ({ deliveryId, status }) => {
     if (deliveryId) {
   
       setActive(!active);
-      console.log("deli id", deliveryId);
-
       await deliveryManServices.MarkActiveOrInactive(deliveryId);
       dispatch(setDeliveryman({ ...deliverymanInfo, active: !active }));
     }

@@ -21,7 +21,7 @@ const Dealer = () => {
   const [users, setUsers] = useState<any[]>([]);
   const dispatch = useDispatch();
   const navigate = useRouter();
-console.log(users);
+
 
   useEffect(() => {
     const getDeliverymansData = async () => {

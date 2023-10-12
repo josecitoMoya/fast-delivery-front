@@ -47,9 +47,7 @@ class DeliveryManService {
     try {
       const packages = await axios.get(
         `${apiURL}/delivery-man/taked-packages`,
-        {
-          withCredentials: true,
-        }
+        {withCredentials: true}
       );
       return packages;
     } catch (error) {
@@ -78,6 +76,19 @@ class DeliveryManService {
     );
     return pack;
   }
+  // async UntakePackageById( packageId: string, deliveryId:string) {
+  //   try {
+  //     console.log(deliveryId,packageId);
+      
+  //   const pack = await axios.delete(
+  //     `${apiURL}/delivery-man/untake-package/${packageId}`,deliveryId,
+  //   );
+  //   return pack;
+  // } catch (error) {
+  //   console.error("Error al obtener los paquetes:", error);
+  //   throw error;
+  // }
+  // }
 
   async MarkDeliveredPackage(packageId: string) {
     const pack = await axios.post(
@@ -92,7 +103,7 @@ class DeliveryManService {
   async MarkActiveOrInactive(deliveryId: string) {
     const pack = await axios.post(
       `${apiURL}/delivery-man/mark-in-or-active`,
-      {deliveryId},
+      { deliveryId },
       {
         withCredentials: true,
       }

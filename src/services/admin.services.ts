@@ -52,8 +52,6 @@ export default class Admin_Service {
 
   async updateDeliveryman(deliverymanId: string, updatedInfo: Deliveryman) {
     try {
-      console.log('vengo del service del front : ', deliverymanId, updatedInfo);
-
       await axios.put(
         `${apiURL}/delivery-man/update-status/${deliverymanId}`,
         updatedInfo,
