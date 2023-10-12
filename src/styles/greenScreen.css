@@ -89,7 +89,7 @@ h3 {
   overflow-y: auto;
   overflow-x: hidden;
   margin: 10px 0;
-  
+  padding-bottom: 10px;
   border-top: 1px solid var(--blue);
   border-bottom: 1px solid var(--blue)
   

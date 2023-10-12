@@ -42,7 +42,8 @@ console.log(users);
   };
 
   return (
-    <>
+    <div className='productScroll'>
+    
       {deliverymans.map((deliveryman) => {
         const correspondingUser = users.find(
           (user) => deliveryman._id === user.deliveryManInfo,
@@ -50,7 +51,6 @@ console.log(users);
     
         return (
           <div key={deliveryman._id}>
-            <div className="border-dotted border-b-2 border-sky-500 mx-2 mt-5 mb-2"></div>
             <div className="flex items-center justify-between ">
               <div className="flex items-center">
                 <div className="mx-2">
@@ -100,7 +100,7 @@ console.log(users);
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 
