@@ -2,8 +2,7 @@ import axios from 'axios';
 import { createPackageDto } from './dto/admin.dto';
 import { Deliveryman } from '@/types/deliveryman.types';
 
-const apiURL = process.env.API_URL || 'http://localhost:3001/api';
-// const apiURL: string = process.env.NEXT_PUBLIC_API_URL || "";
+const apiURL: string = process.env.NEXT_PUBLIC_API_URL || "";
 
 export default class Admin_Service {
   private static instance: Admin_Service | null = null;

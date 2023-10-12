@@ -25,10 +25,11 @@ const GetProductsContent = () => {
   const [deliManInfo, setDeliManInfo] = useState<DeliverymanType>({
     _id: "",
     current_deliveries: 0,
-    active: false,
+    active: true,
+    status: false,
     drinked_alcohol: false,
     taked_drugs: false,
-    sleeped_well: false,
+    have_stress: false,
     packages: [],
   });
   useEffect(() => {
@@ -92,7 +93,7 @@ const GetProductsContent = () => {
           ) : (
             ""
           )
-          )}
+        )}
       </div>
       <Button
         type="button"

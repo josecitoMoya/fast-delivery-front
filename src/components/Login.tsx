@@ -1,21 +1,22 @@
-'use client';
+"use client";
 //styles
-import '../styles/minput.css';
+import "../styles/minput.css";
 //commons
-import Minput from '../common/Minput';
-import Button from '../common/Button';
-import Text from '../common/Text';
+import Minput from "../common/Minput";
+import Button from "../common/Button";
 // assets
-import Lock from '../assets/Ico/Lock';
-import User from '../assets/Ico/User';
+import Lock from "../assets/Ico/Lock";
+import User from "../assets/Ico/User";
 //hooks
-import useInput from '@/hooks/useInput';
+import useInput from "@/hooks/useInput";
 //types
-import { UserLogin } from '@/types/user.types';
+import { UserLogin } from "@/types/user.types";
 // services
 import User_Service from "@/services/user.services";
-import { useRouter } from 'next/navigation';
-
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import deliveryManServices from "@/services/deliveryMan.services";
+import { DeliverymanType } from "@/types/deliveryMan.type";
 
 const userService = new User_Service();
 
@@ -30,26 +31,43 @@ const Login = () => {
         email: email.value,
         password: password.value,
       };
-      const data = await userService.loginUser(userData);
-  
+      await userService.loginUser(userData);
+
       // Obtener el valor de la cookie que contiene el token
+
       const tokenCookie = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('token='));
-      const token = tokenCookie ? tokenCookie.split('=')[1] : null;
-  
+        .split("; ")
+        .find((row) => row.startsWith("token="));
+      const token = tokenCookie ? tokenCookie.split("=")[1] : null;
+
       // Decodificar el token si existe
       if (token) {
-        const tokenParts = token.split('.');
+        const tokenParts = token.split(".");
         const payload = JSON.parse(atob(tokenParts[1]));
         const isAdmin = payload.user.is_admin;
-        isAdmin?(router.push('/admin/diary')):(router.push('/user/home'))
+        
+        if (!isAdmin) {
+          // Obtener el valor del usuario por si esta bloqueado o no
+          const data = await deliveryManServices.getDeliveryManInfo();
+          const active = data.data.message.active;
+
+          if (active) {
+            router.push("/user/home");
+          } else {
+            alert(
+              "Su cuenta ha sido desactivada. Contacte al administrador para más información."
+            );
+          }
+        }else{
+          router.push("/admin/diary");
+        }
       }
     } catch (error) {
-      alert('Error al iniciar sesión. Verifique sus credenciales.');
+      console.error("Error:", error);
+      alert("Error al iniciar sesión. Verifique sus credenciales.");
     }
-  }
-  
+  };
+
   return (
     <>
       <Minput
@@ -83,7 +101,6 @@ const Login = () => {
         text="crear cuenta"
         type="submit"
       />
-      
     </>
   );
 };

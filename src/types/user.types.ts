@@ -7,6 +7,14 @@ export interface UserRegister {
   confirmpassword?: string;
   email: string;
 }
+export interface Payload {
+  name: string;
+  id: string;
+  email: string;
+  is_admin: boolean;
+  is_deleted: boolean;
+  profile_img: string;
+}
 
 export interface User {
   _id: string;
