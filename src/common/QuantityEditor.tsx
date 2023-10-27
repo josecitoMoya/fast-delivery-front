@@ -8,7 +8,7 @@ interface Props {
 
 const QuantityEditor: NextPage<Props> = ({ quantity, setQuantity }) => {
   return (
-    <div className="flex my-auto mx-2">
+    <div className="flex  mx-2">
       <div
         className="my-auto"
         onClick={() => {
@@ -17,7 +17,7 @@ const QuantityEditor: NextPage<Props> = ({ quantity, setQuantity }) => {
       >
         <Minus />
       </div>
-      <p data-testid="quantity-text" className="number">
+      <p data-testid="quantity-text" className="my-auto">
         {quantity}
       </p>
       <div

@@ -20,11 +20,11 @@ const EmptyInput: NextPage<Props> = ({
 }) => {
   return (
     <div
-      className={`border border-white border-opacity-10 rounded-2xl p-2 ${position} flex-row flex bg-${color}`}
+      className={`border border-white border-opacity-10 rounded-2xl ${position} flex-row flex bg-${color}`}
     >
       <input
         type={type}
-        className={`ml-3  empty-input placeholder-${color} text-${color}`}
+        className={` empty-input placeholder-${color} text-${color}`}
         placeholder={placeholder}
         value={value}
         onChange={onChange}

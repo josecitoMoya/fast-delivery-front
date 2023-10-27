@@ -14,12 +14,12 @@ const DateInput: React.FC<DateInputProps> = ({
   className,
 }) => {
   return (
-    <div className={`mx-2 relative ${className}`}>
+    <div className={` relative ${className}`}>
       <DatePicker
         selected={selected}
         onChange={(date) => setDate?.(date)}
-        withPortal
-        className="dateInput border border-blue-500 rounded-lg outline-none px-2 py-2 text-center"
+        placeholderText="00/00/0000"
+        className="dateInput border border-blue-500 rounded-lg outline-none   text-center"
       />
     </div>
   );

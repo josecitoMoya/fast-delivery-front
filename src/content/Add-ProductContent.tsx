@@ -91,7 +91,7 @@ const AddProductContent = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <br />
-      <div className={`cont-input-address `}>
+      <div className={`cont-input-address w-[200px]`}>
         {!isLoaded ? (
           <h1>Loading...</h1>
         ) : (
@@ -106,8 +106,8 @@ const AddProductContent = () => {
                   setValue(e.target.value);
                 }}
                 type="text"
-                placeholder="DirecciÃ³n"
-                className="input-address"
+                className="w-[100%] input-address placeholder-blue"
+                placeholder="Direccion"
               />
             </StandaloneSearchBox>
           </GoogleMap>
@@ -117,15 +117,15 @@ const AddProductContent = () => {
       <EmptyInput
         color="blue"
         type="text"
-        position="mx-auto my-3 w-70"
         placeholder="Nombre De Quien Recibe"
+        position="mx-auto my-3 w-70"
         {...clientName}
       />
 
       <EmptyInput
         color="blue"
         type="text"
-        position="mx-auto my-3 w-70"
+        position="  my-3 w-70"
         placeholder="Peso Del Paquete (KG)"
         {...packageWeigth}
       />
@@ -138,14 +138,16 @@ const AddProductContent = () => {
         {...aditionalInfo}
       />
 
-      <div className="flex items-center justify-between h-10 p-4 w-[65%]">
+      <div
+        className="flex items-center justify-between w"
+      >
         <DateInput
           selected={date}
           setDate={handleDateChange}
-          className="w-full h-full border-blue p-4 text-center quantity-container"
+          className="w-full h-full border-blue  text-center date-container"
         />
 
-        <div className="w-full h-full p-4 border-blue quantity-container">
+        <div className="w-full h-full  border-blue quantity-container flex justify-center ">
           <QuantityEditor quantity={quantity} setQuantity={setQuantity} />
         </div>
       </div>
