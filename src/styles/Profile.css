@@ -1,0 +1,27 @@
+.cont{
+  height: 60vh;
+  max-height: 500px;
+}
+.cont-picture {
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  overflow: hidden; 
+  border-radius: 50%;
+  margin:auto;
+}
+.perfil {
+  height: 100%;
+  width: 100%; 
+  object-fit:cover;
+}
+.btnCont-profile {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--green);
+}
+.btn {
+  font-weight: 500;
+}

@@ -91,7 +91,7 @@ const AddProductContent = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <br />
-      <div className={`cont-input-address w-[200px]`}>
+      <div className={`cont-input-address`}>
         {!isLoaded ? (
           <h1>Loading...</h1>
         ) : (
