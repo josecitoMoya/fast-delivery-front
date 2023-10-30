@@ -15,7 +15,12 @@ export interface Payload {
   is_deleted: boolean;
   profile_img: string;
 }
-
+export interface UserUpdate {
+  name?: string;
+  last_name?: string;
+  email?: string;
+  profile_img?: string;
+}
 export interface User {
   _id: string;
   name: string;
@@ -41,7 +46,7 @@ export interface UserLogin {
 export interface UserProfileData {
   _id: string;
   email: string;
-  password: string;
+  password?: string;
   name: string;
   last_name: string;
   profile_img: string;

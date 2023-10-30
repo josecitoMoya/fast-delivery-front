@@ -1,8 +1,8 @@
-import axios from "axios";
-import Cookies from "js-cookie";
-import { UserLogin, UserRegister } from "@/types/user.types";
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { UserLogin, UserRegister, UserUpdate } from '@/types/user.types';
 
-const apiURL: string = process.env.NEXT_PUBLIC_API_URL || "";
+const apiURL: string = process.env.NEXT_PUBLIC_API_URL || '';
 
 export default class User_Service {
   async register(userData: UserRegister) {
@@ -37,12 +37,12 @@ export default class User_Service {
 
   async logoutUser() {
     try {
-      Cookies.remove("token");
+      Cookies.remove('token');
       await axios.post(`${apiURL}/users/logout`, {
         withCredentials: true,
       });
     } catch (error: any) {
-      console.log("register error : ", error.response.data);
+      console.log('register error : ', error.response.data);
     }
   }
 
@@ -54,5 +54,27 @@ export default class User_Service {
         Authorization: `Bearer ${token}`,
       },
     });
+  }
+
+  async update_info(userId: string, newData: UserUpdate) {
+
+    const update = await axios.put(
+      `${apiURL}/users/update/${userId}`,
+      { newData },
+      {
+        withCredentials: true,
+      }
+    );
+    return update;
+  }
+  async getUser(userId: string) {
+
+    const user = await axios.get(
+      `${apiURL}/users/${userId}`,
+      {
+        withCredentials: true,
+      }
+    );
+    return user;
   }
 }
