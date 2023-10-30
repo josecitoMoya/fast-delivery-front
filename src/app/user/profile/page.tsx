@@ -7,8 +7,8 @@ const Incidency = () => (
   <div>
     <Nav href="/user/home" lHref="/" />
     <GreenScreen
-      href="/user/get-products"
-      h2="Perfl"
+      href="/user/home"
+      h2="Perfil"
       content={<ProfileContent/>}
     />
   </div>
