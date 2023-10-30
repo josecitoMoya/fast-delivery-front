@@ -12,15 +12,15 @@ interface Props {
 
 const Details: NextPage<Props> = ({ selectedDate }) => {
   const formattedDate = new Date(
-    `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${
-      selectedDate + 1
-    }`
+    new Date().getFullYear(),
+    new Date().getMonth(),
+    selectedDate
   ).toLocaleDateString('es-ES', {
     day: '2-digit',
     month: '2-digit',
     year: '2-digit',
   });
-
+  
   const [display, setDisplay] = useState('');
 
   return (
