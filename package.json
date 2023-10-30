@@ -10,6 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.11.2",
+    "@cloudinary/url-gen": "^1.12.0",
     "@googlemaps/google-maps-services-js": "^3.3.39",
     "@react-google-maps/api": "^2.7.0",
     "@reduxjs/toolkit": "^1.9.7",

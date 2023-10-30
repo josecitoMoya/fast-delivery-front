@@ -52,7 +52,7 @@ const Login = () => {
           const active = data.data.message.active;
 
           if (active) {
-            router.push("/user/home");
+            router.push("/user/profile");
           } else {
             alert(
               "Su cuenta ha sido desactivada. Contacte al administrador para más información."

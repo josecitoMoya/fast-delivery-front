@@ -1,4 +1,4 @@
-.cont{
+.cont {
   height: 60vh;
   max-height: 500px;
 }
@@ -6,14 +6,15 @@
   height: 100px;
   width: 100px;
   background-color: black;
-  overflow: hidden; 
+  overflow: hidden;
   border-radius: 50%;
-  margin:auto;
+  margin: auto;
 }
 .perfil {
   height: 100%;
-  width: 100%; 
-  object-fit:cover;
+  width: 100%;
+  cursor: pointer;
+  object-fit: cover;
 }
 .btnCont-profile {
   width: 100px;
